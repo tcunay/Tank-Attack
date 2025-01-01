@@ -1,27 +1,32 @@
-/*using Code.Infrastructure.States.StateInfrastructure;
-using Code.Infrastructure.States.StateMachine;
+using CodeBase.Infrastructure.Loading;
+using CodeBase.Infrastructure.States.StateInfrastructure;
+using CodeBase.Infrastructure.States.StateMachine;
 
 namespace CodeBase.Infrastructure.States.GameStates
 {
-  public class LoadingBattleState : SimplePayloadState<string>
-  {
-    private readonly IGameStateMachine _stateMachine;
-    private readonly ISceneLoader _sceneLoader;
-
-    public LoadingBattleState(IGameStateMachine stateMachine, ISceneLoader sceneLoader)
+    public class LoadingBattleState : SimpleState
     {
-      _stateMachine = stateMachine;
-      _sceneLoader = sceneLoader;
-    }
+        private const string FightSceneName = "BattleScene";
+        
+        private readonly ISceneLoader _sceneLoader;
+        private readonly IGameStateMachine _stateMachine;
+
+        public LoadingBattleState(ISceneLoader sceneLoader, IGameStateMachine stateMachine)
+        {
+            _sceneLoader = sceneLoader;
+            _stateMachine = stateMachine;
+        }
+        
+        public override void Enter()
+        {
+            _sceneLoader.LoadScene(FightSceneName, EnterBattleLoopState);
+        }
+
+        private void EnterBattleLoopState()
+        {
+            _stateMachine.Enter<BattleLoopState>();
+        }
+
     
-    public override void Enter(string sceneName)
-    {
-      _sceneLoader.LoadScene(sceneName, EnterBattleLoopState);
     }
-
-    private void EnterBattleLoopState()
-    {
-      _stateMachine.Enter<BattleEnterState>();
-    }
-  }
-}*/
+}

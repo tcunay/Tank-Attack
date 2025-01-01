@@ -1,6 +1,7 @@
 ﻿using CodeBase.Infrastructure.States.Factory;
 using CodeBase.Infrastructure.States.StateInfrastructure;
 using RSG;
+using UnityEngine;
 using Zenject;
 
 namespace CodeBase.Infrastructure.States.StateMachine
@@ -56,6 +57,7 @@ namespace CodeBase.Infrastructure.States.StateMachine
     {
       if (_activeState != null)
       {
+        Debug.Log($"Request {_activeState.GetType()} State");
         return _activeState
           .BeginExit()
           .Then(_activeState.EndExit)
