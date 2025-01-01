@@ -1,4 +1,7 @@
+using Code.Gameplay.Levels;
 using CodeBase.Gameplay.Input;
+using CodeBase.Gameplay.Shooter.Factory;
+using CodeBase.Gameplay.Time;
 using CodeBase.Infrastructure.Common;
 using CodeBase.Infrastructure.Loading;
 using CodeBase.Infrastructure.States.Factory;
@@ -16,6 +19,8 @@ namespace CodeBase.Infrastructure.Installers
         {
             BindInitializeService();
             BindServices();
+            BindGameplayServices();
+            BindFactories();
             BindStateMachine();
             BindStates();
         }
@@ -29,13 +34,20 @@ namespace CodeBase.Infrastructure.Installers
         {
             Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StartBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
         }
 
         private void BindServices()
         {
+            Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+        }
+
+        private void BindGameplayServices()
+        {
+            Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
             Container.Bind<IInputService>()
 
 #if UNITY_EDITOR
@@ -49,6 +61,11 @@ namespace CodeBase.Infrastructure.Installers
         private void BindStateMachine()
         {
             Container.BindInterfacesTo<GameStateMachine>().AsSingle();
+        }
+        
+        private void BindFactories()
+        {
+            Container.Bind<IShooterFactory>().To<ShooterFactory>().AsSingle();
         }
 
         public void Initialize()
