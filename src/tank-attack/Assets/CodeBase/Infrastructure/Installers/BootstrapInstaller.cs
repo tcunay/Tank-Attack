@@ -1,3 +1,4 @@
+using CodeBase.Gameplay.Input;
 using CodeBase.Infrastructure.Common;
 using CodeBase.Infrastructure.Loading;
 using CodeBase.Infrastructure.States.Factory;
@@ -35,6 +36,14 @@ namespace CodeBase.Infrastructure.Installers
         {
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+            Container.Bind<IInputService>()
+
+#if UNITY_EDITOR
+                .To<StandaloneInputService>()
+#else
+                .To<MobileInputService>()
+#endif
+                .AsSingle();
         }
 
         private void BindStateMachine()
