@@ -1,0 +1,43 @@
+/*using Code.Infrastructure.States.StateInfrastructure;
+
+namespace CodeBase.Infrastructure.States.GameStates
+{
+  public class BattleLoopState : EndOfFrameExitState
+  {
+    private readonly ISystemFactory _systems;
+    private readonly GameContext _gameContext;
+    private BattleFeature _battleFeature;
+
+    public BattleLoopState(ISystemFactory systems, GameContext gameContext)
+    {
+      _systems = systems;
+      _gameContext = gameContext;
+    }
+    
+    public override void Enter()
+    {
+      _battleFeature = _systems.Create<BattleFeature>();
+      _battleFeature.Initialize();
+    }
+
+    protected override void OnUpdate()
+    {
+      _battleFeature.Execute();
+      _battleFeature.Cleanup();
+    }
+
+    protected override void ExitOnEndOfFrame()
+    { 
+      _battleFeature.Clear(DestructEntities);
+      _battleFeature = null;
+    }
+    
+    private void DestructEntities()
+    {
+      foreach (GameEntity entity in _gameContext.GetEntities())
+      {
+        entity.isDestructed = true;
+      }
+    }
+  }
+}*/
