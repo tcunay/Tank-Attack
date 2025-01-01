@@ -57,7 +57,7 @@ namespace CodeBase.Infrastructure.States.StateMachine
     {
       if (_activeState != null)
       {
-        Debug.Log($"Request {_activeState.GetType()} State");
+        Debug.Log($"Change To {_activeState.GetType().Name} State");
         return _activeState
           .BeginExit()
           .Then(_activeState.EndExit)
