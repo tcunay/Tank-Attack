@@ -1,4 +1,5 @@
 using CodeBase.Gameplay.Armaments.Factory;
+using CodeBase.Gameplay.Armaments.View;
 using UnityEngine;
 
 namespace CodeBase.Gameplay.Armaments.Services
@@ -16,6 +17,9 @@ namespace CodeBase.Gameplay.Armaments.Services
         {
             Debug.Log("Shoot");
             GameObject gameObject = _bulletFactory.CreateBullet(at);
+
+            gameObject.transform.forward = direction;
+            gameObject.GetComponent<BulletMove>().MoveDirection = direction;
         }
     }
 }

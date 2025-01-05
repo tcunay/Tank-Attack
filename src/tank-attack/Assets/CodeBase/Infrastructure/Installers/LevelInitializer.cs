@@ -1,12 +1,13 @@
 using Code.Gameplay.Levels;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace CodeBase.Infrastructure.Installers
 {
     public class LevelInitializer : MonoBehaviour, IInitializable
     {
-        public Transform ShooterPosition;
+        public Transform HeroPosition;
         private ILevelDataProvider _levelDataProvider;
 
         [Inject]
@@ -17,7 +18,8 @@ namespace CodeBase.Infrastructure.Installers
         
         public void Initialize()
         {
-            _levelDataProvider.SetStartPoint(ShooterPosition.position);
+            _levelDataProvider.SetStartPoint(HeroPosition.position);
+            HeroPosition.gameObject.SetActive(false);
         }
     }
 }

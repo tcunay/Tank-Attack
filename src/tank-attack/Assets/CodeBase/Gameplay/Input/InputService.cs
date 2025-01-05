@@ -11,7 +11,7 @@ namespace CodeBase.Gameplay.Input
 
         public abstract Vector2 Axis { get; }
 
-        public bool IsAttackButton() => SimpleInput.GetButtonUp(FireButtonKey);
+        public virtual bool IsAttackButton() => SimpleInput.GetButtonUp(FireButtonKey);
 
         protected static Vector2 SimpleInputAxis() => 
             new(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));

@@ -1,5 +1,6 @@
 using CodeBase.Gameplay.StaticData;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace CodeBase.Gameplay.Hero.Factory

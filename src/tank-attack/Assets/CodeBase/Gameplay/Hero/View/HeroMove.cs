@@ -11,7 +11,7 @@ namespace CodeBase.Gameplay.Hero.View
         private IInputService _inputService;
         private ITimeService _time;
 
-        private const float RotationSpeed = 100f;
+        private const float RotationSpeed = 25f;
 
         [Inject]
         private void Construct(IInputService inputService, ITimeService timeService)

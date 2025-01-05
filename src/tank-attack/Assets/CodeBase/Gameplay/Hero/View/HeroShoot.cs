@@ -23,6 +23,9 @@ namespace CodeBase.Gameplay.Hero.View
             {
                 _shootService.Shoot(transform.position ,transform.forward);
             }
+            
+            Debug.DrawRay(transform.position, transform.forward, Color.blue);
+
         }
     }
     

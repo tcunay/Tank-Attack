@@ -19,6 +19,11 @@ namespace CodeBase.Gameplay.Input
             }
         }
 
+        public override bool IsAttackButton()
+        {
+            return base.IsAttackButton() || UnityEngine.Input.GetKeyDown(KeyCode.Space);
+        }
+
         private static Vector2 UnityAxis() => 
             new(UnityEngine.Input.GetAxis(Horizontal), UnityEngine.Input.GetAxis(Vertical));
     }
