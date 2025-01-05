@@ -1,6 +1,9 @@
 using Code.Gameplay.Levels;
+using CodeBase.Gameplay.Armaments.Factory;
+using CodeBase.Gameplay.Armaments.Services;
+using CodeBase.Gameplay.Hero.Factory;
 using CodeBase.Gameplay.Input;
-using CodeBase.Gameplay.Shooter.Factory;
+using CodeBase.Gameplay.StaticData;
 using CodeBase.Gameplay.Time;
 using CodeBase.Infrastructure.Common;
 using CodeBase.Infrastructure.Loading;
@@ -18,11 +21,17 @@ namespace CodeBase.Infrastructure.Installers
         public override void InstallBindings()
         {
             BindInitializeService();
+            BindStaticData();
             BindServices();
-            BindGameplayServices();
             BindFactories();
+            BindGameplayServices();
             BindStateMachine();
             BindStates();
+        }
+
+        private void BindStaticData()
+        {
+            Container.Bind<IStaticDataService>().To<StaticDataService>().AsSingle();
         }
 
         private void BindInitializeService()
@@ -48,6 +57,7 @@ namespace CodeBase.Infrastructure.Installers
         private void BindGameplayServices()
         {
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            Container.Bind<IShootService>().To<ShootService>().AsSingle();
             Container.Bind<IInputService>()
 
 #if UNITY_EDITOR
@@ -65,7 +75,8 @@ namespace CodeBase.Infrastructure.Installers
         
         private void BindFactories()
         {
-            Container.Bind<IShooterFactory>().To<ShooterFactory>().AsSingle();
+            Container.Bind<IBulletFactory>().To<BulletFactory>().AsSingle();
+            Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
         }
 
         public void Initialize()

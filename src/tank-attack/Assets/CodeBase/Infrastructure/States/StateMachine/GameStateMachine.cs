@@ -57,7 +57,6 @@ namespace CodeBase.Infrastructure.States.StateMachine
     {
       if (_activeState != null)
       {
-        Debug.Log($"Change To {_activeState.GetType().Name} State");
         return _activeState
           .BeginExit()
           .Then(_activeState.EndExit)
@@ -69,6 +68,7 @@ namespace CodeBase.Infrastructure.States.StateMachine
 
     private IPromise<TState> GetState<TState>() where TState : class, IExitableState
     {
+      Debug.Log($"Change To {typeof(TState).Name} State");
       TState state = _stateFactory.GetState<TState>();
       _activeState = state;
       

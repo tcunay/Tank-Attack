@@ -4,9 +4,9 @@ using CodeBase.Gameplay.Time;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Gameplay.Shooter.View
+namespace CodeBase.Gameplay.Hero.View
 {
-    public class ShooterMove : MonoBehaviour
+    public class HeroMove : MonoBehaviour
     {
         private IInputService _inputService;
         private ITimeService _time;
