@@ -75,7 +75,7 @@ namespace CodeBase.Infrastructure.Installers
         
         private void BindFactories()
         {
-            Container.Bind<IBulletFactory>().To<BulletFactory>().AsSingle();
+            Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
         }
 

@@ -6,20 +6,20 @@ namespace CodeBase.Gameplay.Armaments.Services
 {
     public class ShootService : IShootService
     {
-        private readonly IBulletFactory _bulletFactory;
+        private readonly IProjectileFactory _projectileFactory;
 
-        public ShootService(IBulletFactory bulletFactory)
+        public ShootService(IProjectileFactory projectileFactory)
         {
-            _bulletFactory = bulletFactory;
+            _projectileFactory = projectileFactory;
         }
 
         public void Shoot(Vector3 at, Vector3 direction)
         {
             Debug.Log("Shoot");
-            GameObject gameObject = _bulletFactory.CreateBullet(at);
+            GameObject gameObject = _projectileFactory.CreateBullet(at);
 
             gameObject.transform.forward = direction;
-            gameObject.GetComponent<BulletMove>().MoveDirection = direction;
+            gameObject.GetComponent<ProjectileMove>().MoveDirection = direction;
         }
     }
 }

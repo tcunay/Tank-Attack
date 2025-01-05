@@ -4,12 +4,12 @@ using Zenject;
 
 namespace CodeBase.Gameplay.Armaments.Factory
 {
-    public class BulletFactory : IBulletFactory
+    public class ProjectileFactory : IProjectileFactory
     {
         private readonly IInstantiator _instantiator;
         private readonly IStaticDataService _staticData;
 
-        public BulletFactory(IInstantiator instantiator, IStaticDataService staticData)
+        public ProjectileFactory(IInstantiator instantiator, IStaticDataService staticData)
         {
             _instantiator = instantiator;
             _staticData = staticData;

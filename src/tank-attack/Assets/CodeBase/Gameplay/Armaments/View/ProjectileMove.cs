@@ -1,12 +1,10 @@
-using System;
 using CodeBase.Gameplay.Time;
-using UnityEditor;
 using UnityEngine;
 using Zenject;
 
 namespace CodeBase.Gameplay.Armaments.View
 {
-    public class BulletMove : MonoBehaviour
+    public class ProjectileMove : MonoBehaviour
     {
         private ITimeService _time;
 
