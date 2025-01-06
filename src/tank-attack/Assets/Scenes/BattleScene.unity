@@ -1967,7 +1967,7 @@ PrefabInstance:
       objectReference: {fileID: 2062380208}
     - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: MoveSetup.WayPoints.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: 'MoveSetup.WayPoints.Array.data[0]'
@@ -1977,6 +1977,14 @@ PrefabInstance:
       propertyPath: 'MoveSetup.WayPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 2062380208}
+    - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
+      propertyPath: 'MoveSetup.WayPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1797078073}
+    - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
+      propertyPath: 'MoveSetup.WayPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 822549012}
     - target: {fileID: 9125253231149713348, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
