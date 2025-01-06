@@ -5,6 +5,7 @@ using CodeBase.Gameplay.Hero.Factory;
 using CodeBase.Gameplay.Input;
 using CodeBase.Gameplay.StaticData;
 using CodeBase.Gameplay.Time;
+using CodeBase.Gameplay.Vehicle.Factory;
 using CodeBase.Infrastructure.Common;
 using CodeBase.Infrastructure.Loading;
 using CodeBase.Infrastructure.States.Factory;
@@ -76,6 +77,7 @@ namespace CodeBase.Infrastructure.Installers
         private void BindFactories()
         {
             Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
+            Container.Bind<IVehicleFactory>().To<VehicleFactory>().AsSingle();
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
         }
 

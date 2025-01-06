@@ -1,12 +1,13 @@
 using Code.Gameplay.Levels;
+using CodeBase.Gameplay.Vehicle.Setup;
 using UnityEngine;
 using Zenject;
 
 namespace CodeBase.Infrastructure.Installers
 {
-    public class LevelInitializer : MonoBehaviour, IInitializable
+    public class VehicleInitializer : MonoBehaviour, IInitializable
     {
-        public Transform HeroPosition;
+        public VehicleSetup[] MoveSetups;
         private ILevelDataProvider _levelDataProvider;
 
         [Inject]
@@ -17,8 +18,7 @@ namespace CodeBase.Infrastructure.Installers
         
         public void Initialize()
         {
-            _levelDataProvider.SetStartPoint(HeroPosition.position);
-            HeroPosition.gameObject.SetActive(false);
+            _levelDataProvider.SetMoveSetups(MoveSetups);
         }
     }
 }
