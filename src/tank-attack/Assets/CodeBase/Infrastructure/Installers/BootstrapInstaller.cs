@@ -1,6 +1,8 @@
 using Code.Gameplay.Levels;
 using CodeBase.Gameplay.Armaments.Factory;
 using CodeBase.Gameplay.Armaments.Services;
+using CodeBase.Gameplay.Cameras.Factory;
+using CodeBase.Gameplay.Cameras.Provider;
 using CodeBase.Gameplay.Hero.Factory;
 using CodeBase.Gameplay.Input;
 using CodeBase.Gameplay.StaticData;
@@ -58,6 +60,7 @@ namespace CodeBase.Infrastructure.Installers
         private void BindGameplayServices()
         {
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
             Container.Bind<IShootService>().To<ShootService>().AsSingle();
             Container.Bind<IInputService>()
 
@@ -79,6 +82,7 @@ namespace CodeBase.Infrastructure.Installers
             Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
             Container.Bind<IVehicleFactory>().To<VehicleFactory>().AsSingle();
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+            Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
         }
 
         public void Initialize()

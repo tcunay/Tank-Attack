@@ -7,5 +7,6 @@ namespace CodeBase.Gameplay.StaticData
         void LoadAll();
         GameObject HeroPrefab();
         GameObject BulletPrefab();
+        GameObject CameraPrefab();
     }
 }

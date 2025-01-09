@@ -1,9 +1,13 @@
 using Code.Gameplay.Levels;
+using CodeBase.Gameplay.Cameras.Components;
+using CodeBase.Gameplay.Cameras.Factory;
+using CodeBase.Gameplay.Cameras.Provider;
 using CodeBase.Gameplay.Hero.Factory;
 using CodeBase.Gameplay.Vehicle.Factory;
 using CodeBase.Gameplay.Vehicle.Setup;
 using CodeBase.Infrastructure.States.StateInfrastructure;
 using CodeBase.Infrastructure.States.StateMachine;
+using UnityEngine;
 
 namespace CodeBase.Infrastructure.States.GameStates
 {
@@ -13,24 +17,32 @@ namespace CodeBase.Infrastructure.States.GameStates
         private readonly ILevelDataProvider _levelDataProvider;
         private readonly IGameStateMachine _stateMachine;
         private readonly IVehicleFactory _vehicleFactory;
+        private readonly ICameraProvider _cameraProvider;
+        private readonly ICameraFactory _cameraFactory;
 
         public StartBattleState(
             IHeroFactory heroFactory,
             ILevelDataProvider levelDataProvider,
             IGameStateMachine stateMachine,
-            IVehicleFactory vehicleFactory
+            IVehicleFactory vehicleFactory,
+            ICameraProvider cameraProvider,
+            ICameraFactory cameraFactory
             )
         {
             _heroFactory = heroFactory;
             _levelDataProvider = levelDataProvider;
             _stateMachine = stateMachine;
             _vehicleFactory = vehicleFactory;
+            _cameraProvider = cameraProvider;
+            _cameraFactory = cameraFactory;
         }
     
         public override void Enter()
         {
-            _heroFactory.CreateHero(_levelDataProvider.StartPoint);
-            
+            GameObject gameObject = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
+            _cameraProvider.SetMainCamera(_cameraFactory.CreateCamera());
+            _cameraProvider.MainCamera.GetComponent<CameraFollow>().Setup(gameObject.transform);
+
             foreach (VehicleSetup setup in _levelDataProvider.MoveSetups)
             {
                 _vehicleFactory.CreateVehicle(setup);

@@ -3,7 +3,7 @@ using CodeBase.Gameplay.Input;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Gameplay.Hero.View
+namespace CodeBase.Gameplay.Hero.Components
 {
     public class HeroShoot : MonoBehaviour
     {

@@ -4,7 +4,7 @@ using CodeBase.Gameplay.Time;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Gameplay.Hero.View
+namespace CodeBase.Gameplay.Hero.Components
 {
     public class HeroMove : MonoBehaviour
     {
