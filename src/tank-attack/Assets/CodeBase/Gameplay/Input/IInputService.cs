@@ -5,8 +5,7 @@ namespace CodeBase.Gameplay.Input
     public interface IInputService
     {
         Vector2 Axis { get; }
-        float CameraZoomAxis { get; }
-
+        float CameraZoomAxis();
         bool IsAttackButton();
     }
 }

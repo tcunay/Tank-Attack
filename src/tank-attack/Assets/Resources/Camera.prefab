@@ -166,4 +166,4 @@ MonoBehaviour:
   MainCamera: {fileID: 6507615046427696263}
   ZoomSpeed: 0.1
   MinFOV: 15
-  MaxFOV: 60
+  MaxFOV: 80

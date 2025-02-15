@@ -20,21 +20,6 @@ namespace CodeBase.Gameplay.Input
                 return axis;
             }
         }
-        
-        public override float CameraZoomAxis
-        {
-            get
-            {
-                float axis = SimpleInputZoomAxis();
-
-                if (axis == 0)
-                {
-                    axis = UnityZoomAxis();
-                }
-                
-                return axis;
-            }
-        }
 
         public override bool IsAttackButton()
         {
