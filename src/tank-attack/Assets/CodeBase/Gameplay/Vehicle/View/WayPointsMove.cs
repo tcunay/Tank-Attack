@@ -7,12 +7,15 @@ namespace CodeBase.Gameplay.Vehicle.View
 {
     public class WayPointsMove : MonoBehaviour
     {
-        private const float ArrivalThreshold = 0.1f;
+        private const float ArrivalThreshold = 1f;
         private const float RotationSpeed = 3f;
 
         private WayPointsMoveSetup _setup;
         private ITimeService _time;
         private int _currentWaypointIndex = 0;
+
+        public WayPointsMoveSetup SetupData => _setup;
+        public Vector3 Direction { get; private set; }
 
         [Inject]
         private void Construct(ITimeService time)
@@ -40,7 +43,8 @@ namespace CodeBase.Gameplay.Vehicle.View
             
             SmoothRotate(direction);
             
-            AddPosition(direction * (_setup.Speed * _time.DeltaTime));
+            //AddPosition(direction * (_setup.Speed * _time.DeltaTime));
+            Direction = direction;
 
             if (IsReached(targetWaypoint.position))
             {
