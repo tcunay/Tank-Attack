@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using CodeBase.Gameplay.Vehicle.Setup;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace CodeBase.Gameplay.StaticData
 {
@@ -7,6 +12,7 @@ namespace CodeBase.Gameplay.StaticData
         private GameObject _hero;
         private GameObject _bullet;
         private GameObject _camera;
+        private Dictionary<VehicleKind ,VehicleConfig> _vehicleConfigs;
 
         private const string HeroPrefabPath = "Hero";
         private const string BulletPrefabPath = "Bullet";
@@ -17,6 +23,7 @@ namespace CodeBase.Gameplay.StaticData
             LoadHeroPrefab();
             LoadBulletPrefab();
             LoadCameraPrefab();
+            LoadVehicles();
         }
 
         public GameObject HeroPrefab()
@@ -34,6 +41,16 @@ namespace CodeBase.Gameplay.StaticData
             return _camera;
         }
 
+        public VehicleConfig GetVehicleConfig(VehicleKind vehicleKind)
+        {
+            if (_vehicleConfigs.TryGetValue(vehicleKind, out VehicleConfig config))
+            {
+                return config;
+            }
+            
+            throw new Exception($"Vehicle config for {vehicleKind} was not found");
+        }
+
         private void LoadHeroPrefab()
         {
             _hero = Load<GameObject>(HeroPrefabPath);
@@ -47,6 +64,13 @@ namespace CodeBase.Gameplay.StaticData
         private void LoadCameraPrefab()
         {
             _camera = Load<GameObject>(CameraPrefabPath);
+        }
+        
+        private void LoadVehicles()
+        {
+            _vehicleConfigs = Resources
+                    .LoadAll<VehicleConfig>("Configs/Vehicles")
+                    .ToDictionary(x => x.Kind);
         }
 
         private T Load<T>(string path) where T : Object

@@ -1,3 +1,4 @@
+using CodeBase.Gameplay.Vehicle.Setup;
 using UnityEngine;
 
 namespace CodeBase.Gameplay.StaticData
@@ -8,5 +9,6 @@ namespace CodeBase.Gameplay.StaticData
         GameObject HeroPrefab();
         GameObject BulletPrefab();
         GameObject CameraPrefab();
+        VehicleConfig GetVehicleConfig(VehicleKind vehicleKind);
     }
 }
