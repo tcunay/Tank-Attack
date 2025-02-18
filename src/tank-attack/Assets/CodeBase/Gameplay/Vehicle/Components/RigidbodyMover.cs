@@ -20,12 +20,12 @@ namespace CodeBase.Gameplay.Vehicle.Components
 
         private void FixedUpdate()
         {
-            _rigidbody.AddForce(_mover.Direction * _mover.SetupData.Speed, ForceMode.Force);
+            _rigidbody.AddForce(_mover.NormalizedDirection * _mover.SetupData.Speed, ForceMode.Force);
         }
 
         private void Update()
         {
-            SmoothRotate(_mover.Direction);
+            SmoothRotate(_mover.NormalizedDirection);
         }
 
         private void SmoothRotate(Vector3 direction)

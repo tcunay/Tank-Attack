@@ -27,7 +27,12 @@ namespace CodeBase.Gameplay.Armaments.View
             {
                 if (_hits[i].transform.parent.TryGetComponent(out IHealth health))
                 {
+                    Debug.Log("Hit");
                     health.TakeDamage(Damage);
+                }
+                else
+                {
+                    Debug.LogError("Need exist Health");
                 }
             }
 

@@ -5,12 +5,13 @@ namespace CodeBase.Gameplay.Vehicle.Components
 {
     public class WayPointsMove : MonoBehaviour
     {
-        private const float ArrivalThreshold = 1f;
+        [SerializeField] private float _arrivalThreshold = 1f;
 
         private WayPointsMoveSetup _setup;
-        private int _currentWaypointIndex = 0;
+        private int _currentWaypointIndex;
 
         public WayPointsMoveSetup SetupData => _setup;
+        public Vector3 NormalizedDirection { get; private set; }
         public Vector3 Direction { get; private set; }
 
         public void Setup(WayPointsMoveSetup setup)
@@ -18,20 +19,19 @@ namespace CodeBase.Gameplay.Vehicle.Components
             _setup = setup;
             transform.position = setup.WayPoints[0].position;
             transform.forward = (setup.WayPoints[1].position - transform.position).normalized;
-            _currentWaypointIndex = 0; 
+            _currentWaypointIndex = 0;
         }
 
         private void Update()
         {
             MoveTowardsWaypoint();
         }
-        
+
         private void MoveTowardsWaypoint()
         {
             Transform targetWaypoint = _setup.WayPoints[_currentWaypointIndex];
-            Vector3 direction = (targetWaypoint.position - transform.position).normalized;
-            
-            Direction = direction;
+            Direction = (targetWaypoint.position - transform.position);
+            NormalizedDirection = Direction.normalized;
 
             if (IsReached(targetWaypoint.position))
             {
@@ -42,12 +42,10 @@ namespace CodeBase.Gameplay.Vehicle.Components
                 }
             }
         }
-        
+
         private bool IsReached(Vector3 position)
         {
-            return Vector3.Distance(transform.position, position) < ArrivalThreshold;
+            return Vector3.Distance(transform.position, position) < _arrivalThreshold;
         }
-
-        
     }
 }

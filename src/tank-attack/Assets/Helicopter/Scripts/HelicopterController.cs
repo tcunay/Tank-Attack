@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class HelicopterController : MonoBehaviour
@@ -24,11 +25,14 @@ public class HelicopterController : MonoBehaviour
         get { return _engineForce; }
         set
         {
-            MainRotorController.RotarSpeed = value * 80;
-            SubRotorController.RotarSpeed = value * 40;
-            HelicopterSound.pitch = Mathf.Clamp(value / 40, 0, 1.2f);
-            if (UIGameController.runtime.EngineForceView != null)
-                UIGameController.runtime.EngineForceView.text = string.Format("Engine value [ {0} ] ", (int)value);
+            /*MainRotorController.RotarSpeed = value * 80;
+            SubRotorController.RotarSpeed = value * 40;*/
+
+            MainRotorController.RotarSpeed =  800;
+            SubRotorController.RotarSpeed = 400;
+            HelicopterSound.pitch = Mathf.Clamp(MainRotorController.RotarSpeed / 40, 0, 1.2f);
+            /*if (UIGameController.runtime.EngineForceView != null)
+                UIGameController.runtime.EngineForceView.text = string.Format("Engine value [ {0} ] ", (int)value);*/
 
             _engineForce = value;
         }
@@ -37,12 +41,13 @@ public class HelicopterController : MonoBehaviour
     private Vector2 hMove = Vector2.zero;
     private Vector2 hTilt = Vector2.zero;
     private float hTurn = 0f;
-    public bool IsOnGround = true;
+    public bool IsOnGround = false;
 
     // Use this for initialization
 	void Start ()
 	{
-        ControlPanel.KeyPressed += OnKeyPressed;
+        if (ControlPanel != null)
+            ControlPanel.KeyPressed += OnKeyPressed;
 	}
 
 	void Update () {
@@ -77,7 +82,7 @@ public class HelicopterController : MonoBehaviour
         HelicopterModel.transform.localRotation = Quaternion.Euler(hTilt.y, HelicopterModel.transform.localEulerAngles.y, -hTilt.x);
     }
 
-    private void OnKeyPressed(PressedKeyCode[] obj)
+    public void OnKeyPressed(IEnumerable<PressedKeyCode> obj)
     {
         float tempY = 0;
         float tempX = 0;
