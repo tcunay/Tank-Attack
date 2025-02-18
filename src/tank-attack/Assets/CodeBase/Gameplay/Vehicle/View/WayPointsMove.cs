@@ -1,27 +1,17 @@
-using CodeBase.Gameplay.Time;
 using CodeBase.Gameplay.Vehicle.Setup;
 using UnityEngine;
-using Zenject;
 
 namespace CodeBase.Gameplay.Vehicle.View
 {
     public class WayPointsMove : MonoBehaviour
     {
         private const float ArrivalThreshold = 1f;
-        private const float RotationSpeed = 3f;
 
         private WayPointsMoveSetup _setup;
-        private ITimeService _time;
         private int _currentWaypointIndex = 0;
 
         public WayPointsMoveSetup SetupData => _setup;
         public Vector3 Direction { get; private set; }
-
-        [Inject]
-        private void Construct(ITimeService time)
-        {
-            _time = time;
-        }
 
         public void Setup(WayPointsMoveSetup setup)
         {
@@ -41,9 +31,6 @@ namespace CodeBase.Gameplay.Vehicle.View
             Transform targetWaypoint = _setup.WayPoints[_currentWaypointIndex];
             Vector3 direction = (targetWaypoint.position - transform.position).normalized;
             
-            SmoothRotate(direction);
-            
-            //AddPosition(direction * (_setup.Speed * _time.DeltaTime));
             Direction = direction;
 
             if (IsReached(targetWaypoint.position))
@@ -61,15 +48,6 @@ namespace CodeBase.Gameplay.Vehicle.View
             return Vector3.Distance(transform.position, position) < ArrivalThreshold;
         }
 
-        private void AddPosition(Vector3 addPosition)
-        {
-            transform.position += addPosition;
-        }
-
-        private void SmoothRotate(Vector3 direction)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, RotationSpeed * _time.DeltaTime);
-        }
+        
     }
 }
