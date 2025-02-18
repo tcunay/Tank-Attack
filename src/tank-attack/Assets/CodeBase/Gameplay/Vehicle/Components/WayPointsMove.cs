@@ -1,7 +1,7 @@
 using CodeBase.Gameplay.Vehicle.Setup;
 using UnityEngine;
 
-namespace CodeBase.Gameplay.Vehicle.View
+namespace CodeBase.Gameplay.Vehicle.Components
 {
     public class WayPointsMove : MonoBehaviour
     {

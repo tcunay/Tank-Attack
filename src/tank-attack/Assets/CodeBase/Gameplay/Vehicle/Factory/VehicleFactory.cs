@@ -1,6 +1,6 @@
 using CodeBase.Gameplay.StaticData;
+using CodeBase.Gameplay.Vehicle.Components;
 using CodeBase.Gameplay.Vehicle.Setup;
-using CodeBase.Gameplay.Vehicle.View;
 using UnityEngine;
 using Zenject;
 

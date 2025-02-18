@@ -1,10 +1,8 @@
-using System;
 using CodeBase.Gameplay.Time;
-using CodeBase.Gameplay.Vehicle.View;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Gameplay.Vehicle
+namespace CodeBase.Gameplay.Vehicle.Components
 {
     public class RigidbodyMover : MonoBehaviour
     {
