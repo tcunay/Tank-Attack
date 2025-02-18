@@ -4,5 +4,6 @@ namespace CodeBase.Gameplay.Vehicle.Setup
     {
         None = 0,
         Tank = 1,
+        Helicopter = 2,
     }
 }
