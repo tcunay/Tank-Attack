@@ -4,9 +4,8 @@ using CodeBase.Infrastructure.States.StateMachine;
 
 namespace CodeBase.Infrastructure.States.GameStates
 {
-    public class LoadingBattleState : SimpleState
+    public class LoadingBattleState : SimplePayloadState<string>
     {
-        private const string FightSceneName = "BattleScene";
         
         private readonly ISceneLoader _sceneLoader;
         private readonly IGameStateMachine _stateMachine;
@@ -16,10 +15,10 @@ namespace CodeBase.Infrastructure.States.GameStates
             _sceneLoader = sceneLoader;
             _stateMachine = stateMachine;
         }
-        
-        public override void Enter()
+
+        public override void Enter(string payload)
         {
-            _sceneLoader.LoadScene(FightSceneName, EnterBattleLoopState);
+            _sceneLoader.LoadScene(payload, EnterBattleLoopState);
         }
 
         private void EnterBattleLoopState()

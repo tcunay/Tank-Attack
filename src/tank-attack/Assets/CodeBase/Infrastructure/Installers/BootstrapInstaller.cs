@@ -46,6 +46,8 @@ namespace CodeBase.Infrastructure.Installers
         private void BindStates()
         {
             Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<StartBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();

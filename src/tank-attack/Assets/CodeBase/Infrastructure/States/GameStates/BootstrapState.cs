@@ -19,7 +19,7 @@ namespace CodeBase.Infrastructure.States.GameStates
     {
       await _staticDataService.LoadAll();
       
-      _stateMachine.Enter<LoadingBattleState>();
+      _stateMachine.Enter<LoadingHomeScreenState>();
     }
   }
 }
