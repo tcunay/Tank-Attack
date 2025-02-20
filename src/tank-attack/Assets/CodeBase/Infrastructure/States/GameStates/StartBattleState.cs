@@ -7,6 +7,7 @@ using CodeBase.Gameplay.Vehicle.Factory;
 using CodeBase.Gameplay.Vehicle.Setup;
 using CodeBase.Infrastructure.States.StateInfrastructure;
 using CodeBase.Infrastructure.States.StateMachine;
+using CodeBase.Meta.UI;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.States.GameStates
@@ -19,6 +20,7 @@ namespace CodeBase.Infrastructure.States.GameStates
         private readonly IVehicleFactory _vehicleFactory;
         private readonly ICameraProvider _cameraProvider;
         private readonly ICameraFactory _cameraFactory;
+        private readonly LoadingCurtain _loadingCurtain;
 
         public StartBattleState(
             IHeroFactory heroFactory,

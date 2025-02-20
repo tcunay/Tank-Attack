@@ -14,6 +14,7 @@ using CodeBase.Infrastructure.Loading;
 using CodeBase.Infrastructure.States.Factory;
 using CodeBase.Infrastructure.States.GameStates;
 using CodeBase.Infrastructure.States.StateMachine;
+using CodeBase.Meta.UI;
 using RSG;
 using UnityEngine;
 using Zenject;
@@ -22,6 +23,8 @@ namespace CodeBase.Infrastructure.Installers
 {
     public class BootstrapInstaller : MonoInstaller, IInitializable, ICoroutineRunner
     {
+        [SerializeField] private LoadingCurtain _curtainPrefab;
+        
         public override void InstallBindings()
         {
             BindInitializeService();
@@ -31,6 +34,7 @@ namespace CodeBase.Infrastructure.Installers
             BindGameplayServices();
             BindStateMachine();
             BindStates();
+            BindLoadingCurtain();
         }
 
         private void BindStaticData()
@@ -87,6 +91,11 @@ namespace CodeBase.Infrastructure.Installers
             Container.Bind<IVehicleFactory>().To<VehicleFactory>().AsSingle();
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
             Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
+        }
+        
+        private void BindLoadingCurtain()
+        {
+            Container.BindInterfacesAndSelfTo<LoadingCurtain>().FromComponentInNewPrefab(_curtainPrefab).AsSingle();
         }
 
         public void Initialize()
