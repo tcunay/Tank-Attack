@@ -1,11 +1,12 @@
 using CodeBase.Gameplay.Vehicle.Setup;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace CodeBase.Gameplay.StaticData
 {
     public interface IStaticDataService
     {
-        void LoadAll();
+        UniTask LoadAll();
         GameObject HeroPrefab();
         GameObject BulletPrefab();
         GameObject CameraPrefab();

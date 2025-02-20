@@ -12,9 +12,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Common
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: Common
   m_GUID: b074363d038704d8b81a01ef9b9ec927
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 2168e02d209cc4400aa11588725c2922
+    m_Address: BulletMaterial
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4e27cc4ab686b41689f71a3b63cae7e1
+    m_Address: VehicleSetup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89befbf4d86094d319dc20e16c036d9a
+    m_Address: Hero
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b9b0c69114a746f9b14145b57d5f8c0
+    m_Address: HelicopterModel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f66b64f91b7e4b24b33baec84467663
+    m_Address: UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1756fa13604947e895a46055cc277d5
+    m_Address: Aim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a58e5e3890b8b41989d22c880705e6d8
+    m_Address: HelicopterSound
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af3cc8d747f714d4b881e7dc1db954e6
+    m_Address: Bullet
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4e3f22a6399b407681e09f1f923786a
+    m_Address: TankMaterial
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db44fbeb2509343fba99565763a48feb
+    m_Address: Camera
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec6a7757e8d0d415486255ecee77127e
+    m_Address: Tank
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcab146097af147c19c62d507d9c6180
+    m_Address: PlaneMaterial
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5ef6fc925e2b64e408be7ce0d2abc957, type: 2}
   m_SchemaSet:

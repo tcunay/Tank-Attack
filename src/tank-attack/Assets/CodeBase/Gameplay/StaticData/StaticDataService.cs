@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CodeBase.Gameplay.Vehicle.Setup;
+using CodeBase.Infrastructure.AssetManagement;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -9,21 +11,25 @@ namespace CodeBase.Gameplay.StaticData
 {
     public class StaticDataService : IStaticDataService
     {
+        private readonly IAssetProvider _assetProvider;
         private GameObject _hero;
         private GameObject _bullet;
         private GameObject _camera;
         private Dictionary<VehicleKind ,VehicleConfig> _vehicleConfigs;
 
-        private const string HeroPrefabPath = "Hero";
-        private const string BulletPrefabPath = "Bullet";
-        private const string CameraPrefabPath = "Camera";
-
-        public void LoadAll()
+        public StaticDataService(IAssetProvider assetProvider)
         {
-            LoadHeroPrefab();
-            LoadBulletPrefab();
-            LoadCameraPrefab();
-            LoadVehicles();
+            _assetProvider = assetProvider;
+        }
+
+        public async UniTask LoadAll()
+        {
+            await UniTask.WhenAll(
+                LoadHeroPrefab(),
+                LoadBulletPrefab(),
+                LoadCameraPrefab(),
+                LoadVehicles()
+            );
         }
 
         public GameObject HeroPrefab()
@@ -51,26 +57,25 @@ namespace CodeBase.Gameplay.StaticData
             throw new Exception($"Vehicle config for {vehicleKind} was not found");
         }
 
-        private void LoadHeroPrefab()
+        private async UniTask LoadHeroPrefab()
         {
-            _hero = Load<GameObject>(HeroPrefabPath);
+            _hero = await _assetProvider.LoadAsset(AssetPath.HeroPrefabPath);
         }
         
-        private void LoadBulletPrefab()
+        private async UniTask LoadBulletPrefab()
         {
-            _bullet = Load<GameObject>(BulletPrefabPath);
+            _bullet = await _assetProvider.LoadAsset(AssetPath.BulletPrefabPath);
         }
         
-        private void LoadCameraPrefab()
+        private async UniTask LoadCameraPrefab()
         {
-            _camera = Load<GameObject>(CameraPrefabPath);
+            _camera = await _assetProvider.LoadAsset(AssetPath.CameraPrefabPath);
         }
         
-        private void LoadVehicles()
+        private async UniTask LoadVehicles()
         {
-            _vehicleConfigs = Resources
-                    .LoadAll<VehicleConfig>("Configs/Vehicles")
-                    .ToDictionary(x => x.Kind);
+            IList<VehicleConfig> vehiclesList = await _assetProvider.LoadAssets<VehicleConfig>("Vehicles");
+            _vehicleConfigs = vehiclesList.ToDictionary(x => x.Kind);
         }
 
         private T Load<T>(string path) where T : Object

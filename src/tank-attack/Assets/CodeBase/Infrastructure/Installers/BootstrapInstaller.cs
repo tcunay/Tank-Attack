@@ -8,6 +8,7 @@ using CodeBase.Gameplay.Input;
 using CodeBase.Gameplay.StaticData;
 using CodeBase.Gameplay.Time;
 using CodeBase.Gameplay.Vehicle.Factory;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Common;
 using CodeBase.Infrastructure.Loading;
 using CodeBase.Infrastructure.States.Factory;
@@ -55,6 +56,7 @@ namespace CodeBase.Infrastructure.Installers
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
+            Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
         }
 
         private void BindGameplayServices()

@@ -15,9 +15,9 @@ namespace CodeBase.Infrastructure.States.GameStates
       _staticDataService = staticDataService;
     }
     
-    public override void Enter()
+    public override async void Enter()
     {
-      _staticDataService.LoadAll();
+      await _staticDataService.LoadAll();
       
       _stateMachine.Enter<LoadingBattleState>();
     }
