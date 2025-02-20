@@ -5,7 +5,6 @@ using CodeBase.Gameplay.Vehicle.Setup;
 using CodeBase.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace CodeBase.Gameplay.StaticData
 {
@@ -59,17 +58,17 @@ namespace CodeBase.Gameplay.StaticData
 
         private async UniTask LoadHeroPrefab()
         {
-            _hero = await _assetProvider.LoadAsset(AssetPath.HeroPrefabPath);
+            _hero = await Load(AssetPath.HeroPrefabPath);
         }
         
         private async UniTask LoadBulletPrefab()
         {
-            _bullet = await _assetProvider.LoadAsset(AssetPath.BulletPrefabPath);
+            _bullet = await Load(AssetPath.BulletPrefabPath);
         }
         
         private async UniTask LoadCameraPrefab()
         {
-            _camera = await _assetProvider.LoadAsset(AssetPath.CameraPrefabPath);
+            _camera = await Load(AssetPath.CameraPrefabPath);
         }
         
         private async UniTask LoadVehicles()
@@ -78,16 +77,9 @@ namespace CodeBase.Gameplay.StaticData
             _vehicleConfigs = vehiclesList.ToDictionary(x => x.Kind);
         }
 
-        private T Load<T>(string path) where T : Object
+        private async UniTask<GameObject> Load(string path)
         {
-            var loaded = Resources.Load<T>(path);
-
-            if (loaded == null)
-            {
-                Debug.LogError($"Not Found to path {path}");
-            }
-
-            return loaded;
+            return await _assetProvider.LoadAsset(path);
         }
     }
 }
