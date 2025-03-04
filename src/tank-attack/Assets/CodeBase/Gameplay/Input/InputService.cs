@@ -1,19 +1,13 @@
 ﻿using CodeBase.Gameplay.Input.Generated;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace CodeBase.Gameplay.Input
 {
-    public abstract class InputService : IInputService
+    public class InputService : IInputService
     {
-        protected const string Vertical = "Vertical";
-        protected const string Horizontal = "Horizontal";
-        private const string SimpleInputZoom = "SimpleInputZoom";
-        private const string MouseScrollWheel = "Mouse ScrollWheel";
+        private readonly PlayerInputActions _playerInput;
         
-        private const string FireButtonKey = "Fire";
-
-        protected PlayerInputActions _playerInput;
+        public float CameraZoomAxis { get; set; }
 
         protected InputService()
         {
@@ -23,17 +17,8 @@ namespace CodeBase.Gameplay.Input
         
         public virtual Vector2 Axis => SimpleInputAxis();
 
-        public virtual bool IsAttackButton() => SimpleInput.GetButtonUp(FireButtonKey);
+        public virtual bool IsAttackButton() => _playerInput.Player.Attack.triggered;
         
-        public float CameraZoomAxis()
-        {
-            return SimpleInputZoomAxis();
-        }
-
-        protected Vector2 SimpleInputAxis() =>
-            _playerInput.Player.Move.ReadValue<Vector2>();
-
-        private float SimpleInputZoomAxis() => 
-            SimpleInput.GetAxis(SimpleInputZoom);
+        private Vector2 SimpleInputAxis() => _playerInput.Player.Move.ReadValue<Vector2>();
     }
 }

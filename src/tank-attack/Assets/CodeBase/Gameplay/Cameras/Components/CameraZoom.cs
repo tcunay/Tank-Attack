@@ -20,7 +20,7 @@ namespace CodeBase.Gameplay.Cameras.Components
 
         private void Update()
         {
-            MainCamera.fieldOfView = Mathf.Lerp(MaxFOV, MinFOV, _input.CameraZoomAxis());
+            MainCamera.fieldOfView = Mathf.Lerp(MaxFOV, MinFOV, _input.CameraZoomAxis);
         }
     }
 }

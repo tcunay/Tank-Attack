@@ -1,37 +1,35 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.UI;
+using Zenject;
 
 namespace CodeBase.Gameplay.Input
 {
     public class ZoomSlider : MonoBehaviour
     {
         [SerializeField] private Slider _slider;
+        private IInputService _inputService;
+
+        [Inject]
+        private void Construct(IInputService inputService)
+        {
+            _inputService = inputService;
+        }
         
-        private readonly SimpleInput.AxisInput _yAxis = new( "SimpleInputZoom" );
-
-        private void OnEnable()
+        private void Awake()
         {
-            _yAxis.StartTracking();
-
-            SimpleInput.OnUpdate += OnUpdate;
+            _slider.onValueChanged.AddListener(OnSliderValueChanged);
+        }
+        
+        private void OnDestroy()
+        {
+            _slider.onValueChanged.RemoveListener(OnSliderValueChanged);
         }
 
-        private void OnUpdate()
+        private void OnSliderValueChanged(float value)
         {
-            
-        }
-
-        private void OnDisable()
-        {
-            _yAxis.StopTracking();
-
-            SimpleInput.OnUpdate -= OnUpdate;
-        }
-
-        private void Update()
-        {
-            _yAxis.value = _slider.value;
+            _inputService.CameraZoomAxis = value;
         }
     }
 }

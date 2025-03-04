@@ -70,14 +70,7 @@ namespace CodeBase.Infrastructure.Installers
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
             Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
             Container.Bind<IShootService>().To<ShootService>().AsSingle();
-            Container.Bind<IInputService>()
-
-#if UNITY_EDITOR
-                .To<StandaloneInputService>()
-#else
-                .To<MobileInputService>()
-#endif
-                .AsSingle();
+            Container.Bind<IInputService>().To<InputService>().AsSingle();
         }
 
         private void BindStateMachine()
