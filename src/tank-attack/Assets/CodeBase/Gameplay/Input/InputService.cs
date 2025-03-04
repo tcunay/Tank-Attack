@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using CodeBase.Gameplay.Input.Generated;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace CodeBase.Gameplay.Input
 {
@@ -11,32 +13,27 @@ namespace CodeBase.Gameplay.Input
         
         private const string FireButtonKey = "Fire";
 
-        public abstract Vector2 Axis { get; }
+        protected PlayerInputActions _playerInput;
+
+        protected InputService()
+        {
+            _playerInput = new PlayerInputActions();
+            _playerInput.Player.Enable();
+        }
+        
+        public virtual Vector2 Axis => SimpleInputAxis();
 
         public virtual bool IsAttackButton() => SimpleInput.GetButtonUp(FireButtonKey);
         
         public float CameraZoomAxis()
         {
-            float axis = SimpleInputZoomAxis();
-
-            if (axis == 0)
-            {
-                axis = UnityZoomAxis();
-            }
-                
-            return axis;
+            return SimpleInputZoomAxis();
         }
-
+        
         protected static Vector2 SimpleInputAxis() => 
             new(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
 
         private float SimpleInputZoomAxis() => 
             SimpleInput.GetAxis(SimpleInputZoom);
-        
-        private float UnityZoomAxis() => 
-            UnityEngine.Input.GetAxis(MouseScrollWheel) * 30;
-        
-        
-
     }
 }

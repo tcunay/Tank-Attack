@@ -4,8 +4,6 @@ namespace CodeBase.Gameplay.Input
 {
     public class StandaloneInputService : InputService
     {
-        private const string MouseScrollWheel = "Mouse ScrollWheel";
-
         public override Vector2 Axis
         {
             get
@@ -26,10 +24,9 @@ namespace CodeBase.Gameplay.Input
             return base.IsAttackButton() || UnityEngine.Input.GetKeyDown(KeyCode.Space);
         }
 
-        private static Vector2 UnityAxis() => 
-            new(UnityEngine.Input.GetAxis(Horizontal), UnityEngine.Input.GetAxis(Vertical));
-        
-        private float UnityZoomAxis() => 
-            UnityEngine.Input.GetAxis(MouseScrollWheel) * 30;
+        private Vector2 UnityAxis()
+        {
+            return _playerInput.Player.Move.ReadValue<Vector2>();
+        }
     }
 }
