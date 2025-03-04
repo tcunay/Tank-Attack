@@ -19,10 +19,10 @@ namespace CodeBase.Gameplay.Input
             }
         }
 
-        public override bool IsAttackButton()
+        /*public override bool IsAttackButton()
         {
             return base.IsAttackButton() || UnityEngine.Input.GetKeyDown(KeyCode.Space);
-        }
+        }*/
 
         private Vector2 UnityAxis()
         {

@@ -29,9 +29,9 @@ namespace CodeBase.Gameplay.Input
         {
             return SimpleInputZoomAxis();
         }
-        
-        protected static Vector2 SimpleInputAxis() => 
-            new(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
+
+        protected Vector2 SimpleInputAxis() =>
+            _playerInput.Player.Move.ReadValue<Vector2>();
 
         private float SimpleInputZoomAxis() => 
             SimpleInput.GetAxis(SimpleInputZoom);
