@@ -7,18 +7,16 @@ namespace CodeBase.Gameplay.Input
     {
         private readonly PlayerInputActions _playerInput;
         
-        public float CameraZoomAxis { get; set; }
-
         protected InputService()
         {
             _playerInput = new PlayerInputActions();
             _playerInput.Player.Enable();
         }
         
-        public virtual Vector2 Axis => SimpleInputAxis();
+        public float CameraZoomAxis { get; set; }
+        
+        public virtual Vector2 Axis => _playerInput.Player.Move.ReadValue<Vector2>();
 
         public virtual bool IsAttackButton() => _playerInput.Player.Attack.triggered;
-        
-        private Vector2 SimpleInputAxis() => _playerInput.Player.Move.ReadValue<Vector2>();
     }
 }
