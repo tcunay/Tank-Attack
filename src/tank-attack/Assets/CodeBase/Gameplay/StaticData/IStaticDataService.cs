@@ -1,3 +1,4 @@
+using Code.Gameplay.Levels.Setup;
 using CodeBase.Gameplay.Vehicle.Setup;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -11,5 +12,6 @@ namespace CodeBase.Gameplay.StaticData
         GameObject BulletPrefab();
         GameObject CameraPrefab();
         VehicleConfig GetVehicleConfig(VehicleKind vehicleKind);
+        LevelConfig GetLevelConfig(int levelNumber);
     }
 }

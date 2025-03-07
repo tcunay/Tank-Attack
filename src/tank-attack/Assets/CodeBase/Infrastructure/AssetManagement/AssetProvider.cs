@@ -7,6 +7,11 @@ namespace CodeBase.Infrastructure.AssetManagement
 {
     public class AssetProvider : IAssetProvider
     {
+        public async UniTask LoadScene(AssetReference scene)
+        {
+            await Addressables.LoadSceneAsync(scene).ToUniTask();
+        }
+        
         public async UniTask<GameObject> LoadAsset(string path)
         {
             return await LoadAsset<GameObject>(path);

@@ -7,7 +7,8 @@ namespace CodeBase.Infrastructure.Installers
 {
     public class LevelInitializer : MonoBehaviour, IInitializable
     {
-        public Transform HeroPosition;
+        [SerializeField] private Transform _heroPosition;
+        
         private ILevelDataProvider _levelDataProvider;
         private ICameraProvider _cameraProvider;
 
@@ -20,8 +21,8 @@ namespace CodeBase.Infrastructure.Installers
         
         public void Initialize()
         {
-            _levelDataProvider.SetStartPoint(HeroPosition.position);
-            HeroPosition.gameObject.SetActive(false);
+            _levelDataProvider.SetStartPoint(_heroPosition.position);
+            _heroPosition.gameObject.SetActive(false);
         }
     }
 }

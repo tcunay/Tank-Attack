@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Gameplay.Levels.Setup;
 using CodeBase.Gameplay.Vehicle.Setup;
 using CodeBase.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace CodeBase.Gameplay.StaticData
         private GameObject _bullet;
         private GameObject _camera;
         private Dictionary<VehicleKind ,VehicleConfig> _vehicleConfigs;
+        private Dictionary<int, LevelConfig> _levels;
 
         public StaticDataService(IAssetProvider assetProvider)
         {
@@ -27,7 +29,8 @@ namespace CodeBase.Gameplay.StaticData
                 LoadHeroPrefab(),
                 LoadBulletPrefab(),
                 LoadCameraPrefab(),
-                LoadVehicles()
+                LoadVehicles(),
+                LoadLevels()
             );
         }
 
@@ -56,6 +59,16 @@ namespace CodeBase.Gameplay.StaticData
             throw new Exception($"Vehicle config for {vehicleKind} was not found");
         }
 
+        public LevelConfig GetLevelConfig(int levelNumber)
+        {
+            if (_levels.TryGetValue(levelNumber, out LevelConfig config))
+            {
+                return config;
+            }
+            
+            throw new Exception($"Level config for {levelNumber} was not found");
+        }
+
         private async UniTask LoadHeroPrefab()
         {
             _hero = await Load(AssetPath.HeroPrefabPath);
@@ -75,6 +88,12 @@ namespace CodeBase.Gameplay.StaticData
         {
             IList<VehicleConfig> vehiclesList = await _assetProvider.LoadAssets<VehicleConfig>("Vehicles");
             _vehicleConfigs = vehiclesList.ToDictionary(x => x.Kind);
+        }
+        
+        private async UniTask LoadLevels()
+        {
+            IList<LevelConfig> levels = await _assetProvider.LoadAssets<LevelConfig>("Levels");
+            _levels = levels.ToDictionary(x => x.LevelNumber);
         }
 
         private async UniTask<GameObject> Load(string path)

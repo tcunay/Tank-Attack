@@ -32,6 +32,6 @@ namespace CodeBase.Meta.UI
         }
 
         private void EnterBattleLoadingState() => 
-            _stateMachine.Enter<LoadingBattleState, string>(BattleSceneName);
+            _stateMachine.Enter<LoadingBattleState>();
     }
 }

@@ -1,4 +1,5 @@
 using Code.Gameplay.Levels;
+using Code.Gameplay.Levels.Setup;
 using CodeBase.Gameplay.Cameras.Components;
 using CodeBase.Gameplay.Cameras.Factory;
 using CodeBase.Gameplay.Cameras.Provider;
@@ -12,7 +13,7 @@ using UnityEngine;
 
 namespace CodeBase.Infrastructure.States.GameStates
 {
-    public class StartBattleState : SimpleState
+    public class StartBattleState : SimplePayloadState<LevelConfig>
     {
         private readonly IHeroFactory _heroFactory;
         private readonly ILevelDataProvider _levelDataProvider;
@@ -39,7 +40,7 @@ namespace CodeBase.Infrastructure.States.GameStates
             _cameraFactory = cameraFactory;
         }
     
-        public override void Enter()
+        public override void Enter(LevelConfig levelConfig)
         {
             GameObject gameObject = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
             _cameraProvider.SetMainCamera(_cameraFactory.CreateCamera());

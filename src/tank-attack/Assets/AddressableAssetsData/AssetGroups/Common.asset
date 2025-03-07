@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Common
   m_GUID: b074363d038704d8b81a01ef9b9ec927
   m_SerializeEntries:
+  - m_GUID: 02a96fd5663cc4ecfa47f230afe89c81
+    m_Address: Levels
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2168e02d209cc4400aa11588725c2922
     m_Address: BulletMaterial
     m_ReadOnly: 0
@@ -37,6 +42,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8f66b64f91b7e4b24b33baec84467663
     m_Address: UI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99c9720ab356a0642a771bea13969a05
+    m_Address: Assets/Scenes/BattleScene.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
