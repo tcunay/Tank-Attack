@@ -3,9 +3,9 @@ using CodeBase.Gameplay.Cameras.Provider;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers
+namespace CodeBase.Infrastructure.Installers.Initializers
 {
-    public class LevelInitializer : MonoBehaviour, IInitializable
+    public class HeroInitializer : MonoBehaviour, IInitializable
     {
         [SerializeField] private Transform _heroPosition;
         

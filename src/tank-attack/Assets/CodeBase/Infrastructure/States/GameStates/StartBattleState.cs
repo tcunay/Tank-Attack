@@ -1,5 +1,5 @@
 using Code.Gameplay.Levels;
-using Code.Gameplay.Levels.Setup;
+using CodeBase.Gameplay.Armaments.Services;
 using CodeBase.Gameplay.Cameras.Components;
 using CodeBase.Gameplay.Cameras.Factory;
 using CodeBase.Gameplay.Cameras.Provider;
@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace CodeBase.Infrastructure.States.GameStates
 {
-    public class StartBattleState : SimplePayloadState<LevelConfig>
+    public class StartBattleState : SimpleState
     {
         private readonly IHeroFactory _heroFactory;
         private readonly ILevelDataProvider _levelDataProvider;
@@ -21,6 +21,7 @@ namespace CodeBase.Infrastructure.States.GameStates
         private readonly IVehicleFactory _vehicleFactory;
         private readonly ICameraProvider _cameraProvider;
         private readonly ICameraFactory _cameraFactory;
+        private readonly IBulletMagazine _bulletMagazine;
         private readonly LoadingCurtain _loadingCurtain;
 
         public StartBattleState(
@@ -40,18 +41,9 @@ namespace CodeBase.Infrastructure.States.GameStates
             _cameraFactory = cameraFactory;
         }
     
-        public override void Enter(LevelConfig levelConfig)
+        public override void Enter()
         {
-            GameObject gameObject = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
-            _cameraProvider.SetMainCamera(_cameraFactory.CreateCamera());
-            _cameraProvider.MainCamera.GetComponent<CameraFollow>().Setup(gameObject.transform);
-
-            foreach (VehicleSetup setup in _levelDataProvider.MoveSetups)
-            {
-                _vehicleFactory.CreateVehicle(setup);
-            }
             
-            _stateMachine.Enter<BattleLoopState>();
         }
     }
 }

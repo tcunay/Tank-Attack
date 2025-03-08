@@ -1574,9 +1574,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1300924655}
   - component: {fileID: 1300924654}
+  - component: {fileID: 1300924659}
   - component: {fileID: 1300924657}
   - component: {fileID: 1300924656}
   - component: {fileID: 1300924658}
+  - component: {fileID: 1300924660}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1598,6 +1600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
+  - {fileID: 1300924659}
   - {fileID: 1300924657}
   _installerPrefabs: []
   _autoRun: 1
@@ -1659,6 +1662,7 @@ MonoBehaviour:
   Initializers:
   - {fileID: 1300924656}
   - {fileID: 1300924658}
+  - {fileID: 1300924660}
 --- !u!114 &1300924658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,6 +1679,30 @@ MonoBehaviour:
   - {fileID: 1912868292302917283}
   - {fileID: 2020323468}
   - {fileID: 1093758964}
+--- !u!114 &1300924659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300924653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed749404cf204f4e9f655f2bcf8d44e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300924660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300924653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15eaf7116c4748bf856b89cfe810a633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1464428145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,10 +2371,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2482694664912230129, guid: 0470d1430c8054dea9da7133de902793, type: 3}
-      propertyPath: m_Behaviour
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2794513836356814107, guid: 0470d1430c8054dea9da7133de902793, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

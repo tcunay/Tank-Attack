@@ -1,4 +1,6 @@
-/*namespace CodeBase.Infrastructure.States.StateInfrastructure
+using RSG;
+
+namespace CodeBase.Infrastructure.States.StateInfrastructure
 {
     public class EndOfFrameExitState : IState, IUpdateable
     {
@@ -47,4 +49,4 @@
             _exitPromise = null;
         }
     }
-}*/
+}

@@ -5,6 +5,7 @@ using CodeBase.Gameplay.Cameras.Factory;
 using CodeBase.Gameplay.Cameras.Provider;
 using CodeBase.Gameplay.Hero.Factory;
 using CodeBase.Gameplay.Input;
+using CodeBase.Gameplay.Levels;
 using CodeBase.Gameplay.StaticData;
 using CodeBase.Gameplay.Time;
 using CodeBase.Gameplay.Vehicle.Factory;
@@ -52,6 +53,7 @@ namespace CodeBase.Infrastructure.Installers
             Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
             Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<BootBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<StartBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
@@ -82,7 +84,6 @@ namespace CodeBase.Infrastructure.Installers
         {
             Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
             Container.Bind<IVehicleFactory>().To<VehicleFactory>().AsSingle();
-            Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
             Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
         }
         

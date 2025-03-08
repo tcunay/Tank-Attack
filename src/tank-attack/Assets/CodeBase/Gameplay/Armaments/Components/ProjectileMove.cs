@@ -2,7 +2,7 @@ using CodeBase.Gameplay.Time;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Gameplay.Armaments.View
+namespace CodeBase.Gameplay.Armaments.Components
 {
     public class ProjectileMove : MonoBehaviour
     {

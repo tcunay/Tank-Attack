@@ -1,5 +1,4 @@
-using Code.Gameplay.Levels.Setup;
-using CodeBase.Gameplay.StaticData;
+using Code.Gameplay.Levels;
 using CodeBase.Infrastructure.Loading;
 using CodeBase.Infrastructure.States.StateInfrastructure;
 using CodeBase.Infrastructure.States.StateMachine;
@@ -9,32 +8,33 @@ namespace CodeBase.Infrastructure.States.GameStates
 {
     public class LoadingBattleState : SimpleState
     {
-        
         private readonly ISceneLoader _sceneLoader;
         private readonly IGameStateMachine _stateMachine;
-        private readonly IStaticDataService _staticDataService;
+        private readonly ILevelDataProvider _levelDataProvider;
         private readonly LoadingCurtain _loadingCurtain;
 
-        public LoadingBattleState(ISceneLoader sceneLoader, IGameStateMachine stateMachine, IStaticDataService staticDataService, LoadingCurtain loadingCurtain)
+        public LoadingBattleState(
+            ISceneLoader sceneLoader,
+            IGameStateMachine stateMachine,
+            ILevelDataProvider levelDataProvider,
+            LoadingCurtain loadingCurtain)
         {
             _sceneLoader = sceneLoader;
             _stateMachine = stateMachine;
-            _staticDataService = staticDataService;
             _loadingCurtain = loadingCurtain;
+            _levelDataProvider = levelDataProvider;
         }
 
         public override void Enter()
         {
-            LevelConfig levelConfig = _staticDataService.GetLevelConfig(1);
             _loadingCurtain.Show();
-            _sceneLoader.LoadScene(levelConfig.SceneReference, () => EnterBattleLoopState(levelConfig));
+            
+            _sceneLoader.LoadScene(_levelDataProvider.LevelConfig.SceneReference, EnterBattleLoopState);
         }
 
-        private void EnterBattleLoopState(LevelConfig level)
+        private void EnterBattleLoopState()
         {
-            _stateMachine.Enter<StartBattleState, LevelConfig>(level);
+            //_stateMachine.Enter<StartBattleState>();
         }
-
-    
     }
 }

@@ -1,8 +1,7 @@
-using System;
 using CodeBase.Gameplay.Stats.Health;
 using UnityEngine;
 
-namespace CodeBase.Gameplay.Armaments.View
+namespace CodeBase.Gameplay.Armaments.Components
 {
     public class ProjectileAttack : MonoBehaviour
     {

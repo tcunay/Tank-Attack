@@ -23,15 +23,15 @@ namespace CodeBase.Meta.UI
 
         private void Awake()
         {
-            _startBattleButton.onClick.AddListener(EnterBattleLoadingState);
+            _startBattleButton.onClick.AddListener(EnterBattleState);
         }
 
         private void OnDestroy()
         {
-            _startBattleButton.onClick.RemoveListener(EnterBattleLoadingState);
+            _startBattleButton.onClick.RemoveListener(EnterBattleState);
         }
 
-        private void EnterBattleLoadingState() => 
-            _stateMachine.Enter<LoadingBattleState>();
+        private void EnterBattleState() => 
+            _stateMachine.Enter<BootBattleState>();
     }
 }

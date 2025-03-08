@@ -1,5 +1,6 @@
+using System;
+using CodeBase.Gameplay.Armaments.Components;
 using CodeBase.Gameplay.Armaments.Factory;
-using CodeBase.Gameplay.Armaments.View;
 using UnityEngine;
 
 namespace CodeBase.Gameplay.Armaments.Services
@@ -7,6 +8,8 @@ namespace CodeBase.Gameplay.Armaments.Services
     public class ShootService : IShootService
     {
         private readonly IProjectileFactory _projectileFactory;
+
+        public event Action Shooted;
 
         public ShootService(IProjectileFactory projectileFactory)
         {
@@ -20,6 +23,8 @@ namespace CodeBase.Gameplay.Armaments.Services
 
             gameObject.transform.forward = direction;
             gameObject.GetComponent<ProjectileMove>().MoveDirection = direction;
+            
+            Shooted?.Invoke();
         }
     }
 }

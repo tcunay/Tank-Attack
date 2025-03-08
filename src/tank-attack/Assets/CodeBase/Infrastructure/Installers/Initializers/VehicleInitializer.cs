@@ -3,11 +3,12 @@ using CodeBase.Gameplay.Vehicle.Setup;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers
+namespace CodeBase.Infrastructure.Installers.Initializers
 {
     public class VehicleInitializer : MonoBehaviour, IInitializable
     {
         public VehicleSetup[] MoveSetups;
+        
         private ILevelDataProvider _levelDataProvider;
 
         [Inject]
