@@ -5,17 +5,18 @@ namespace CodeBase.Gameplay.Armaments.Components
 {
     public class ProjectileAttack : MonoBehaviour
     {
-        public SphereCollider SphereCollider;
+        [SerializeField] private SphereCollider _collider;
         
         private const string HittableLayerName = "Hittable";
         private const float Damage = 1;
         
-        private int _layerMask;
         private readonly Collider[] _hits = new Collider[5];
+        private int _layerMask;
 
         private void Awake()
         {
             _layerMask = 1 << LayerMask.NameToLayer(HittableLayerName);
+            _collider.enabled = false;
         }
 
         private void Update()
@@ -42,6 +43,6 @@ namespace CodeBase.Gameplay.Armaments.Components
         }
         
         private int Hit() => 
-            Physics.OverlapSphereNonAlloc(transform.position, SphereCollider.radius, _hits, _layerMask);
+            Physics.OverlapSphereNonAlloc(transform.position, _collider.radius, _hits, _layerMask);
     }
 }
