@@ -12,12 +12,11 @@ namespace CodeBase.Gameplay.Input
         protected InputService()
         {
             _playerInput = new PlayerInputActions();
-            _playerInput.Player.Enable();
         }
         
         public float CameraZoomAxis { get; set; }
-        public virtual Vector2 Axis => _playerInput.Player.Move.ReadValue<Vector2>();
-        public virtual bool IsAttackButton() => _playerInput.Player.Attack.triggered;
+        public Vector2 Axis => _playerInput.Player.Move.ReadValue<Vector2>();
+        public bool IsAttackButton() => _playerInput.Player.Attack.triggered;
         
         public void Initialize()
         {
