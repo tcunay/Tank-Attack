@@ -8,11 +8,11 @@ namespace CodeBase.Gameplay.Hero.Components
 {
     public class HeroRotate : MonoBehaviour
     {
-        private IInputService _inputService;
-        private ITimeService _time;
-
         private const float RotationSpeed = 50f;
         private const float ClampAngle = 70f;
+        
+        private IInputService _inputService;
+        private ITimeService _time;
 
         [Inject]
         private void Construct(IInputService inputService, ITimeService timeService)
