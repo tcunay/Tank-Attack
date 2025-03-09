@@ -18,7 +18,7 @@ namespace CodeBase.Gameplay.Armaments.Factory
         public GameObject CreateBullet(Vector3 at)
         {
             GameObject bullet = _instantiator.InstantiatePrefab(_staticData.BulletPrefab(), at, Quaternion.identity, null);
-            GameObject.Destroy(bullet, 15);
+            GameObject.Destroy(bullet, 5);
             return bullet;
         }
     }
