@@ -12,6 +12,11 @@ namespace CodeBase.Infrastructure.AssetManagement
             await Addressables.LoadSceneAsync(scene).ToUniTask();
         }
         
+        public async UniTask LoadScene(string scene)
+        {
+            await Addressables.LoadSceneAsync(scene).ToUniTask();
+        }
+        
         public async UniTask<GameObject> LoadAsset(string path)
         {
             return await LoadAsset<GameObject>(path);

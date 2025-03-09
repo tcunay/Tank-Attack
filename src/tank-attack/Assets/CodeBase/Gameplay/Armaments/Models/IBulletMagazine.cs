@@ -1,6 +1,6 @@
 using System;
 
-namespace CodeBase.Gameplay.Armaments.Services
+namespace CodeBase.Gameplay.Armaments.Models
 {
     public interface IBulletMagazine
     {

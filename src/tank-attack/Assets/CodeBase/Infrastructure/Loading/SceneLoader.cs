@@ -22,9 +22,15 @@ namespace CodeBase.Infrastructure.Loading
     public void LoadScene(string name, Action onLoaded = null) =>
       _coroutineRunner.StartCoroutine(Load(name, onLoaded));
 
-    public async void LoadScene(AssetReference scene, Action onLoaded = null)
+    public async void LoadSceneAsset(AssetReference nextScene, Action onLoaded = null)
     {
-      await _assetProvider.LoadScene(scene);
+      await _assetProvider.LoadScene(nextScene);
+      onLoaded?.Invoke();
+    }
+    
+    public async void LoadSceneAsset(string nextScene, Action onLoaded = null)
+    {
+      await _assetProvider.LoadScene(nextScene);
       onLoaded?.Invoke();
     }
 

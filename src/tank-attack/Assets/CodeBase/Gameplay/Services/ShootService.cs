@@ -1,19 +1,20 @@
-using System;
 using CodeBase.Gameplay.Armaments.Components;
 using CodeBase.Gameplay.Armaments.Factory;
+using CodeBase.Gameplay.Armaments.Models;
+using CodeBase.Gameplay.Armaments.Services;
 using UnityEngine;
 
-namespace CodeBase.Gameplay.Armaments.Services
+namespace CodeBase.Gameplay.Services
 {
     public class ShootService : IShootService
     {
         private readonly IProjectileFactory _projectileFactory;
-
-        public event Action Shooted;
-
-        public ShootService(IProjectileFactory projectileFactory)
+        private readonly IBulletMagazine _bulletMagazine;
+        
+        public ShootService(IProjectileFactory projectileFactory, IBulletMagazine bulletMagazine)
         {
             _projectileFactory = projectileFactory;
+            _bulletMagazine = bulletMagazine;
         }
 
         public void Shoot(Vector3 at, Vector3 direction)
@@ -24,7 +25,7 @@ namespace CodeBase.Gameplay.Armaments.Services
             gameObject.transform.forward = direction;
             gameObject.GetComponent<ProjectileMove>().MoveDirection = direction;
             
-            Shooted?.Invoke();
+            _bulletMagazine.Remove(1);
         }
     }
 }

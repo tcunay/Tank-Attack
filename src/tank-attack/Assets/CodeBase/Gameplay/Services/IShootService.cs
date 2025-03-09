@@ -6,6 +6,5 @@ namespace CodeBase.Gameplay.Armaments.Services
     public interface IShootService
     {
         void Shoot(Vector3 at, Vector3 direction);
-        event Action Shooted;
     }
 }

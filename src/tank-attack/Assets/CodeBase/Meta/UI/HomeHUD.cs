@@ -1,5 +1,6 @@
 using System;
 using CodeBase.Infrastructure.States.GameStates;
+using CodeBase.Infrastructure.States.GameStates.Battle;
 using CodeBase.Infrastructure.States.StateMachine;
 using UnityEngine;
 using UnityEngine.UI;

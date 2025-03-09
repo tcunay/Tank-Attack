@@ -1,21 +1,20 @@
 using CodeBase.Infrastructure.States.StateInfrastructure;
 using CodeBase.Meta.UI;
 
-namespace CodeBase.Infrastructure.States.GameStates
+namespace CodeBase.Infrastructure.States.GameStates.Battle
 {
-    public class HomeScreenState : SimpleState
+    public class BattleLoopState : SimpleState
     {
         private readonly LoadingCurtain _loadingCurtain;
 
-        public HomeScreenState(LoadingCurtain loadingCurtain)
+        public BattleLoopState(LoadingCurtain loadingCurtain)
         {
             _loadingCurtain = loadingCurtain;
         }
-        
+
         public override void Enter()
         {
             base.Enter();
-            
             _loadingCurtain.Hide();
         }
     }

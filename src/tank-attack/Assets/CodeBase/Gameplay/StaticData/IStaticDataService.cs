@@ -2,6 +2,7 @@ using Code.Gameplay.Levels.Setup;
 using CodeBase.Gameplay.Vehicle.Setup;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace CodeBase.Gameplay.StaticData
 {
@@ -13,5 +14,6 @@ namespace CodeBase.Gameplay.StaticData
         GameObject CameraPrefab();
         VehicleConfig GetVehicleConfig(VehicleKind vehicleKind);
         LevelConfig GetLevelConfig(int levelNumber);
+        AssetReference GameOverSceneReference();
     }
 }

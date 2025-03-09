@@ -1,4 +1,5 @@
 ﻿using CodeBase.Gameplay.StaticData;
+using CodeBase.Infrastructure.States.GameStates.Home;
 using CodeBase.Infrastructure.States.StateInfrastructure;
 using CodeBase.Infrastructure.States.StateMachine;
 using CodeBase.Meta.UI;

@@ -14,6 +14,9 @@ using CodeBase.Infrastructure.Common;
 using CodeBase.Infrastructure.Loading;
 using CodeBase.Infrastructure.States.Factory;
 using CodeBase.Infrastructure.States.GameStates;
+using CodeBase.Infrastructure.States.GameStates.Battle;
+using CodeBase.Infrastructure.States.GameStates.GameOver;
+using CodeBase.Infrastructure.States.GameStates.Home;
 using CodeBase.Infrastructure.States.StateMachine;
 using CodeBase.Meta.UI;
 using RSG;
@@ -55,8 +58,9 @@ namespace CodeBase.Infrastructure.Installers
             Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BootBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<StartBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LoadingGameOverState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameOverLoopState>().AsSingle();
         }
 
         private void BindServices()
@@ -71,8 +75,6 @@ namespace CodeBase.Infrastructure.Installers
         {
             Container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
             Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
-            Container.Bind<IShootService>().To<ShootService>().AsSingle();
-            Container.Bind<IInputService>().To<InputService>().AsSingle();
         }
 
         private void BindStateMachine()
@@ -82,9 +84,7 @@ namespace CodeBase.Infrastructure.Installers
         
         private void BindFactories()
         {
-            Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
-            Container.Bind<IVehicleFactory>().To<VehicleFactory>().AsSingle();
-            Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
+            
         }
         
         private void BindLoadingCurtain()

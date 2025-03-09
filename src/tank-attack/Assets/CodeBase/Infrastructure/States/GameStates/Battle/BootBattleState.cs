@@ -4,7 +4,7 @@ using CodeBase.Gameplay.StaticData;
 using CodeBase.Infrastructure.States.StateInfrastructure;
 using CodeBase.Infrastructure.States.StateMachine;
 
-namespace CodeBase.Infrastructure.States.GameStates
+namespace CodeBase.Infrastructure.States.GameStates.Battle
 {
     public class BootBattleState : SimpleState
     {

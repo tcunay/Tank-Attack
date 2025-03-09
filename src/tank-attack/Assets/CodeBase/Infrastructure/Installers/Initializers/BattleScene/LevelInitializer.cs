@@ -5,12 +5,12 @@ using CodeBase.Gameplay.Cameras.Provider;
 using CodeBase.Gameplay.Hero.Factory;
 using CodeBase.Gameplay.Vehicle.Factory;
 using CodeBase.Gameplay.Vehicle.Setup;
-using CodeBase.Infrastructure.States.GameStates;
+using CodeBase.Infrastructure.States.GameStates.Battle;
 using CodeBase.Infrastructure.States.StateMachine;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers.Initializers
+namespace CodeBase.Infrastructure.Installers.Initializers.BattleScene
 {
     public class LevelInitializer : MonoBehaviour, IInitializable
     {

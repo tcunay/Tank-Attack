@@ -11,5 +11,6 @@ namespace CodeBase.Infrastructure.AssetManagement
         UniTask<GameObject> LoadAsset(string path);
         UniTask<IList<TObject>> LoadAssets<TObject>(string path);
         UniTask LoadScene(AssetReference scene);
+        UniTask LoadScene(string scene);
     }
 }

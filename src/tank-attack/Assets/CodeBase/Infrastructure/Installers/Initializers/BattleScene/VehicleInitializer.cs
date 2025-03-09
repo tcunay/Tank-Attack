@@ -3,7 +3,7 @@ using CodeBase.Gameplay.Vehicle.Setup;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers.Initializers
+namespace CodeBase.Infrastructure.Installers.Initializers.BattleScene
 {
     public class VehicleInitializer : MonoBehaviour, IInitializable
     {

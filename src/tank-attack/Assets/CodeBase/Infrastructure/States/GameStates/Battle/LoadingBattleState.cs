@@ -4,7 +4,7 @@ using CodeBase.Infrastructure.States.StateInfrastructure;
 using CodeBase.Infrastructure.States.StateMachine;
 using CodeBase.Meta.UI;
 
-namespace CodeBase.Infrastructure.States.GameStates
+namespace CodeBase.Infrastructure.States.GameStates.Battle
 {
     public class LoadingBattleState : SimpleState
     {
@@ -29,12 +29,7 @@ namespace CodeBase.Infrastructure.States.GameStates
         {
             _loadingCurtain.Show();
             
-            _sceneLoader.LoadScene(_levelDataProvider.LevelConfig.SceneReference, EnterBattleLoopState);
-        }
-
-        private void EnterBattleLoopState()
-        {
-            //_stateMachine.Enter<StartBattleState>();
+            _sceneLoader.LoadSceneAsset(_levelDataProvider.LevelConfig.SceneReference);
         }
     }
 }

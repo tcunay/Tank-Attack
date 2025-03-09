@@ -3,7 +3,7 @@ using CodeBase.Gameplay.Cameras.Provider;
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers.Initializers
+namespace CodeBase.Infrastructure.Installers.Initializers.BattleScene
 {
     public class HeroInitializer : MonoBehaviour, IInitializable
     {

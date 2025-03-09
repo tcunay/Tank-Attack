@@ -1,4 +1,5 @@
 using System;
+using CodeBase.Gameplay.Armaments.Models;
 using CodeBase.Gameplay.Armaments.Services;
 using TMPro;
 using UnityEngine;

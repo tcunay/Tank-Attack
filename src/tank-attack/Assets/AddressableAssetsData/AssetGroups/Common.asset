@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b1cc1c693fe94404ad6149771316240
+    m_Address: GameOverScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2168e02d209cc4400aa11588725c2922
     m_Address: BulletMaterial
     m_ReadOnly: 0

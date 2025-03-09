@@ -6,6 +6,7 @@ using CodeBase.Gameplay.Vehicle.Setup;
 using CodeBase.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace CodeBase.Gameplay.StaticData
 {
@@ -17,6 +18,7 @@ namespace CodeBase.Gameplay.StaticData
         private GameObject _camera;
         private Dictionary<VehicleKind ,VehicleConfig> _vehicleConfigs;
         private Dictionary<int, LevelConfig> _levels;
+        private AssetReference _gameOverSceneReference;
 
         public StaticDataService(IAssetProvider assetProvider)
         {
@@ -30,8 +32,14 @@ namespace CodeBase.Gameplay.StaticData
                 LoadBulletPrefab(),
                 LoadCameraPrefab(),
                 LoadVehicles(),
-                LoadLevels()
+                LoadLevels(),
+                LoadGameOverSceneReference()
             );
+        }
+
+        private async UniTask LoadGameOverSceneReference()
+        {
+            //_gameOverSceneReference = await _assetProvider.LoadAsset<AssetReference>(AssetPath.GameOverScene);
         }
 
         public GameObject HeroPrefab()
@@ -67,6 +75,11 @@ namespace CodeBase.Gameplay.StaticData
             }
             
             throw new Exception($"Level config for {levelNumber} was not found");
+        }
+
+        public AssetReference GameOverSceneReference()
+        {
+            return _gameOverSceneReference;
         }
 
         private async UniTask LoadHeroPrefab()
