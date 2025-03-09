@@ -22,7 +22,6 @@ namespace CodeBase.Gameplay.Services
             Debug.Log("Shoot");
             GameObject gameObject = _projectileFactory.CreateBullet(at);
 
-            gameObject.transform.forward = direction;
             gameObject.GetComponent<ProjectileMove>().MoveDirection = direction;
             
             _bulletMagazine.Remove(1);

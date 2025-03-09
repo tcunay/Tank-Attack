@@ -6,18 +6,23 @@ namespace CodeBase.Gameplay.Armaments.Components
 {
     public class ProjectileMove : MonoBehaviour
     {
-        private ITimeService _time;
-
         private const float Speed = 3;
         
-        public Vector3 MoveDirection { get; set; }
-
+        private ITimeService _time;
+        
         [Inject]
         private void Construct(ITimeService time)
         {
             _time = time;
         }
         
+        public Vector3 MoveDirection { get; set; }
+
+        private void Start()
+        {
+            gameObject.transform.forward = MoveDirection;
+        }
+
         private void Update()
         {
             transform.Translate(new Vector3(0,0,Speed * _time.DeltaTime));
