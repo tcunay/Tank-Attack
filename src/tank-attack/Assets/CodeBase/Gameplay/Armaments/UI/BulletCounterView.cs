@@ -11,10 +11,10 @@ namespace CodeBase.Gameplay.Armaments.UI
     {
         [SerializeField] private TMP_Text _counterText;
         
-        private IBulletMagazine _bulletMagazine;
+        private IWeaponMagazine _bulletMagazine;
 
         [Inject]
-        private void Construct(IBulletMagazine bulletMagazine)
+        private void Construct(IWeaponMagazine bulletMagazine)
         {
             _bulletMagazine = bulletMagazine;
         }

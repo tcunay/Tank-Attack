@@ -1,11 +1,10 @@
 using System;
-using CodeBase.Gameplay.Armaments.Services;
 using CodeBase.Gameplay.Armaments.Setup;
 using UnityEngine;
 
 namespace CodeBase.Gameplay.Armaments.Models
 {
-    public class BulletMagazine : IBulletMagazine
+    public class WeaponMagazine : IWeaponMagazine
     {
         private readonly ArmamentSetup _setup;
 
@@ -13,7 +12,7 @@ namespace CodeBase.Gameplay.Armaments.Models
 
         public event Action Changed;
 
-        public BulletMagazine(ArmamentSetup setup)
+        public WeaponMagazine(ArmamentSetup setup)
         {
             _setup = setup;
 

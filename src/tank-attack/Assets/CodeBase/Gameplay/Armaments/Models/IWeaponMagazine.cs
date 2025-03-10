@@ -2,7 +2,7 @@ using System;
 
 namespace CodeBase.Gameplay.Armaments.Models
 {
-    public interface IBulletMagazine
+    public interface IWeaponMagazine
     {
         int Count { get; }
         event Action Changed;

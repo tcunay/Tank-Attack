@@ -9,11 +9,12 @@ using CodeBase.Gameplay.Hero.Factory;
 using CodeBase.Gameplay.Input;
 using CodeBase.Gameplay.Services;
 using CodeBase.Gameplay.Vehicle.Factory;
+using CodeBase.Infrastructure.Common;
 using Zenject;
 
 namespace CodeBase.Infrastructure.Installers
 {
-    public class LevelInstaller : MonoInstaller
+    public class LevelInstaller : MonoInstaller, ICoroutineRunner
     {
         private ILevelDataProvider _levelDataProvider;
 
@@ -38,7 +39,7 @@ namespace CodeBase.Infrastructure.Installers
 
         private void BindModels()
         {
-            Container.BindInterfacesTo<BulletMagazine>().AsSingle();
+            Container.BindInterfacesTo<WeaponMagazine>().AsSingle();
         }
 
         private void BindFactories()
@@ -51,9 +52,11 @@ namespace CodeBase.Infrastructure.Installers
         
         private void BindGameplayServices()
         {
+            Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
             Container.Bind<IShootService>().To<ShootService>().AsSingle();
             Container.BindInterfacesTo<InputService>().AsSingle();
-            Container.BindInterfacesTo<GameOverOnMagazineEmptyService>().AsSingle();
+            Container.BindInterfacesTo<BulletsLifeCycleService>().AsSingle();
+            Container.BindInterfacesTo<GameOverOnOutOfBulletsService>().AsSingle();
         }
     }
 }

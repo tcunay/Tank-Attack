@@ -1,6 +1,6 @@
 namespace CodeBase.Gameplay.GameOver.Systems
 {
-    public interface IGameOverOnMagazineEmptyService
+    public interface IGameOverOnOutOfBulletsService
     {
     }
 }
