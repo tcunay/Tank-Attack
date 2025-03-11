@@ -1,4 +1,5 @@
 using Code.Infrastructure.AssetManagement;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
@@ -17,9 +18,9 @@ namespace Code.Infrastructure.View.Factory
             _instantiator = instantiator;
         }
 
-        public EntityBehaviour CreateViewFormEntity(GameEntity entity)
+        public async UniTask<EntityBehaviour> CreateViewFormEntity(GameEntity entity)
         {
-            EntityBehaviour viewPrefab = _assetProvider.LoadAsset<EntityBehaviour>(entity.ViewPath);
+            EntityBehaviour viewPrefab = await _assetProvider.LoadAsset<EntityBehaviour>(entity.ViewPath);
             EntityBehaviour view = _instantiator
                 .InstantiatePrefabForComponent<EntityBehaviour>(
                     viewPrefab,
