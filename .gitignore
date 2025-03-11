@@ -68,6 +68,12 @@ ExportedObj/
 # Packed Addressables
 /src/tank-attack/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
+/src/tank-attack/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta
+/src/tank-attack/Assets/Plugins/Zenject/Source/Zenject.csproj.meta
+
+src/CustomGenerators/CustomGenerators/KSyndicate.CustomGenerators.Plugins/obj
+src/CustomGenerators/CustomGenerators/KSyndicate.CustomGenerators.Plugins/bin
+
 # Temporary auto-generated Android Assets
 /src/tank-attack/[Aa]ssets/[Ss]treamingAssets/aa.meta
 /src/tank-attack/[Aa]ssets/[Ss]treamingAssets/aa/*
