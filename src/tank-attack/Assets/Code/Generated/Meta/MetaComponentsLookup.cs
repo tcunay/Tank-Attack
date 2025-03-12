@@ -9,14 +9,17 @@
 public static class MetaComponentsLookup {
 
     public const int Destructed = 0;
+    public const int Id = 1;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 2;
 
     public static readonly string[] componentNames = {
-        "Destructed"
+        "Destructed",
+        "Id"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Code.Common.Destructed)
+        typeof(Code.Common.Destructed),
+        typeof(Code.Gameplay.Common.Id)
     };
 }

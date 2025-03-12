@@ -1,14 +1,15 @@
-using Code.Gameplay.Armaments.Factory;
-using Code.Gameplay.Armaments.Models;
-using Code.Gameplay.Armaments.Services;
-using Code.Gameplay.Armaments.Setup;
 using Code.Gameplay.Cameras.Factory;
+using Code.Gameplay.Features.Armaments.Factory;
+using Code.Gameplay.Features.Armaments.Models;
+using Code.Gameplay.Features.Armaments.Services;
+using Code.Gameplay.Features.Armaments.Setup;
+using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Vehicle.Factory;
 using Code.Gameplay.GameOver.Services;
-using Code.Gameplay.Hero.Factory;
 using Code.Gameplay.Input;
+using Code.Gameplay.Input.Services;
 using Code.Gameplay.Levels;
 using Code.Gameplay.Services;
-using Code.Gameplay.Vehicle.Factory;
 using Code.Infrastructure.Common;
 using Zenject;
 
@@ -26,6 +27,7 @@ namespace Code.Infrastructure.Installers
         
         public override void InstallBindings()
         {
+            return;
             BindSetups();
             BindModels();
             BindFactories();
@@ -54,7 +56,6 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
             Container.Bind<IShootService>().To<ShootService>().AsSingle();
-            Container.BindInterfacesTo<InputService>().AsSingle();
             Container.BindInterfacesTo<BulletsLifeCycleService>().AsSingle();
             Container.BindInterfacesTo<GameOverOnOutOfBulletsService>().AsSingle();
         }

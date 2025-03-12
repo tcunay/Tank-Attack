@@ -1,6 +1,6 @@
-using Code.Gameplay.Armaments.Components;
-using Code.Gameplay.Armaments.Factory;
-using Code.Gameplay.Armaments.Models;
+using Code.Gameplay.Features.Armaments.Components;
+using Code.Gameplay.Features.Armaments.Factory;
+using Code.Gameplay.Features.Armaments.Models;
 using UnityEngine;
 
 namespace Code.Gameplay.Services

@@ -1,6 +1,6 @@
 using System;
-using Code.Gameplay.Armaments.Models;
-using Code.Gameplay.Armaments.Services;
+using Code.Gameplay.Features.Armaments.Models;
+using Code.Gameplay.Features.Armaments.Services;
 using Code.Infrastructure.States.GameStates.GameOver;
 using Code.Infrastructure.States.StateMachine;
 using Zenject;

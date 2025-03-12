@@ -29,7 +29,13 @@ namespace Code.Infrastructure.States.GameStates.Battle
         {
             _loadingCurtain.Show();
             
-            _sceneLoader.LoadSceneAsset(_levelDataProvider.LevelConfig.SceneReference);
+            //_sceneLoader.LoadScene("BattleScene", LoadingButtonState);
+            _sceneLoader.LoadSceneAsset(_levelDataProvider.LevelConfig.SceneReference, LoadingButtonState);
+        }
+
+        private void LoadingButtonState()
+        {
+            _stateMachine.Enter<BattleEnterState>();
         }
     }
 }

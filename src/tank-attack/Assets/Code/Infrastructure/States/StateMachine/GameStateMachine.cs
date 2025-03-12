@@ -70,7 +70,7 @@ namespace Code.Infrastructure.States.StateMachine
     {
       Debug.Log($"Change To {typeof(TState).Name} State");
       TState state = _stateFactory.GetState<TState>();
-      _activeState = state;
+      //_activeState = state;
       
       return Promise<TState>.Resolved(state);
     }

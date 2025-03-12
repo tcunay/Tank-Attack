@@ -1,4 +1,4 @@
-using Code.Gameplay.Armaments.Setup;
+using Code.Gameplay.Features.Armaments.Setup;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 

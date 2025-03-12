@@ -1,5 +1,5 @@
+using Code.Gameplay.Features.Vehicle.Setup;
 using Code.Gameplay.Levels;
-using Code.Gameplay.Vehicle.Setup;
 using UnityEngine;
 using Zenject;
 
@@ -19,6 +19,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         public void Initialize()
         {
+            return;
             _levelDataProvider.SetMoveSetups(MoveSetups);
         }
     }

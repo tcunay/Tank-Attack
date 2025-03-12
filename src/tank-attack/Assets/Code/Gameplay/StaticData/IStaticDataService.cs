@@ -1,5 +1,5 @@
+using Code.Gameplay.Features.Vehicle.Setup;
 using Code.Gameplay.Levels.Setup;
-using Code.Gameplay.Vehicle.Setup;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;

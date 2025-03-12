@@ -13,15 +13,29 @@ public static class GameComponentsLookup {
     public const int View = 2;
     public const int ViewPath = 3;
     public const int ViewPrefab = 4;
+    public const int Damage = 5;
+    public const int Id = 6;
+    public const int Transform = 7;
+    public const int WorldPosition = 8;
+    public const int Enemy = 9;
+    public const int SpawnTimer = 10;
+    public const int Hero = 11;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "Destructed",
         "SelfDestructTimer",
         "View",
         "ViewPath",
-        "ViewPrefab"
+        "ViewPrefab",
+        "Damage",
+        "Id",
+        "Transform",
+        "WorldPosition",
+        "Enemy",
+        "SpawnTimer",
+        "Hero"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -29,6 +43,13 @@ public static class GameComponentsLookup {
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewPath),
-        typeof(Code.Common.ViewPrefab)
+        typeof(Code.Common.ViewPrefab),
+        typeof(Code.Gameplay.Common.Damage),
+        typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.TransformComponent),
+        typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Enemies.Enemy),
+        typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
+        typeof(Code.Gameplay.Features.Hero.Hero)
     };
 }

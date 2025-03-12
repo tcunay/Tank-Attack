@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Code.Gameplay.Features.Vehicle.Setup;
 using Code.Gameplay.Levels.Setup;
-using Code.Gameplay.Vehicle.Setup;
 using Code.Infrastructure.AssetManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;

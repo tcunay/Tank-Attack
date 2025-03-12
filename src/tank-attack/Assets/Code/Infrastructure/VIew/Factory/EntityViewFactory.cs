@@ -20,7 +20,7 @@ namespace Code.Infrastructure.View.Factory
 
         public async UniTask<EntityBehaviour> CreateViewFormEntity(GameEntity entity)
         {
-            EntityBehaviour viewPrefab = await _assetProvider.LoadAsset<EntityBehaviour>(entity.ViewPath);
+            GameObject viewPrefab = await _assetProvider.LoadAsset(entity.ViewPath);
             EntityBehaviour view = _instantiator
                 .InstantiatePrefabForComponent<EntityBehaviour>(
                     viewPrefab,

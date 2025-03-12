@@ -1,10 +1,10 @@
 using Code.Gameplay.Cameras.Components;
 using Code.Gameplay.Cameras.Factory;
 using Code.Gameplay.Cameras.Provider;
-using Code.Gameplay.Hero.Factory;
+using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Vehicle.Factory;
+using Code.Gameplay.Features.Vehicle.Setup;
 using Code.Gameplay.Levels;
-using Code.Gameplay.Vehicle.Factory;
-using Code.Gameplay.Vehicle.Setup;
 using Code.Infrastructure.States.GameStates.Battle;
 using Code.Infrastructure.States.StateMachine;
 using UnityEngine;
@@ -41,7 +41,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         public void Initialize()
         {
-            GameObject gameObject = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
+            /*GameObject gameObject = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
             
             _cameraProvider.SetMainCamera(_cameraFactory.CreateCamera());
             _cameraProvider.MainCamera.GetComponent<CameraFollow>().Setup(gameObject.transform);
@@ -51,7 +51,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
                 _vehicleFactory.CreateVehicle(setup);
             }
             
-            _stateMachine.Enter<BattleLoopState>();
+            _stateMachine.Enter<BattleLoopState>();*/
         }
     }
 }
