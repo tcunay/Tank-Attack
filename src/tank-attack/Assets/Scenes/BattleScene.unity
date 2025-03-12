@@ -1659,10 +1659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db690876bc04294b87b0a4403ee3528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Initializers:
-  - {fileID: 1300924656}
-  - {fileID: 1300924658}
-  - {fileID: 1300924660}
+  Initializers: []
 --- !u!114 &1300924658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,6 +1700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eaf7116c4748bf856b89cfe810a633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 0}
 --- !u!1 &1464428145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2369,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1516081376552335362, guid: 0470d1430c8054dea9da7133de902793, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2794513836356814107, guid: 0470d1430c8054dea9da7133de902793, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

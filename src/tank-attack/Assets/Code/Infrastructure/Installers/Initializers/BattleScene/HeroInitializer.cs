@@ -12,7 +12,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         private ILevelDataProvider _levelDataProvider;
         private ICameraProvider _cameraProvider;
 
-        [Inject]
+        //[Inject]
         private void Construct(ILevelDataProvider levelDataProvider, ICameraProvider cameraProvider)
         {
             _cameraProvider = cameraProvider;

@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Armaments.UI
         
         private IWeaponMagazine _bulletMagazine;
 
-        [Inject]
+        //[Inject]
         private void Construct(IWeaponMagazine bulletMagazine)
         {
             _bulletMagazine = bulletMagazine;
@@ -20,12 +20,14 @@ namespace Code.Gameplay.Features.Armaments.UI
 
         private void Awake()
         {
+            return;
             _bulletMagazine.Changed += UpdateText;
             UpdateText();
         }
 
         private void OnDestroy()
         {
+            return;
             _bulletMagazine.Changed -= UpdateText;
         }
 

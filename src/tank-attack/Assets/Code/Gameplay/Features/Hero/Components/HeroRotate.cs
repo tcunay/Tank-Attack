@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.Hero.Components
         private IInputService _inputService;
         private ITimeService _time;
 
-        [Inject]
+        //[Inject]
         private void Construct(IInputService inputService, ITimeService timeService)
         {
             _time = timeService;
@@ -24,6 +24,7 @@ namespace Code.Gameplay.Features.Hero.Components
 
         private void LateUpdate()
         {
+            return;
             if (_inputService.Axis.sqrMagnitude < Constants.Epsilon)
                 return;
             

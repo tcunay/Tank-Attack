@@ -1,4 +1,5 @@
 using Code.Gameplay.Cameras.Provider;
+using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Input.Services;
@@ -34,6 +35,7 @@ namespace Code.Infrastructure.Installers
             BindStaticData();
             BindServices();
             BindSystemFactory();
+            BindCommonServices();
             BindContexts();
             BindFactories();
             BindGameplayServices();
@@ -88,8 +90,6 @@ namespace Code.Infrastructure.Installers
 
         private void BindServices()
         {
-            Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
-            Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
             Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
         }
@@ -108,6 +108,15 @@ namespace Code.Infrastructure.Installers
         private void BindFactories()
         {
             
+        }
+        
+        private void BindCommonServices()
+        {
+            //Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
+            Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
+            //Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
+            Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
+            Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
         }
         
         private void BindGameplayFactories()

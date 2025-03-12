@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.Hero.Components
         private IInputService _inputService;
         private IShootService _shootService;
 
-        [Inject]
+       // [Inject]
         private void Construct(IInputService inputService, IShootService shootService)
         {
             _shootService = shootService;
@@ -20,6 +20,7 @@ namespace Code.Gameplay.Features.Hero.Components
 
         private void Update()
         {
+            return;
             if (_inputService.IsAttackButton())
             {
                 _shootService.Shoot(transform.position ,transform.forward);

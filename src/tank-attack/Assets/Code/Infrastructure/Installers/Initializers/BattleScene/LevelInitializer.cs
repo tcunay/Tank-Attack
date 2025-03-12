@@ -14,6 +14,8 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
 {
     public class LevelInitializer : MonoBehaviour, IInitializable
     {
+        [SerializeField] private Camera _mainCamera;
+        
         private IHeroFactory _heroFactory;
         private ILevelDataProvider _levelDataProvider;
         private ICameraFactory _cameraFactory;
@@ -21,7 +23,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         private IVehicleFactory _vehicleFactory;
         private IGameStateMachine _stateMachine;
 
-        [Inject]
+        //[Inject]
         private void Construct(
             IHeroFactory heroFactory,
             ILevelDataProvider levelDataProvider,

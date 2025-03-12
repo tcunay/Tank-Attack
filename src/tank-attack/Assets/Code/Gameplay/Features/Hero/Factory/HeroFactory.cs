@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Code.Common.Entity;
+using Code.Common.Extensions;
 using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
@@ -27,7 +28,8 @@ namespace Code.Gameplay.Features.Hero.Factory
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .AddWorldPosition(at)
-                .AddViewPath(AssetPath.HeroPrefabPath);
+                .AddViewPath(AssetPath.HeroPrefabPath)
+                .With(x => x.isHero = true);
             /*.AddBaseStats(baseStats)
             .AddStatModifiers(InitStats.EmptyStatDictionary())
             .AddSpeed(baseStats[Stats.Speed])

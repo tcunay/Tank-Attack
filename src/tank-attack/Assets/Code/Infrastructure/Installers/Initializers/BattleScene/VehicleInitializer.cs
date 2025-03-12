@@ -11,7 +11,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         private ILevelDataProvider _levelDataProvider;
 
-        [Inject]
+        //[Inject]
         private void Construct(ILevelDataProvider levelDataProvider)
         {
             _levelDataProvider = levelDataProvider;
