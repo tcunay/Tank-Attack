@@ -19,21 +19,22 @@ public static class GameComponentsLookup {
     public const int Transform = 8;
     public const int WorldPosition = 9;
     public const int Camera = 10;
-    public const int Enemy = 11;
-    public const int SpawnTimer = 12;
-    public const int Hero = 13;
-    public const int Direction = 14;
-    public const int MovementAvailable = 15;
-    public const int Moving = 16;
-    public const int OrbitCenterFollowTarget = 17;
-    public const int OrbitCenterPosition = 18;
-    public const int OrbitPhase = 19;
-    public const int OrbitRadius = 20;
-    public const int RotationAlongDirection = 21;
-    public const int Speed = 22;
-    public const int TurnedAlongDirection = 23;
+    public const int CameraUnity = 11;
+    public const int Enemy = 12;
+    public const int SpawnTimer = 13;
+    public const int Hero = 14;
+    public const int Direction = 15;
+    public const int MovementAvailable = 16;
+    public const int Moving = 17;
+    public const int OrbitCenterFollowTarget = 18;
+    public const int OrbitCenterPosition = 19;
+    public const int OrbitPhase = 20;
+    public const int OrbitRadius = 21;
+    public const int RotationAlongDirection = 22;
+    public const int Speed = 23;
+    public const int TurnedAlongDirection = 24;
 
-    public const int TotalComponents = 24;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -47,6 +48,7 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "Camera",
+        "CameraUnity",
         "Enemy",
         "SpawnTimer",
         "Hero",
@@ -74,6 +76,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Features.Camera.Camera),
+        typeof(Code.Gameplay.Features.Camera.CameraUnity),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
         typeof(Code.Gameplay.Features.Hero.Hero),

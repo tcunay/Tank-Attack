@@ -8,6 +8,7 @@ namespace Code.Gameplay.Features.Camera
         public CameraFeature(ISystemFactory systems)
         {
             Add(systems.Create<CameraFollowHeroSystem>());
+            Add(systems.Create<SetCameraZoomByInputSystem>());
         }
     }
 }
