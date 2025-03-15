@@ -14,35 +14,19 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
 {
     public class LevelInitializer : MonoBehaviour, IInitializable
     {
-        [SerializeField] private Camera _mainCamera;
+        [SerializeField] private Transform _heroPoint;
         
-        private IHeroFactory _heroFactory;
         private ILevelDataProvider _levelDataProvider;
-        private ICameraFactory _cameraFactory;
-        private ICameraProvider _cameraProvider;
-        private IVehicleFactory _vehicleFactory;
-        private IGameStateMachine _stateMachine;
 
-        //[Inject]
-        private void Construct(
-            IHeroFactory heroFactory,
-            ILevelDataProvider levelDataProvider,
-            ICameraFactory cameraFactory,
-            IVehicleFactory vehicleFactory,
-            IGameStateMachine stateMachine,
-            ICameraProvider cameraProvider
-            )
+        [Inject]
+        private void Construct(ILevelDataProvider levelDataProvider)
         {
-            _stateMachine = stateMachine;
-            _vehicleFactory = vehicleFactory;
-            _cameraProvider = cameraProvider;
-            _cameraFactory = cameraFactory;
             _levelDataProvider = levelDataProvider;
-            _heroFactory = heroFactory;
         }
         
         public void Initialize()
         {
+            _levelDataProvider.SetStartPoint(_heroPoint);
             /*GameObject gameObject = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
             
             _cameraProvider.SetMainCamera(_cameraFactory.CreateCamera());

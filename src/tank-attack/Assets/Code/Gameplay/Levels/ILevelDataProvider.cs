@@ -6,10 +6,10 @@ namespace Code.Gameplay.Levels
 {
   public interface ILevelDataProvider
   {
-    Vector3 StartPoint { get; }
+    Transform StartPoint { get; }
     VehicleSetup[] MoveSetups { get; }
     LevelConfig LevelConfig { get; }
-    void SetStartPoint(Vector3 startPoint);
+    void SetStartPoint(Transform startPoint);
     void SetMoveSetups(VehicleSetup[] moveSetups);
     void SetLevelConfig(LevelConfig levelConfig);
   }

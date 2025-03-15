@@ -18,7 +18,7 @@ namespace Code.Gameplay.Features.Hero.Factory
             _identifierService = identifierService;
         }
         
-        public GameEntity CreateHero(Vector3 at)
+        public GameEntity CreateHero(Vector3 at, Quaternion rotation)
         {
             /*Dictionary<Stats, float> baseStats = InitStats.EmptyStatDictionary()
                     .With(x => x[Stats.Speed] = 2)
@@ -28,6 +28,7 @@ namespace Code.Gameplay.Features.Hero.Factory
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .AddWorldPosition(at)
+                .AddRotation(rotation.eulerAngles)
                 .AddViewPath(AssetPath.HeroPrefabPath)
                 .With(x => x.isHero = true);
             /*.AddBaseStats(baseStats)

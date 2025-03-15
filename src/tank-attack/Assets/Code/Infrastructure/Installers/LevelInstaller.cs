@@ -46,10 +46,8 @@ namespace Code.Infrastructure.Installers
 
         private void BindFactories()
         {
-            Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
             Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
             Container.Bind<IVehicleFactory>().To<VehicleFactory>().AsSingle();
-            Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
         }
         
         private void BindGameplayServices()

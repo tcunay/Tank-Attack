@@ -14,6 +14,10 @@ using Code.Gameplay.Features.Loot;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;*/
+
+using Code.Gameplay.Features.Camera;
+using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
@@ -27,6 +31,11 @@ namespace Code.Gameplay
             Add(systems.Create<InputFeature>());
 
             Add(systems.Create<BindViewFeature>());
+            
+            Add(systems.Create<HeroFeature>());
+            Add(systems.Create<CameraFeature>());
+            
+            Add(systems.Create<MovementFeature>());
 
             /*Add(systems.Create<HeroFeature>());
             Add(systems.Create<EnemyFeature>());

@@ -7,7 +7,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
 {
     public class HeroInitializer : MonoBehaviour, IInitializable
     {
-        [SerializeField] private Transform _heroPosition;
+        [SerializeField] private Transform _heroStartPosition;
         
         private ILevelDataProvider _levelDataProvider;
         private ICameraProvider _cameraProvider;
@@ -21,8 +21,8 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         public void Initialize()
         {
-            _levelDataProvider.SetStartPoint(_heroPosition.position);
-            _heroPosition.gameObject.SetActive(false);
+            //_levelDataProvider.SetStartPoint(_heroStartPosition.position, _heroStartPosition.rotation);
+            //_heroStartPosition.gameObject.SetActive(false);
         }
     }
 }

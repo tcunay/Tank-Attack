@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b78187ac78154f039649e6f5d0b2a504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heroPosition: {fileID: 187351178}
+  _heroStartPosition: {fileID: 0}
 --- !u!114 &1300924657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,7 +1659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db690876bc04294b87b0a4403ee3528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Initializers: []
+  Initializers:
+  - {fileID: 1300924660}
 --- !u!114 &1300924658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,7 +1701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15eaf7116c4748bf856b89cfe810a633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainCamera: {fileID: 0}
+  _heroPoint: {fileID: 187351178}
 --- !u!1 &1464428145
 GameObject:
   m_ObjectHideFlags: 0

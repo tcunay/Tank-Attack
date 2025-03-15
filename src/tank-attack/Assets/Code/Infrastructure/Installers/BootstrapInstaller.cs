@@ -1,3 +1,4 @@
+using Code.Gameplay.Cameras.Factory;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Time;
@@ -123,6 +124,7 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
             Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+            Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
 
             /*Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
             Container.Bind<IArmamentFactory>().To<ArmamentFactory>().AsSingle();

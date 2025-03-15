@@ -6,11 +6,11 @@ namespace Code.Gameplay.Levels
 {
     public class LevelDataProvider : ILevelDataProvider
     {
-        public Vector3 StartPoint { get; private set; }
+        public Transform StartPoint { get; private set; }
         public VehicleSetup[] MoveSetups { get; private set; }
         public LevelConfig LevelConfig { get; private set; }
 
-        public void SetStartPoint(Vector3 startPoint)
+        public void SetStartPoint(Transform startPoint)
         {
             StartPoint = startPoint;
         }

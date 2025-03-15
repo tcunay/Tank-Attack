@@ -15,13 +15,25 @@ public static class GameComponentsLookup {
     public const int ViewPrefab = 4;
     public const int Damage = 5;
     public const int Id = 6;
-    public const int Transform = 7;
-    public const int WorldPosition = 8;
-    public const int Enemy = 9;
-    public const int SpawnTimer = 10;
-    public const int Hero = 11;
+    public const int Rotation = 7;
+    public const int Transform = 8;
+    public const int WorldPosition = 9;
+    public const int Camera = 10;
+    public const int Enemy = 11;
+    public const int SpawnTimer = 12;
+    public const int Hero = 13;
+    public const int Direction = 14;
+    public const int MovementAvailable = 15;
+    public const int Moving = 16;
+    public const int OrbitCenterFollowTarget = 17;
+    public const int OrbitCenterPosition = 18;
+    public const int OrbitPhase = 19;
+    public const int OrbitRadius = 20;
+    public const int RotationAlongDirection = 21;
+    public const int Speed = 22;
+    public const int TurnedAlongDirection = 23;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 24;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -31,11 +43,23 @@ public static class GameComponentsLookup {
         "ViewPrefab",
         "Damage",
         "Id",
+        "Rotation",
         "Transform",
         "WorldPosition",
+        "Camera",
         "Enemy",
         "SpawnTimer",
-        "Hero"
+        "Hero",
+        "Direction",
+        "MovementAvailable",
+        "Moving",
+        "OrbitCenterFollowTarget",
+        "OrbitCenterPosition",
+        "OrbitPhase",
+        "OrbitRadius",
+        "RotationAlongDirection",
+        "Speed",
+        "TurnedAlongDirection"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -46,10 +70,22 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.Rotation),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Camera.Camera),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Enemies.SpawnTimer),
-        typeof(Code.Gameplay.Features.Hero.Hero)
+        typeof(Code.Gameplay.Features.Hero.Hero),
+        typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
+        typeof(Code.Gameplay.Features.Movement.Moving),
+        typeof(Code.Gameplay.Features.Movement.OrbitCenterFollowTarget),
+        typeof(Code.Gameplay.Features.Movement.OrbitCenterPosition),
+        typeof(Code.Gameplay.Features.Movement.OrbitPhase),
+        typeof(Code.Gameplay.Features.Movement.OrbitRadius),
+        typeof(Code.Gameplay.Features.Movement.RotationAlongDirection),
+        typeof(Code.Gameplay.Features.Movement.Speed),
+        typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection)
     };
 }
