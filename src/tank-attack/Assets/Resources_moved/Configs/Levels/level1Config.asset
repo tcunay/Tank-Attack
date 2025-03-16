@@ -22,4 +22,4 @@ MonoBehaviour:
   _armamentSetup:
     Count: 10
     ProjectileSetup:
-      Speed: 1
+      Speed: 3
