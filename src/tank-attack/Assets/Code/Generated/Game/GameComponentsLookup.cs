@@ -18,23 +18,25 @@ public static class GameComponentsLookup {
     public const int Rotation = 7;
     public const int Transform = 8;
     public const int WorldPosition = 9;
-    public const int Camera = 10;
-    public const int CameraUnity = 11;
-    public const int Enemy = 12;
-    public const int SpawnTimer = 13;
-    public const int Hero = 14;
-    public const int Direction = 15;
-    public const int MovementAvailable = 16;
-    public const int Moving = 17;
-    public const int OrbitCenterFollowTarget = 18;
-    public const int OrbitCenterPosition = 19;
-    public const int OrbitPhase = 20;
-    public const int OrbitRadius = 21;
-    public const int RotationAlongDirection = 22;
-    public const int Speed = 23;
-    public const int TurnedAlongDirection = 24;
+    public const int Armament = 10;
+    public const int Projectile = 11;
+    public const int Camera = 12;
+    public const int CameraUnity = 13;
+    public const int Enemy = 14;
+    public const int SpawnTimer = 15;
+    public const int Hero = 16;
+    public const int Direction = 17;
+    public const int MovementAvailable = 18;
+    public const int Moving = 19;
+    public const int OrbitCenterFollowTarget = 20;
+    public const int OrbitCenterPosition = 21;
+    public const int OrbitPhase = 22;
+    public const int OrbitRadius = 23;
+    public const int RotationAlongDirection = 24;
+    public const int Speed = 25;
+    public const int TurnedAlongDirection = 26;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -47,6 +49,8 @@ public static class GameComponentsLookup {
         "Rotation",
         "Transform",
         "WorldPosition",
+        "Armament",
+        "Projectile",
         "Camera",
         "CameraUnity",
         "Enemy",
@@ -75,6 +79,8 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Rotation),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Armament),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Projectile),
         typeof(Code.Gameplay.Features.Camera.Camera),
         typeof(Code.Gameplay.Features.Camera.CameraUnity),
         typeof(Code.Gameplay.Features.Enemies.Enemy),

@@ -1,7 +1,6 @@
 using Code.Gameplay.Cameras.Factory;
 using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Armaments.Models;
-using Code.Gameplay.Features.Armaments.Services;
 using Code.Gameplay.Features.Armaments.Setup;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Vehicle.Factory;
@@ -46,7 +45,6 @@ namespace Code.Infrastructure.Installers
 
         private void BindFactories()
         {
-            Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
             Container.Bind<IVehicleFactory>().To<VehicleFactory>().AsSingle();
         }
         
@@ -54,7 +52,6 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<ICoroutineRunner>().FromInstance(this).AsSingle();
             Container.Bind<IShootService>().To<ShootService>().AsSingle();
-            Container.BindInterfacesTo<BulletsLifeCycleService>().AsSingle();
             Container.BindInterfacesTo<GameOverOnOutOfBulletsService>().AsSingle();
         }
     }

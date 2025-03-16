@@ -1,5 +1,10 @@
 using System;
+using Code.Common.Entity;
+using Code.Common.Extensions;
+using Code.Gameplay.Features.Armaments.Setup;
 using Code.Gameplay.StaticData;
+using Code.Infrastructure.AssetManagement;
+using Code.Infrastructure.Identifiers;
 using UnityEngine;
 using Zenject;
 
@@ -9,22 +14,28 @@ namespace Code.Gameplay.Features.Armaments.Factory
     {
         private readonly IInstantiator _instantiator;
         private readonly IStaticDataService _staticData;
+        private readonly IIdentifierService _identifierService;
 
-        public event Action<GameObject> Created;
+        public event Action<GameEntity> Created;
 
-        public ProjectileFactory(IInstantiator instantiator, IStaticDataService staticData)
+        public ProjectileFactory(IInstantiator instantiator, IStaticDataService staticData, IIdentifierService identifierService)
         {
             _instantiator = instantiator;
             _staticData = staticData;
+            _identifierService = identifierService;
         }
 
-        public GameObject CreateBullet(Vector3 at)
+        public GameEntity CreateBullet(Vector3 at, Vector3 direction, ProjectileSetup setup)
         {
-            GameObject bullet =
-                _instantiator.InstantiatePrefab(_staticData.BulletPrefab(), at, Quaternion.identity, null);
-
-            Created?.Invoke(bullet);
-            return bullet;
+            return CreateEntity.Empty(_identifierService.Next())
+                .AddViewPath(AssetPath.BulletPrefabPath)
+                .AddWorldPosition(at)
+                .AddSpeed(setup.Speed)
+                .AddDirection(Vector3.forward)
+                .AddSelfDestructTimer(5)
+                .With(x => x.isMovementAvailable = true)
+                .With(x => x.isMoving = true)
+                .With(x => x.isProjectile = true);
         }
     }
 }

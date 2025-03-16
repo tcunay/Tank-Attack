@@ -1,6 +1,5 @@
 using System;
 using Code.Gameplay.Features.Armaments.Models;
-using Code.Gameplay.Features.Armaments.Services;
 using Code.Infrastructure.States.GameStates.GameOver;
 using Code.Infrastructure.States.StateMachine;
 using Zenject;
@@ -11,33 +10,29 @@ namespace Code.Gameplay.GameOver.Services
     {
         private readonly IWeaponMagazine _bulletMagazine;
         private readonly IGameStateMachine _stateMachine;
-        private readonly IBulletsLifeCycleService _bulletsLifeCycleService;
 
-        public GameOverOnOutOfBulletsService(IWeaponMagazine bulletMagazine, IGameStateMachine stateMachine, IBulletsLifeCycleService bulletsLifeCycleService)
+        public GameOverOnOutOfBulletsService(IWeaponMagazine bulletMagazine, IGameStateMachine stateMachine)
         {
             _bulletMagazine = bulletMagazine;
             _stateMachine = stateMachine;
-            _bulletsLifeCycleService = bulletsLifeCycleService;
         }
 
         public void Initialize()
         {
             _bulletMagazine.Changed += OnBulletCountChanged;
-            _bulletsLifeCycleService.CountChanged += OnBulletCountChanged;
         }
 
         public void Dispose()
         {
             _bulletMagazine.Changed -= OnBulletCountChanged;
-            _bulletsLifeCycleService.CountChanged -= OnBulletCountChanged;
         }
 
         private void OnBulletCountChanged()
         {
-            if (_bulletMagazine.Count == 0 && _bulletsLifeCycleService.LiveBulletsCount == 0)
+            /*if (_bulletMagazine.Count == 0 && _bulletsLifeCycleService.LiveBulletsCount == 0)
             {
                 _stateMachine.Enter<LoadingGameOverState>();
-            }
+            }*/
         }
     }
 }

@@ -1,11 +1,11 @@
 using System;
+using Code.Gameplay.Features.Armaments.Setup;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Armaments.Factory
 {
     public interface IProjectileFactory
     {
-        event Action<GameObject> Created;
-        GameObject CreateBullet(Vector3 at);
+        GameEntity CreateBullet(Vector3 at, Vector3 direction, ProjectileSetup setup);
     }
 }

@@ -15,6 +15,8 @@ using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.Statuses;
 using Code.Gameplay.Features.TargetCollection;*/
 
+using Code.Common.Systems.Destruct;
+using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Movement;
@@ -35,7 +37,10 @@ namespace Code.Gameplay
             Add(systems.Create<HeroFeature>());
             Add(systems.Create<CameraFeature>());
             
+            Add(systems.Create<ArmamentsFeature>());
+            
             Add(systems.Create<MovementFeature>());
+            Add(systems.Create<ProcessDestructedFeature>());
 
             /*Add(systems.Create<HeroFeature>());
             Add(systems.Create<EnemyFeature>());
@@ -58,6 +63,7 @@ namespace Code.Gameplay
             Add(systems.Create<StatsFeature>());
 
             Add(systems.Create<GameOverOnHeroDeathSystem>());
+
 
             Add(systems.Create<ProcessDestructedFeature>());*/
         }

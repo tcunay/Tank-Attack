@@ -24,8 +24,8 @@ namespace Code.Gameplay.Services
             {
                 return;
             }
-            
-            GameObject gameObject = _projectileFactory.CreateBullet(at);
+
+            GameObject gameObject = null; //_projectileFactory.CreateBullet(at, , direction);
 
             gameObject.GetComponent<ProjectileMove>().MoveDirection = direction;
             
