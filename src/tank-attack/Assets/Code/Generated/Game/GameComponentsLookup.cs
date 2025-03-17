@@ -24,20 +24,21 @@ public static class GameComponentsLookup {
     public const int CameraUnity = 13;
     public const int Enemy = 14;
     public const int Hero = 15;
-    public const int Direction = 16;
-    public const int MovementAvailable = 17;
-    public const int Moving = 18;
-    public const int OrbitCenterFollowTarget = 19;
-    public const int OrbitCenterPosition = 20;
-    public const int OrbitPhase = 21;
-    public const int OrbitRadius = 22;
-    public const int RotationAlongDirection = 23;
-    public const int Speed = 24;
-    public const int TurnedAlongDirection = 25;
-    public const int WayPointsMove = 26;
-    public const int VehicleTypeId = 27;
+    public const int ArrivalThreshold = 16;
+    public const int Direction = 17;
+    public const int MovementAvailable = 18;
+    public const int Moving = 19;
+    public const int OrbitCenterFollowTarget = 20;
+    public const int OrbitCenterPosition = 21;
+    public const int OrbitPhase = 22;
+    public const int OrbitRadius = 23;
+    public const int RotationAlongDirection = 24;
+    public const int Speed = 25;
+    public const int TurnedAlongDirection = 26;
+    public const int WayPointsMove = 27;
+    public const int VehicleTypeId = 28;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 29;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -56,6 +57,7 @@ public static class GameComponentsLookup {
         "CameraUnity",
         "Enemy",
         "Hero",
+        "ArrivalThreshold",
         "Direction",
         "MovementAvailable",
         "Moving",
@@ -87,6 +89,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Camera.CameraUnity),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Hero.Hero),
+        typeof(Code.Gameplay.Features.Movement.ArrivalThreshold),
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),

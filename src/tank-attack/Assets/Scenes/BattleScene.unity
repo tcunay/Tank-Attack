@@ -1666,14 +1666,17 @@ MonoBehaviour:
   - Kind: 0
     MoveSetup:
       Speed: 1
+      ArrivalThreshold: 1
       WayPoints: []
   - Kind: 0
     MoveSetup:
       Speed: 1
+      ArrivalThreshold: 1
       WayPoints: []
   - Kind: 0
     MoveSetup:
       Speed: 1
+      ArrivalThreshold: 1
       WayPoints: []
 --- !u!114 &1300924659
 MonoBehaviour:
@@ -1704,14 +1707,16 @@ MonoBehaviour:
   - VehicleSetup:
       Kind: 1
       MoveSetup:
-        Speed: 4
+        Speed: 1
+        ArrivalThreshold: 1
         WayPoints:
         - {fileID: 1645450525}
         - {fileID: 1921213427}
   - VehicleSetup:
       Kind: 1
       MoveSetup:
-        Speed: 3
+        Speed: 1
+        ArrivalThreshold: 1
         WayPoints:
         - {fileID: 1464428146}
         - {fileID: 2062380208}
@@ -1724,6 +1729,7 @@ MonoBehaviour:
       Kind: 2
       MoveSetup:
         Speed: 1
+        ArrivalThreshold: 1
         WayPoints:
         - {fileID: 496717926}
         - {fileID: 1716619495}

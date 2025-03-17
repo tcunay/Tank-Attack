@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Movement.WayPointsMove wayPointsMove { get { return (Code.Gameplay.Features.Movement.WayPointsMove)GetComponent(GameComponentsLookup.WayPointsMove); } }
-    public UnityEngine.Transform[] WayPointsMove { get { return wayPointsMove.Value; } }
+    public Code.Common.Collections.CircularNode<UnityEngine.Vector3> WayPointsMove { get { return wayPointsMove.Value; } }
     public bool hasWayPointsMove { get { return HasComponent(GameComponentsLookup.WayPointsMove); } }
 
-    public GameEntity AddWayPointsMove(UnityEngine.Transform[] newValue) {
+    public GameEntity AddWayPointsMove(Code.Common.Collections.CircularNode<UnityEngine.Vector3> newValue) {
         var index = GameComponentsLookup.WayPointsMove;
         var component = (Code.Gameplay.Features.Movement.WayPointsMove)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.WayPointsMove));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceWayPointsMove(UnityEngine.Transform[] newValue) {
+    public GameEntity ReplaceWayPointsMove(Code.Common.Collections.CircularNode<UnityEngine.Vector3> newValue) {
         var index = GameComponentsLookup.WayPointsMove;
         var component = (Code.Gameplay.Features.Movement.WayPointsMove)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.WayPointsMove));
         component.Value = newValue;

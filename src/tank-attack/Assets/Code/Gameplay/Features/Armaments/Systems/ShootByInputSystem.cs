@@ -2,6 +2,7 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Armaments.Setup;
 using Code.Gameplay.Levels;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.Armaments.Systems
 {
@@ -32,7 +33,8 @@ namespace Code.Gameplay.Features.Armaments.Systems
             {
                 ProjectileSetup projectileSetup = _levelDataProvider.LevelConfig.ArmamentSetup.ProjectileSetup;
                 
-                _projectileFactory.CreateBullet(hero.WorldPosition, hero.Rotation, projectileSetup);
+                Vector3 forward = Quaternion.Euler(hero.Rotation) * Vector3.forward;
+                _projectileFactory.CreateBullet(hero.WorldPosition, forward, projectileSetup);
             }
         }
     }
