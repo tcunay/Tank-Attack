@@ -16,8 +16,6 @@ namespace Code.Gameplay.Features.Armaments.Factory
         private readonly IStaticDataService _staticData;
         private readonly IIdentifierService _identifierService;
 
-        public event Action<GameEntity> Created;
-
         public ProjectileFactory(IInstantiator instantiator, IStaticDataService staticData, IIdentifierService identifierService)
         {
             _instantiator = instantiator;
