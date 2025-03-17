@@ -1,5 +1,6 @@
-using Code.Gameplay;
 using Code.Gameplay.Cameras.Factory;
+using Code.Gameplay.Features.Enemies;
+using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Levels;
 using Code.Infrastructure.States.GameStates.Battle;
@@ -15,6 +16,7 @@ namespace Code.Infrastructure.States.GameStates
     private readonly ILevelDataProvider _levelDataProvider;
     private readonly ICameraFactory _cameraFactory;
     private readonly IHeroFactory _heroFactory;
+    private readonly IEnemyFactory _enemyFactory;
     private readonly ISystemFactory _systems;
     private readonly GameContext _gameContext;
 
@@ -22,17 +24,21 @@ namespace Code.Infrastructure.States.GameStates
       IGameStateMachine stateMachine, 
       ILevelDataProvider levelDataProvider,
       ICameraFactory cameraFactory,
-      IHeroFactory heroFactory)
+      IHeroFactory heroFactory, 
+      IEnemyFactory enemyFactory)
     {
       _stateMachine = stateMachine;
       _levelDataProvider = levelDataProvider;
       _cameraFactory = cameraFactory;
       _heroFactory = heroFactory;
+      _enemyFactory = enemyFactory;
     }
     
     public override void Enter()
     {
-      PlaceHero();  
+      PlaceHero();
+      CreateCamera();
+      PlaceEnemies();
       
       _stateMachine.Enter<BattleLoopState>();
     }
@@ -40,7 +46,19 @@ namespace Code.Infrastructure.States.GameStates
     private void PlaceHero()
     {
       _heroFactory.CreateHero(_levelDataProvider.StartPoint.position, _levelDataProvider.StartPoint.rotation);
+    }
+    
+    private void CreateCamera()
+    {
       _cameraFactory.CreateCamera();
+    }
+
+    private void PlaceEnemies()
+    {
+      foreach (EnemySetup enemySetup in _levelDataProvider.EnemySetups)
+      {
+        _enemyFactory.CreateEnemy(enemySetup);
+      }
     }
   }
 }

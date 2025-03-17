@@ -8,5 +8,7 @@ namespace Code.Gameplay.Features.Vehicle.Setup
     {
         public float Speed = 1;
         public Transform[] WayPoints;
+
+        public Transform StartPoint => WayPoints[0];
     }
 }

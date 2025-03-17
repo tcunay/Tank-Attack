@@ -1165,17 +1165,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 96647124}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1093758964 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
-  m_PrefabInstance: {fileID: 96647123}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4fbf1cf4b6341389ecff37f97017e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1149319997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,9 +1663,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSetups:
-  - {fileID: 1912868292302917283}
-  - {fileID: 2020323468}
-  - {fileID: 1093758964}
+  - Kind: 0
+    MoveSetup:
+      Speed: 1
+      WayPoints: []
+  - Kind: 0
+    MoveSetup:
+      Speed: 1
+      WayPoints: []
+  - Kind: 0
+    MoveSetup:
+      Speed: 1
+      WayPoints: []
 --- !u!114 &1300924659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1702,6 +1700,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroPoint: {fileID: 187351178}
+  _enemiesSetups:
+  - VehicleSetup:
+      Kind: 1
+      MoveSetup:
+        Speed: 4
+        WayPoints:
+        - {fileID: 1645450525}
+        - {fileID: 1921213427}
+  - VehicleSetup:
+      Kind: 1
+      MoveSetup:
+        Speed: 3
+        WayPoints:
+        - {fileID: 1464428146}
+        - {fileID: 2062380208}
+        - {fileID: 1797078073}
+        - {fileID: 822549012}
+        - {fileID: 1607032195}
+        - {fileID: 160834476}
+        - {fileID: 1149319998}
+  - VehicleSetup:
+      Kind: 2
+      MoveSetup:
+        Speed: 1
+        WayPoints:
+        - {fileID: 496717926}
+        - {fileID: 1716619495}
+        - {fileID: 304772622}
+        - {fileID: 737427876}
+        - {fileID: 999818541}
+        - {fileID: 1557470046}
+        - {fileID: 1712057750}
 --- !u!1 &1464428145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,17 +2381,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9125253231149713348, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
   m_PrefabInstance: {fileID: 2020323466}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2020323468 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
-  m_PrefabInstance: {fileID: 2020323466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4fbf1cf4b6341389ecff37f97017e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2031698449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2690,7 +2709,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 9125253231149713348, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
@@ -2706,17 +2726,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9125253231149713348, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
   m_PrefabInstance: {fileID: 1912868292302917281}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1912868292302917283 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
-  m_PrefabInstance: {fileID: 1912868292302917281}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4fbf1cf4b6341389ecff37f97017e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4641857373115338691
 PrefabInstance:
   m_ObjectHideFlags: 0

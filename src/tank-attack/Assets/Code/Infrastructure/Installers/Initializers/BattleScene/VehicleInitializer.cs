@@ -11,7 +11,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         private ILevelDataProvider _levelDataProvider;
 
-        //[Inject]
+        [Inject]
         private void Construct(ILevelDataProvider levelDataProvider)
         {
             _levelDataProvider = levelDataProvider;
@@ -19,8 +19,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         public void Initialize()
         {
-            return;
-            _levelDataProvider.SetMoveSetups(MoveSetups);
+            //_levelDataProvider.SetEnemySetups(MoveSetups);
         }
     }
 }

@@ -1,8 +1,9 @@
-using UnityEngine;
+using System;
 
 namespace Code.Gameplay.Features.Vehicle.Setup
 {
-    public class VehicleSetup : MonoBehaviour
+    [Serializable]
+    public class VehicleSetup
     {
         public VehicleKind Kind;
         public WayPointsMoveSetup MoveSetup;

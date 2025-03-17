@@ -1,3 +1,4 @@
+using Code.Infrastructure.View;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Vehicle.Setup
@@ -6,9 +7,9 @@ namespace Code.Gameplay.Features.Vehicle.Setup
     public class VehicleConfig : ScriptableObject
     {
         [SerializeField] private VehicleKind _vehicleKind;
-        [SerializeField] private GameObject _prefab;
+        [SerializeField] private EntityBehaviour _prefab;
 
-        public GameObject Prefab => _prefab;
+        public EntityBehaviour Prefab => _prefab;
         public VehicleKind Kind => _vehicleKind;
     }
 }

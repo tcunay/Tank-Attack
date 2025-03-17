@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9125253231149713348}
-  - component: {fileID: 5656886670048257027}
   m_Layer: 0
   m_Name: VehicleSetup
   m_TagString: Untagged
@@ -32,19 +31,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5656886670048257027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402666285450153697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4fbf1cf4b6341389ecff37f97017e19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Prefab: {fileID: 8576849102382489990, guid: ec6a7757e8d0d415486255ecee77127e, type: 3}
-  MoveSetup:
-    Speed: 13
-    WayPoints: []

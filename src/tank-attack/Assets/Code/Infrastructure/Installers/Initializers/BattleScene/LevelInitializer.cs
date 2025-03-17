@@ -1,6 +1,7 @@
 using Code.Gameplay.Cameras.Components;
 using Code.Gameplay.Cameras.Factory;
 using Code.Gameplay.Cameras.Provider;
+using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Vehicle.Factory;
 using Code.Gameplay.Features.Vehicle.Setup;
@@ -15,6 +16,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
     public class LevelInitializer : MonoBehaviour, IInitializable
     {
         [SerializeField] private Transform _heroPoint;
+        [SerializeField] public EnemySetup[] _enemiesSetups;
         
         private ILevelDataProvider _levelDataProvider;
 
@@ -27,6 +29,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         public void Initialize()
         {
             _levelDataProvider.SetStartPoint(_heroPoint);
+            _levelDataProvider.SetEnemySetups(_enemiesSetups);
             /*GameObject gameObject = _heroFactory.CreateHero(_levelDataProvider.StartPoint);
             
             _cameraProvider.SetMainCamera(_cameraFactory.CreateCamera());
