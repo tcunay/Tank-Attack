@@ -37,8 +37,8 @@ public sealed partial class GameEntity : INamedEntity
           case nameof(Hero):
             return PrintHero();
 
-          case nameof(Enemy):
-            return PrintEnemy();
+          /*case nameof(Enemy):
+            return PrintEnemy();*/
         }
       }
     }

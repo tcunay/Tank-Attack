@@ -15,30 +15,28 @@ public static class GameComponentsLookup {
     public const int ViewPrefab = 4;
     public const int Damage = 5;
     public const int Id = 6;
-    public const int Rotation = 7;
-    public const int Transform = 8;
-    public const int WorldPosition = 9;
-    public const int Armament = 10;
-    public const int Projectile = 11;
-    public const int Camera = 12;
-    public const int CameraUnity = 13;
-    public const int Enemy = 14;
-    public const int Hero = 15;
-    public const int ArrivalThreshold = 16;
-    public const int Direction = 17;
-    public const int MovementAvailable = 18;
-    public const int Moving = 19;
-    public const int OrbitCenterFollowTarget = 20;
-    public const int OrbitCenterPosition = 21;
-    public const int OrbitPhase = 22;
-    public const int OrbitRadius = 23;
-    public const int RotationAlongDirection = 24;
-    public const int Speed = 25;
-    public const int TurnedAlongDirection = 26;
-    public const int WayPointsMove = 27;
-    public const int VehicleTypeId = 28;
+    public const int Rigidbody = 7;
+    public const int Rotation = 8;
+    public const int Transform = 9;
+    public const int WorldPosition = 10;
+    public const int Armament = 11;
+    public const int Projectile = 12;
+    public const int Camera = 13;
+    public const int CameraUnity = 14;
+    public const int Enemy = 15;
+    public const int Hero = 16;
+    public const int ArrivalThreshold = 17;
+    public const int Direction = 18;
+    public const int MovementAvailable = 19;
+    public const int Moving = 20;
+    public const int RotationAlongDirection = 21;
+    public const int Speed = 22;
+    public const int TurnedAlongDirection = 23;
+    public const int WayPointsMove = 24;
+    public const int WayPointsMoveIndex = 25;
+    public const int VehicleTypeId = 26;
 
-    public const int TotalComponents = 29;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -48,6 +46,7 @@ public static class GameComponentsLookup {
         "ViewPrefab",
         "Damage",
         "Id",
+        "Rigidbody",
         "Rotation",
         "Transform",
         "WorldPosition",
@@ -61,14 +60,11 @@ public static class GameComponentsLookup {
         "Direction",
         "MovementAvailable",
         "Moving",
-        "OrbitCenterFollowTarget",
-        "OrbitCenterPosition",
-        "OrbitPhase",
-        "OrbitRadius",
         "RotationAlongDirection",
         "Speed",
         "TurnedAlongDirection",
         "WayPointsMove",
+        "WayPointsMoveIndex",
         "VehicleTypeId"
     };
 
@@ -80,6 +76,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.Id),
+        typeof(Code.Gameplay.Common.RigidbodyComponent),
         typeof(Code.Gameplay.Common.Rotation),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
@@ -93,14 +90,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Direction),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
-        typeof(Code.Gameplay.Features.Movement.OrbitCenterFollowTarget),
-        typeof(Code.Gameplay.Features.Movement.OrbitCenterPosition),
-        typeof(Code.Gameplay.Features.Movement.OrbitPhase),
-        typeof(Code.Gameplay.Features.Movement.OrbitRadius),
         typeof(Code.Gameplay.Features.Movement.RotationAlongDirection),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),
         typeof(Code.Gameplay.Features.Movement.WayPointsMove),
+        typeof(Code.Gameplay.Features.Movement.WayPointsMoveIndex),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)
     };
 }

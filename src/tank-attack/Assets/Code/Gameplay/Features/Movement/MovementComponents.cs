@@ -1,4 +1,3 @@
-using Code.Common.Collections;
 using Entitas;
 using UnityEngine;
 
@@ -11,10 +10,7 @@ namespace Code.Gameplay.Features.Movement
     [Game] public class TurnedAlongDirection : IComponent { }
     [Game] public class RotationAlongDirection : IComponent { }
     
-    [Game] public class WayPointsMove : IComponent { public CircularNode<Vector3> Value; }
+    [Game] public class WayPointsMove : IComponent { public Vector3[] Value; }
+    [Game] public class WayPointsMoveIndex : IComponent { public int Value; }
     [Game] public class ArrivalThreshold : IComponent { public float Value; }
-    [Game] public class OrbitRadius : IComponent { public float Value; }
-    [Game] public class OrbitPhase : IComponent { public float Value; }
-    [Game] public class OrbitCenterFollowTarget : IComponent { public int Value; }
-    [Game] public class OrbitCenterPosition : IComponent { public Vector3 Value; }
 }

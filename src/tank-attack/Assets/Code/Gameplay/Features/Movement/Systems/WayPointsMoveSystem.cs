@@ -7,26 +7,37 @@ namespace Code.Gameplay.Features.Movement.Systems
     public class WayPointsMoveSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _movers;
-        private readonly List<GameEntity> _moversBuffer = new(8);
+        private readonly List<GameEntity> _moversBuffer = new(16);
 
         public WayPointsMoveSystem(GameContext game)
         {
             _movers = game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.WayPointsMove, GameMatcher.ArrivalThreshold));
+                .AllOf(
+                    GameMatcher.WayPointsMove,
+                    GameMatcher.WayPointsMoveIndex,
+                    GameMatcher.ArrivalThreshold));
         }
 
         public void Execute()
         {
             foreach (GameEntity mover in _movers.GetEntities(_moversBuffer))
             {
-                Vector3 targetWaypoint = mover.WayPointsMove.Value;
+                int currentIndex = mover.WayPointsMoveIndex;
+                Vector3 targetWaypoint = mover.WayPointsMove[currentIndex];
 
                 if (IsReached(mover.WorldPosition, targetWaypoint, mover.ArrivalThreshold))
                 {
-                    mover.ReplaceWayPointsMove(mover.WayPointsMove.Next);
+                    currentIndex++;
+                    
+                    if (currentIndex >= mover.WayPointsMove.Length)
+                    {
+                        currentIndex = 0;
+                    }
+                    
+                    mover.ReplaceWayPointsMoveIndex(currentIndex);
                 }
                 
-                Vector3 direction = (mover.WayPointsMove.Value - mover.WorldPosition).normalized;
+                Vector3 direction = (mover.WayPointsMove[currentIndex] - mover.WorldPosition).normalized;
                 mover.ReplaceDirection(direction);
             }
         }
