@@ -12,7 +12,7 @@ namespace Code.Gameplay.Features.Movement.Systems
                 .AllOf(
                     GameMatcher.WorldPosition,
                     GameMatcher.Transform
-                ).NoneOf(GameMatcher.PhysicalMover));
+                ));
         }
         
         public void Execute()

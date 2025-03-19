@@ -42,13 +42,13 @@ namespace Code.Gameplay.Features.Hero.Services
                 euler.x = Mathf.Clamp(euler.x - angleDelta.y, -ClampAngle, ClampAngle);
                 euler.y += angleDelta.x;
 
-                hero.ReplaceWorldRotation(new Vector3(euler.x, euler.y, 0f));
+                hero.ReplaceWorldRotation(Quaternion.Euler(new Vector3(euler.x, euler.y, 0f)));
             }
         }
 
-        private Vector3 GetNormalizeLocalEulerAngles(Vector3 euler)
+        private Vector3 GetNormalizeLocalEulerAngles(Quaternion rotation)
         {
-            
+            var euler = rotation.eulerAngles;
             euler.x = euler.x > 180f ? euler.x - 360f : euler.x;
             euler.y = euler.y > 180f ? euler.y - 360f : euler.y;
 

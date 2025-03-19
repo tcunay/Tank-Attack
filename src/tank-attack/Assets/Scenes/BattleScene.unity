@@ -1707,7 +1707,7 @@ MonoBehaviour:
   - VehicleSetup:
       Kind: 1
       MoveSetup:
-        Speed: 12.1
+        Speed: 1
         ArrivalThreshold: 1
         WayPoints:
         - {fileID: 1645450525}
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   - VehicleSetup:
       Kind: 1
       MoveSetup:
-        Speed: 12.1
+        Speed: 1
         ArrivalThreshold: 1
         WayPoints:
         - {fileID: 1464428146}
@@ -1728,8 +1728,8 @@ MonoBehaviour:
   - VehicleSetup:
       Kind: 2
       MoveSetup:
-        Speed: 1000
-        ArrivalThreshold: 5
+        Speed: 1
+        ArrivalThreshold: 1
         WayPoints:
         - {fileID: 496717926}
         - {fileID: 1716619495}

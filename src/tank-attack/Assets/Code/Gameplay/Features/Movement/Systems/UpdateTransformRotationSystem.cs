@@ -12,14 +12,14 @@ namespace Code.Gameplay.Features.Movement.Systems
                 .AllOf(
                     GameMatcher.WorldPosition,
                     GameMatcher.WorldRotation
-                ).NoneOf(GameMatcher.PhysicalMover));
+                ));
         }
         
         public void Execute()
         {
             foreach (GameEntity target in _transforms)
             {
-                target.Transform.localEulerAngles = target.WorldRotation;
+                target.Transform.rotation = target.WorldRotation;
             }
         }
     }

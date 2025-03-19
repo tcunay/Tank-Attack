@@ -18,7 +18,7 @@ namespace Code.Gameplay.Features.Movement.Systems
                     GameMatcher.Direction,
                     GameMatcher.Moving,
                     GameMatcher.MovementAvailable
-                ).NoneOf(GameMatcher.PhysicalMover));
+                ));
         }
         
         public void Execute()

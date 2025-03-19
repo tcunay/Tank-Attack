@@ -26,18 +26,19 @@ public static class GameComponentsLookup {
     public const int Enemy = 15;
     public const int Hero = 16;
     public const int ArrivalThreshold = 17;
-    public const int Direction = 18;
-    public const int InitPositionPhysicalMover = 19;
+    public const int CurrentSpeed = 18;
+    public const int Direction = 19;
     public const int MovementAvailable = 20;
     public const int Moving = 21;
-    public const int PhysicalMover = 22;
-    public const int RotationSpeed = 23;
-    public const int Speed = 24;
-    public const int WayPointsMove = 25;
-    public const int WayPointsMoveIndex = 26;
-    public const int VehicleTypeId = 27;
+    public const int RotationSpeed = 22;
+    public const int Speed = 23;
+    public const int WayPointsMove = 24;
+    public const int WayPointsMoveIndex = 25;
+    public const int Helicopter = 26;
+    public const int Tank = 27;
+    public const int VehicleTypeId = 28;
 
-    public const int TotalComponents = 28;
+    public const int TotalComponents = 29;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -58,15 +59,16 @@ public static class GameComponentsLookup {
         "Enemy",
         "Hero",
         "ArrivalThreshold",
+        "CurrentSpeed",
         "Direction",
-        "InitPositionPhysicalMover",
         "MovementAvailable",
         "Moving",
-        "PhysicalMover",
         "RotationSpeed",
         "Speed",
         "WayPointsMove",
         "WayPointsMoveIndex",
+        "Helicopter",
+        "Tank",
         "VehicleTypeId"
     };
 
@@ -89,15 +91,16 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Movement.ArrivalThreshold),
+        typeof(Code.Gameplay.Features.Movement.CurrentSpeed),
         typeof(Code.Gameplay.Features.Movement.Direction),
-        typeof(Code.Gameplay.Features.Movement.InitPositionPhysicalMover),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
-        typeof(Code.Gameplay.Features.Movement.PhysicalMover),
         typeof(Code.Gameplay.Features.Movement.RotationSpeed),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.WayPointsMove),
         typeof(Code.Gameplay.Features.Movement.WayPointsMoveIndex),
+        typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Helicopter),
+        typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Tank),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)
     };
 }

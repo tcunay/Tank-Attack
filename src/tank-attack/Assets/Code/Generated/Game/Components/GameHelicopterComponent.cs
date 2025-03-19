@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherInitPositionPhysicalMover;
+    static Entitas.IMatcher<GameEntity> _matcherHelicopter;
 
-    public static Entitas.IMatcher<GameEntity> InitPositionPhysicalMover {
+    public static Entitas.IMatcher<GameEntity> Helicopter {
         get {
-            if (_matcherInitPositionPhysicalMover == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.InitPositionPhysicalMover);
+            if (_matcherHelicopter == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Helicopter);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherInitPositionPhysicalMover = matcher;
+                _matcherHelicopter = matcher;
             }
 
-            return _matcherInitPositionPhysicalMover;
+            return _matcherHelicopter;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.InitPositionPhysicalMover initPositionPhysicalMoverComponent = new Code.Gameplay.Features.Movement.InitPositionPhysicalMover();
+    static readonly Code.Gameplay.Features.Vehicle.VehicleComponents.Helicopter helicopterComponent = new Code.Gameplay.Features.Vehicle.VehicleComponents.Helicopter();
 
-    public bool isInitPositionPhysicalMover {
-        get { return HasComponent(GameComponentsLookup.InitPositionPhysicalMover); }
+    public bool isHelicopter {
+        get { return HasComponent(GameComponentsLookup.Helicopter); }
         set {
-            if (value != isInitPositionPhysicalMover) {
-                var index = GameComponentsLookup.InitPositionPhysicalMover;
+            if (value != isHelicopter) {
+                var index = GameComponentsLookup.Helicopter;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : initPositionPhysicalMoverComponent;
+                            : helicopterComponent;
 
                     AddComponent(index, component);
                 } else {

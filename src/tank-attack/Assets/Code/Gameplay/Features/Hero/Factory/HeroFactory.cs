@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Hero.Factory
             return CreateEntity.Empty()
                 .AddId(_identifierService.Next())
                 .AddWorldPosition(at)
-                .AddWorldRotation(rotation.eulerAngles)
+                .AddWorldRotation(rotation)
                 .AddViewPath(AssetPath.HeroPrefabPath)
                 .With(x => x.isHero = true);
         }

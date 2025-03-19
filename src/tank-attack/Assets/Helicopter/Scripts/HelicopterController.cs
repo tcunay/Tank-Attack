@@ -165,6 +165,7 @@ public class HelicopterController : MonoBehaviour
 
     private void OnCollisionEnter()
     {
+        return;
         IsOnGround = true;
     }
 

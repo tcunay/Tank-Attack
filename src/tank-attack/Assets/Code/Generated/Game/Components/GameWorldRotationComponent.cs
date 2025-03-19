@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Common.WorldRotation worldRotation { get { return (Code.Gameplay.Common.WorldRotation)GetComponent(GameComponentsLookup.WorldRotation); } }
-    public UnityEngine.Vector3 WorldRotation { get { return worldRotation.Value; } }
+    public UnityEngine.Quaternion WorldRotation { get { return worldRotation.Value; } }
     public bool hasWorldRotation { get { return HasComponent(GameComponentsLookup.WorldRotation); } }
 
-    public GameEntity AddWorldRotation(UnityEngine.Vector3 newValue) {
+    public GameEntity AddWorldRotation(UnityEngine.Quaternion newValue) {
         var index = GameComponentsLookup.WorldRotation;
         var component = (Code.Gameplay.Common.WorldRotation)CreateComponent(index, typeof(Code.Gameplay.Common.WorldRotation));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceWorldRotation(UnityEngine.Vector3 newValue) {
+    public GameEntity ReplaceWorldRotation(UnityEngine.Quaternion newValue) {
         var index = GameComponentsLookup.WorldRotation;
         var component = (Code.Gameplay.Common.WorldRotation)CreateComponent(index, typeof(Code.Gameplay.Common.WorldRotation));
         component.Value = newValue;

@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
@@ -22,13 +23,35 @@ namespace Code.Gameplay.Features.Enemies.Factory
         public GameEntity CreateEnemy(EnemySetup setup)
         {
             VehicleSetup vehicleSetup = setup.VehicleSetup;
-            VehicleConfig vehicleConfig = _staticDataService.GetVehicleConfig(vehicleSetup.Kind);
 
+            return vehicleSetup.Kind switch
+            {
+                VehicleKind.Tank => CreateTank(vehicleSetup),
+                VehicleKind.Helicopter => CreateHelicopter(vehicleSetup),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
+
+        private GameEntity CreateHelicopter(VehicleSetup vehicleSetup)
+        {
+            return CreateVehicle(vehicleSetup)
+                .With(x => x.isHelicopter = true);
+        }
+
+        private GameEntity CreateTank(VehicleSetup vehicleSetup)
+        {
+            return CreateVehicle(vehicleSetup)
+                .With(x => x.isTank = true);
+        }
+
+        private GameEntity CreateVehicle(VehicleSetup vehicleSetup)
+        {
             Transform startPoint = vehicleSetup.MoveSetup.StartPoint;
-
+            VehicleConfig vehicleConfig = _staticDataService.GetVehicleConfig(vehicleSetup.Kind);
+            
             return CreateEntity.Empty(_identifierService.Next())
                 .AddWorldPosition(startPoint.position)
-                .AddWorldRotation(startPoint.rotation.eulerAngles)
+                .AddWorldRotation(startPoint.rotation)
                 .AddViewPrefab(vehicleConfig.Prefab)
                 .AddVehicleTypeId(vehicleSetup.Kind)
                 .AddSpeed(vehicleSetup.MoveSetup.Speed)
@@ -36,10 +59,10 @@ namespace Code.Gameplay.Features.Enemies.Factory
                 .AddWayPointsMoveIndex(0)
                 .AddArrivalThreshold(vehicleSetup.MoveSetup.ArrivalThreshold)
                 .AddRotationSpeed(3)
-                .With(x => x.isPhysicalMover = true)
                 .With(x => x.isMoving = true)
                 .With(x => x.isMovementAvailable = true)
                 .With(x => x.isEnemy = true);
+            
         }
     }
 }

@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherPhysicalMover;
+    static Entitas.IMatcher<GameEntity> _matcherTank;
 
-    public static Entitas.IMatcher<GameEntity> PhysicalMover {
+    public static Entitas.IMatcher<GameEntity> Tank {
         get {
-            if (_matcherPhysicalMover == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PhysicalMover);
+            if (_matcherTank == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Tank);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherPhysicalMover = matcher;
+                _matcherTank = matcher;
             }
 
-            return _matcherPhysicalMover;
+            return _matcherTank;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.PhysicalMover physicalMoverComponent = new Code.Gameplay.Features.Movement.PhysicalMover();
+    static readonly Code.Gameplay.Features.Vehicle.VehicleComponents.Tank tankComponent = new Code.Gameplay.Features.Vehicle.VehicleComponents.Tank();
 
-    public bool isPhysicalMover {
-        get { return HasComponent(GameComponentsLookup.PhysicalMover); }
+    public bool isTank {
+        get { return HasComponent(GameComponentsLookup.Tank); }
         set {
-            if (value != isPhysicalMover) {
-                var index = GameComponentsLookup.PhysicalMover;
+            if (value != isTank) {
+                var index = GameComponentsLookup.Tank;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : physicalMoverComponent;
+                            : tankComponent;
 
                     AddComponent(index, component);
                 } else {

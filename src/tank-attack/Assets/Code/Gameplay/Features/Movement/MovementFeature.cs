@@ -8,14 +8,8 @@ namespace Code.Gameplay.Features.Movement
     {
         public MovementFeature(ISystemFactory systems)
         {
-            Add(systems.Create<InitPositionByPhysicsEntitySystem>());
-            
             Add(systems.Create<DirectionalDeltaMoveSystem>());
-            
-            Add(systems.Create<AddRigidbodyForceByDirection>());
-            Add(systems.Create<MoveRotationRigidbodyByDirection>());
-            Add(systems.Create<UpdateWorldPositionToPhysicalMovers>());
-            Add(systems.Create<UpdateWorldRotationToPhysicalMovers>());
+            Add(systems.Create<SetRotationByDirection>());
             
             Add(systems.Create<UpdateTransformPositionSystem>());
             Add(systems.Create<UpdateTransformRotationSystem>());
