@@ -36,6 +36,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
                 .AddWayPointsMove(vehicleSetup.MoveSetup.WayPoints.Select(x => x.position).ToArray())
                 .AddWayPointsMoveIndex(0)
                 .AddArrivalThreshold(vehicleSetup.MoveSetup.ArrivalThreshold)
+                .With(x => x.isPhysicalMover = true)
                 .With(x => x.isMoving = true)
                 .With(x => x.isMovementAvailable = true)
                 .With(x => x.isEnemy = true);

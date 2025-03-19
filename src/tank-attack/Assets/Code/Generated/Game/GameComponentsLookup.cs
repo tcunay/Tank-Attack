@@ -27,11 +27,11 @@ public static class GameComponentsLookup {
     public const int Hero = 16;
     public const int ArrivalThreshold = 17;
     public const int Direction = 18;
-    public const int MovementAvailable = 19;
-    public const int Moving = 20;
-    public const int RotationAlongDirection = 21;
-    public const int Speed = 22;
-    public const int TurnedAlongDirection = 23;
+    public const int InitPositionPhysicalMover = 19;
+    public const int MovementAvailable = 20;
+    public const int Moving = 21;
+    public const int PhysicalMover = 22;
+    public const int Speed = 23;
     public const int WayPointsMove = 24;
     public const int WayPointsMoveIndex = 25;
     public const int VehicleTypeId = 26;
@@ -58,11 +58,11 @@ public static class GameComponentsLookup {
         "Hero",
         "ArrivalThreshold",
         "Direction",
+        "InitPositionPhysicalMover",
         "MovementAvailable",
         "Moving",
-        "RotationAlongDirection",
+        "PhysicalMover",
         "Speed",
-        "TurnedAlongDirection",
         "WayPointsMove",
         "WayPointsMoveIndex",
         "VehicleTypeId"
@@ -88,11 +88,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Movement.ArrivalThreshold),
         typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.InitPositionPhysicalMover),
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
-        typeof(Code.Gameplay.Features.Movement.RotationAlongDirection),
+        typeof(Code.Gameplay.Features.Movement.PhysicalMover),
         typeof(Code.Gameplay.Features.Movement.Speed),
-        typeof(Code.Gameplay.Features.Movement.TurnedAlongDirection),
         typeof(Code.Gameplay.Features.Movement.WayPointsMove),
         typeof(Code.Gameplay.Features.Movement.WayPointsMoveIndex),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)

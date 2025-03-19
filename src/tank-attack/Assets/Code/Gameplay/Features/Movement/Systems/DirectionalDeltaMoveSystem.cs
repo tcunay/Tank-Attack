@@ -1,6 +1,5 @@
 using Code.Gameplay.Common.Time;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
@@ -19,7 +18,7 @@ namespace Code.Gameplay.Features.Movement.Systems
                     GameMatcher.Direction,
                     GameMatcher.Moving,
                     GameMatcher.MovementAvailable
-                ));
+                ).NoneOf(GameMatcher.PhysicalMover));
         }
         
         public void Execute()

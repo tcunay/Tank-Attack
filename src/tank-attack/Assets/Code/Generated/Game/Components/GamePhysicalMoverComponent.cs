@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherTurnedAlongDirection;
+    static Entitas.IMatcher<GameEntity> _matcherPhysicalMover;
 
-    public static Entitas.IMatcher<GameEntity> TurnedAlongDirection {
+    public static Entitas.IMatcher<GameEntity> PhysicalMover {
         get {
-            if (_matcherTurnedAlongDirection == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.TurnedAlongDirection);
+            if (_matcherPhysicalMover == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.PhysicalMover);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherTurnedAlongDirection = matcher;
+                _matcherPhysicalMover = matcher;
             }
 
-            return _matcherTurnedAlongDirection;
+            return _matcherPhysicalMover;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.TurnedAlongDirection turnedAlongDirectionComponent = new Code.Gameplay.Features.Movement.TurnedAlongDirection();
+    static readonly Code.Gameplay.Features.Movement.PhysicalMover physicalMoverComponent = new Code.Gameplay.Features.Movement.PhysicalMover();
 
-    public bool isTurnedAlongDirection {
-        get { return HasComponent(GameComponentsLookup.TurnedAlongDirection); }
+    public bool isPhysicalMover {
+        get { return HasComponent(GameComponentsLookup.PhysicalMover); }
         set {
-            if (value != isTurnedAlongDirection) {
-                var index = GameComponentsLookup.TurnedAlongDirection;
+            if (value != isPhysicalMover) {
+                var index = GameComponentsLookup.PhysicalMover;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : turnedAlongDirectionComponent;
+                            : physicalMoverComponent;
 
                     AddComponent(index, component);
                 } else {

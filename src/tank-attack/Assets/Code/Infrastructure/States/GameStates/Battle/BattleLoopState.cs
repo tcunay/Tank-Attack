@@ -6,7 +6,7 @@ using Code.Meta.UI;
 
 namespace Code.Infrastructure.States.GameStates.Battle
 {
-    public class BattleLoopState : EndOfFrameExitState
+    public class BattleLoopState : EndOfFrameExitState, IFixedUpdateable
     {
         private readonly ISystemFactory _systems;
         private readonly LoadingCurtain _loadingCurtain;
@@ -31,6 +31,11 @@ namespace Code.Infrastructure.States.GameStates.Battle
         {
             _battleFeature.Execute();
             _battleFeature.Cleanup();
+        }
+        
+        public void FixedUpdate()
+        {
+            _battleFeature.FixedExecute();
         }
 
         protected override void ExitOnEndOfFrame()

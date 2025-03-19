@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Code.Infrastructure.States.StateMachine
 {
-  public class GameStateMachine : IGameStateMachine, ITickable
+  public class GameStateMachine : IGameStateMachine, ITickable, IFixedTickable
   {
     private IExitableState _activeState;
     private readonly IStateFactory _stateFactory;
@@ -20,6 +20,12 @@ namespace Code.Infrastructure.States.StateMachine
     {
       if(_activeState is IUpdateable updateableState)
         updateableState.Update();
+    }
+
+    public void FixedTick()
+    {
+      if (_activeState is IFixedUpdateable fixedUpdateableState)
+        fixedUpdateableState.FixedUpdate();
     }
     
     public void Enter<TState>() where TState : class, IState =>

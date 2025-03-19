@@ -4,12 +4,13 @@ using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Input;
+using Code.Infrastructure.Entitas;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
 
 namespace Code.Gameplay
 {
-    public class BattleFeature : Feature
+    public class BattleFeature : UniFeature
     {
         public BattleFeature(ISystemFactory systems)
         {

@@ -7,8 +7,9 @@ namespace Code.Gameplay.Features.Movement
     [Game] public class Direction : IComponent { public Vector3 Value; }
     [Game] public class Moving : IComponent { }
     [Game] public class MovementAvailable : IComponent { }
-    [Game] public class TurnedAlongDirection : IComponent { }
-    [Game] public class RotationAlongDirection : IComponent { }
+    
+    [Game] public class PhysicalMover : IComponent { }
+    [Game] public class InitPositionPhysicalMover : IComponent { }
     
     [Game] public class WayPointsMove : IComponent { public Vector3[] Value; }
     [Game] public class WayPointsMoveIndex : IComponent { public int Value; }

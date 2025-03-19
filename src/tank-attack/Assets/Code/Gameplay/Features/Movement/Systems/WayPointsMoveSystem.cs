@@ -15,7 +15,9 @@ namespace Code.Gameplay.Features.Movement.Systems
                 .AllOf(
                     GameMatcher.WayPointsMove,
                     GameMatcher.WayPointsMoveIndex,
-                    GameMatcher.ArrivalThreshold));
+                    GameMatcher.ArrivalThreshold,
+                    GameMatcher.WorldPosition
+                    ));
         }
 
         public void Execute()

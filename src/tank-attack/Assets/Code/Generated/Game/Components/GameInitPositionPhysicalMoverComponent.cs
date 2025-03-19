@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherRotationAlongDirection;
+    static Entitas.IMatcher<GameEntity> _matcherInitPositionPhysicalMover;
 
-    public static Entitas.IMatcher<GameEntity> RotationAlongDirection {
+    public static Entitas.IMatcher<GameEntity> InitPositionPhysicalMover {
         get {
-            if (_matcherRotationAlongDirection == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.RotationAlongDirection);
+            if (_matcherInitPositionPhysicalMover == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.InitPositionPhysicalMover);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherRotationAlongDirection = matcher;
+                _matcherInitPositionPhysicalMover = matcher;
             }
 
-            return _matcherRotationAlongDirection;
+            return _matcherInitPositionPhysicalMover;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.RotationAlongDirection rotationAlongDirectionComponent = new Code.Gameplay.Features.Movement.RotationAlongDirection();
+    static readonly Code.Gameplay.Features.Movement.InitPositionPhysicalMover initPositionPhysicalMoverComponent = new Code.Gameplay.Features.Movement.InitPositionPhysicalMover();
 
-    public bool isRotationAlongDirection {
-        get { return HasComponent(GameComponentsLookup.RotationAlongDirection); }
+    public bool isInitPositionPhysicalMover {
+        get { return HasComponent(GameComponentsLookup.InitPositionPhysicalMover); }
         set {
-            if (value != isRotationAlongDirection) {
-                var index = GameComponentsLookup.RotationAlongDirection;
+            if (value != isInitPositionPhysicalMover) {
+                var index = GameComponentsLookup.InitPositionPhysicalMover;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : rotationAlongDirectionComponent;
+                            : initPositionPhysicalMoverComponent;
 
                     AddComponent(index, component);
                 } else {
