@@ -11,6 +11,8 @@ namespace Code.Gameplay.Features.Movement
             Add(systems.Create<DirectionalDeltaMoveSystem>());
             Add(systems.Create<SetRotationByDirection>());
             
+            Add(systems.Create<SetHelicopterXAngleSystem>());
+            
             Add(systems.Create<UpdateTransformPositionSystem>());
             Add(systems.Create<UpdateTransformRotationSystem>());
             

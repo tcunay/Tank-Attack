@@ -7,12 +7,12 @@ namespace Code.Gameplay.Features.Movement.Systems
     public class SetRotationByDirection : IExecuteSystem
     {
         private readonly ITimeService _time;
-        private readonly IGroup<GameEntity> _rigidbodyMovers;
+        private readonly IGroup<GameEntity> _movers;
 
         public SetRotationByDirection(GameContext game, ITimeService time)
         {
             _time = time;
-            _rigidbodyMovers = game.GetGroup(GameMatcher
+            _movers = game.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldRotation,
                     GameMatcher.RotationSpeed,
@@ -24,12 +24,14 @@ namespace Code.Gameplay.Features.Movement.Systems
 
         public void Execute()
         {
-            foreach (GameEntity mover in _rigidbodyMovers)
+            foreach (GameEntity mover in _movers)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(mover.Direction);
-                mover.ReplaceWorldRotation(Quaternion.Slerp(mover.WorldRotation,  targetRotation, mover.RotationSpeed * _time.DeltaTime));
+                mover.ReplaceWorldRotation(Quaternion.Slerp(mover.WorldRotation, targetRotation,
+                    mover.RotationSpeed * _time.DeltaTime));
             }
-            
+
         }
+
     }
 }
