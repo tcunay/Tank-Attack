@@ -2,17 +2,17 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
-    public class UpdateRotationToPhysicalMovers : IExecuteSystem
+    public class UpdateWorldRotationToPhysicalMovers : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _rigidbodyMovers;
 
-        public UpdateRotationToPhysicalMovers(GameContext game)
+        public UpdateWorldRotationToPhysicalMovers(GameContext game)
         {
             _rigidbodyMovers = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Rigidbody,
+                    GameMatcher.Transform,
                     GameMatcher.PhysicalMover,
-                    GameMatcher.Rotation
+                    GameMatcher.WorldRotation
                 ));
         }
 
@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             foreach (GameEntity mover in _rigidbodyMovers)
             {
-                mover.ReplaceRotation(mover.Rigidbody.rotation.eulerAngles);
+                mover.ReplaceWorldRotation(mover.Transform.rotation.eulerAngles);
             }
         }
     }

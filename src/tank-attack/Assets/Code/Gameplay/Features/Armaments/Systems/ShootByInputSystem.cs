@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
             {
                 ProjectileSetup projectileSetup = _levelDataProvider.LevelConfig.ArmamentSetup.ProjectileSetup;
                 
-                Vector3 forward = Quaternion.Euler(hero.Rotation) * Vector3.forward;
+                Vector3 forward = Quaternion.Euler(hero.WorldRotation) * Vector3.forward;
                 _projectileFactory.CreateBullet(hero.WorldPosition, forward, projectileSetup);
             }
         }

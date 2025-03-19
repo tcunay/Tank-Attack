@@ -15,7 +15,7 @@ namespace Code.Gameplay.Features.Movement
             Add(systems.Create<AddRigidbodyForceByDirection>());
             Add(systems.Create<MoveRotationRigidbodyByDirection>());
             Add(systems.Create<UpdateWorldPositionToPhysicalMovers>());
-            Add(systems.Create<UpdateRotationToPhysicalMovers>());
+            Add(systems.Create<UpdateWorldRotationToPhysicalMovers>());
             
             Add(systems.Create<UpdateTransformPositionSystem>());
             Add(systems.Create<UpdateTransformRotationSystem>());

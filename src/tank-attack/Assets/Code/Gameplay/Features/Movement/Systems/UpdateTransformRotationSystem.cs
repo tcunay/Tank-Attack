@@ -11,7 +11,7 @@ namespace Code.Gameplay.Features.Movement.Systems
             _transforms = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
-                    GameMatcher.Rotation
+                    GameMatcher.WorldRotation
                 ).NoneOf(GameMatcher.PhysicalMover));
         }
         
@@ -19,7 +19,7 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             foreach (GameEntity target in _transforms)
             {
-                target.Transform.localEulerAngles = target.Rotation;
+                target.Transform.localEulerAngles = target.WorldRotation;
             }
         }
     }

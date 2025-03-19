@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Entity;
 using Code.Common.Extensions;
@@ -29,13 +28,14 @@ namespace Code.Gameplay.Features.Enemies.Factory
 
             return CreateEntity.Empty(_identifierService.Next())
                 .AddWorldPosition(startPoint.position)
-                .AddRotation(startPoint.rotation.eulerAngles)
+                .AddWorldRotation(startPoint.rotation.eulerAngles)
                 .AddViewPrefab(vehicleConfig.Prefab)
                 .AddVehicleTypeId(vehicleSetup.Kind)
                 .AddSpeed(vehicleSetup.MoveSetup.Speed)
                 .AddWayPointsMove(vehicleSetup.MoveSetup.WayPoints.Select(x => x.position).ToArray())
                 .AddWayPointsMoveIndex(0)
                 .AddArrivalThreshold(vehicleSetup.MoveSetup.ArrivalThreshold)
+                .AddRotationSpeed(3)
                 .With(x => x.isPhysicalMover = true)
                 .With(x => x.isMoving = true)
                 .With(x => x.isMovementAvailable = true)

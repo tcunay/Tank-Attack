@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             _rigidbodyMovers = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Rigidbody,
+                    GameMatcher.Transform,
                     GameMatcher.PhysicalMover,
                     GameMatcher.WorldPosition
                 ));
@@ -20,7 +20,7 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             foreach (GameEntity mover in _rigidbodyMovers)
             {
-                mover.ReplaceWorldPosition(mover.Rigidbody.position);
+                mover.ReplaceWorldPosition(mover.Transform.position);
             }
         }
     }

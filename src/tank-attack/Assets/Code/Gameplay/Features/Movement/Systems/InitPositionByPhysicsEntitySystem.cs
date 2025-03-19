@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Movement.Systems
                     GameMatcher.Rigidbody,
                     GameMatcher.PhysicalMover,
                     GameMatcher.WorldPosition,
-                    GameMatcher.Rotation
+                    GameMatcher.WorldRotation
                 )
                 .NoneOf(GameMatcher.InitPositionPhysicalMover));
         }
@@ -26,7 +26,7 @@ namespace Code.Gameplay.Features.Movement.Systems
             foreach (GameEntity mover in _rigidbodyMovers.GetEntities(_moversBuffer))
             {
                 mover.Rigidbody.position = mover.WorldPosition;
-                mover.Rigidbody.rotation = Quaternion.Euler(mover.Rotation);
+                mover.Rigidbody.rotation = Quaternion.Euler(mover.WorldRotation);
                 mover.isInitPositionPhysicalMover = true;
             }
         }

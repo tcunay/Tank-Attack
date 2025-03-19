@@ -16,7 +16,7 @@ namespace Code.Gameplay.Features.Camera.Systems
                     {
                         GameMatcher.Hero,
                         GameMatcher.WorldPosition,
-                        GameMatcher.Rotation
+                        GameMatcher.WorldRotation
                     }));
             
             _cameras = gameContext.GetGroup(GameMatcher
@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.Camera.Systems
                     {
                         GameMatcher.Camera,
                         GameMatcher.WorldPosition,
-                        GameMatcher.Rotation
+                        GameMatcher.WorldRotation
                     }));
         }
         
@@ -35,7 +35,7 @@ namespace Code.Gameplay.Features.Camera.Systems
             foreach (GameEntity camera in _cameras)
             {
                 camera.ReplaceWorldPosition(hero.WorldPosition);
-                camera.ReplaceRotation(hero.Rotation);
+                camera.ReplaceWorldRotation(hero.WorldRotation);
             }
         }
     }

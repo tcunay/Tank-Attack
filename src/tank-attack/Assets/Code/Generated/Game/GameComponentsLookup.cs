@@ -16,9 +16,9 @@ public static class GameComponentsLookup {
     public const int Damage = 5;
     public const int Id = 6;
     public const int Rigidbody = 7;
-    public const int Rotation = 8;
-    public const int Transform = 9;
-    public const int WorldPosition = 10;
+    public const int Transform = 8;
+    public const int WorldPosition = 9;
+    public const int WorldRotation = 10;
     public const int Armament = 11;
     public const int Projectile = 12;
     public const int Camera = 13;
@@ -31,12 +31,13 @@ public static class GameComponentsLookup {
     public const int MovementAvailable = 20;
     public const int Moving = 21;
     public const int PhysicalMover = 22;
-    public const int Speed = 23;
-    public const int WayPointsMove = 24;
-    public const int WayPointsMoveIndex = 25;
-    public const int VehicleTypeId = 26;
+    public const int RotationSpeed = 23;
+    public const int Speed = 24;
+    public const int WayPointsMove = 25;
+    public const int WayPointsMoveIndex = 26;
+    public const int VehicleTypeId = 27;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 28;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -47,9 +48,9 @@ public static class GameComponentsLookup {
         "Damage",
         "Id",
         "Rigidbody",
-        "Rotation",
         "Transform",
         "WorldPosition",
+        "WorldRotation",
         "Armament",
         "Projectile",
         "Camera",
@@ -62,6 +63,7 @@ public static class GameComponentsLookup {
         "MovementAvailable",
         "Moving",
         "PhysicalMover",
+        "RotationSpeed",
         "Speed",
         "WayPointsMove",
         "WayPointsMoveIndex",
@@ -77,9 +79,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.Damage),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.RigidbodyComponent),
-        typeof(Code.Gameplay.Common.Rotation),
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Common.WorldRotation),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Armament),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Projectile),
         typeof(Code.Gameplay.Features.Camera.Camera),
@@ -92,6 +94,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.MovementAvailable),
         typeof(Code.Gameplay.Features.Movement.Moving),
         typeof(Code.Gameplay.Features.Movement.PhysicalMover),
+        typeof(Code.Gameplay.Features.Movement.RotationSpeed),
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.WayPointsMove),
         typeof(Code.Gameplay.Features.Movement.WayPointsMoveIndex),

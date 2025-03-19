@@ -18,7 +18,7 @@ namespace Code.Gameplay.Features.Hero.Services
         {
             _time = time;
             _heroes = game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Hero, GameMatcher.Rotation));
+                .AllOf(GameMatcher.Hero, GameMatcher.WorldRotation));
             
             _inputs = inputContext.GetGroup(InputMatcher
                 .AllOf(InputMatcher.Input, InputMatcher.AxisInput));
@@ -34,7 +34,7 @@ namespace Code.Gameplay.Features.Hero.Services
                     continue;
                 }
                 
-                Vector3 euler = GetNormalizeLocalEulerAngles(hero.Rotation);
+                Vector3 euler = GetNormalizeLocalEulerAngles(hero.WorldRotation);
                 
                 float speed = RotationSpeed * _time.DeltaTime;
                 Vector2 angleDelta = input.AxisInput * speed;
@@ -42,7 +42,7 @@ namespace Code.Gameplay.Features.Hero.Services
                 euler.x = Mathf.Clamp(euler.x - angleDelta.y, -ClampAngle, ClampAngle);
                 euler.y += angleDelta.x;
 
-                hero.ReplaceRotation(new Vector3(euler.x, euler.y, 0f));
+                hero.ReplaceWorldRotation(new Vector3(euler.x, euler.y, 0f));
             }
         }
 

@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Movement.Systems
 {
     public class MoveRotationRigidbodyByDirection : IExecuteSystem
     {
-        private const float RotationSpeed = 300f;
+        private const float RotationSpeed = 3f;
         
         private readonly ITimeService _time;
         private readonly IGroup<GameEntity> _rigidbodyMovers;
@@ -18,6 +18,7 @@ namespace Code.Gameplay.Features.Movement.Systems
                 .AllOf(
                     GameMatcher.Rigidbody,
                     GameMatcher.PhysicalMover,
+                    GameMatcher.RotationSpeed,
                     GameMatcher.Direction,
                     GameMatcher.Moving,
                     GameMatcher.MovementAvailable
@@ -28,15 +29,10 @@ namespace Code.Gameplay.Features.Movement.Systems
         {
             foreach (GameEntity mover in _rigidbodyMovers)
             {
-                SmoothRotate(mover.Direction, mover.Rigidbody);
+                Quaternion targetRotation = Quaternion.LookRotation(mover.Direction);
+                mover.Rigidbody.MoveRotation(Quaternion.Slerp(mover.Rigidbody.rotation, targetRotation, mover.RotationSpeed * _time.DeltaTime));
             }
             
-        }
-        
-        private void SmoothRotate(Vector3 direction, Rigidbody rigidbody)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            rigidbody.MoveRotation(Quaternion.Slerp(rigidbody.rotation, targetRotation, RotationSpeed * _time.DeltaTime));
         }
     }
 }

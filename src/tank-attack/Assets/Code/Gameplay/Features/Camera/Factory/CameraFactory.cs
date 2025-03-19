@@ -23,7 +23,7 @@ namespace Code.Gameplay.Cameras.Factory
                 .AddId(_inIdentifierService.Next())
                 .AddViewPath(AssetPath.CameraPrefabPath)
                 .AddWorldPosition(Vector3.zero)
-                .AddRotation(Vector3.zero)
+                .AddWorldRotation(Vector3.zero)
                 .With(x => x.isCamera = true);
         }
     }
