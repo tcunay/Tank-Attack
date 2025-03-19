@@ -11,7 +11,7 @@ public class HeliRotorController : MonoBehaviour
 		Z,
 	}
 	public Axis RotateAxis;
-    private float _rotarSpeed;
+    [SerializeField] private float _rotarSpeed;
     public float RotarSpeed
     {
         get { return _rotarSpeed; }

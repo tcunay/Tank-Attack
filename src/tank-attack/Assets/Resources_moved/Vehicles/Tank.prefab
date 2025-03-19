@@ -62,10 +62,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7544565383678394871}
-  - component: {fileID: 1270619154170005504}
-  - component: {fileID: 8659981248537293847}
-  - component: {fileID: 988215572221352656}
-  - component: {fileID: 3908870994947210545}
   - component: {fileID: -1677035578204368272}
   - component: {fileID: 4075182115086922864}
   m_Layer: 0
@@ -92,57 +88,6 @@ Transform:
   - {fileID: 89790483484909090}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1270619154170005504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576849102382489990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 376459b40d36479798e3d2caad9243b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8659981248537293847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576849102382489990}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 648ed20f060845b28813b00d7f16e3a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &988215572221352656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576849102382489990}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2633c6ce9d542fd9fe8497e211d603e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _arrivalThreshold: 1
---- !u!114 &3908870994947210545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8576849102382489990}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e862543300a44feb68bda300a94068d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 0}
-  _mover: {fileID: 988215572221352656}
 --- !u!114 &-1677035578204368272
 MonoBehaviour:
   m_ObjectHideFlags: 0
