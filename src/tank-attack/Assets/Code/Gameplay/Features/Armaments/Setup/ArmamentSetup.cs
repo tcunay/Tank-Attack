@@ -14,6 +14,7 @@ namespace Code.Gameplay.Features.Armaments.Setup
     {
         public float Speed;
         public float ContactRadius;
+        public float Damage;
     }
     
 }

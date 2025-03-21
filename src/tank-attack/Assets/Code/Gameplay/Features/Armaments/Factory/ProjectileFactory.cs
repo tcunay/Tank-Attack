@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
                 .AddViewPath(AssetPath.BulletPrefabPath)
                 .AddWorldPosition(at)
                 .AddSpeed(setup.Speed)
+                .AddDamage(setup.Damage)
                 .AddDirection(direction)
                 .AddSelfDestructTimer(5)
                 .With(x => x.isMovementAvailable = true)

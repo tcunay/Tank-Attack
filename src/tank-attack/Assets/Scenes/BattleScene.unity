@@ -1664,16 +1664,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSetups:
   - Kind: 0
+    MaxHp: 0
     MoveSetup:
       Speed: 1
       ArrivalThreshold: 1
       WayPoints: []
   - Kind: 0
+    MaxHp: 0
     MoveSetup:
       Speed: 1
       ArrivalThreshold: 1
       WayPoints: []
   - Kind: 0
+    MaxHp: 0
     MoveSetup:
       Speed: 1
       ArrivalThreshold: 1
@@ -1706,6 +1709,7 @@ MonoBehaviour:
   _enemiesSetups:
   - VehicleSetup:
       Kind: 1
+      MaxHp: 2
       MoveSetup:
         Speed: 1
         ArrivalThreshold: 1
@@ -1714,6 +1718,7 @@ MonoBehaviour:
         - {fileID: 1921213427}
   - VehicleSetup:
       Kind: 1
+      MaxHp: 2
       MoveSetup:
         Speed: 1
         ArrivalThreshold: 1
@@ -1727,6 +1732,7 @@ MonoBehaviour:
         - {fileID: 1149319998}
   - VehicleSetup:
       Kind: 2
+      MaxHp: 1
       MoveSetup:
         Speed: 1
         ArrivalThreshold: 1

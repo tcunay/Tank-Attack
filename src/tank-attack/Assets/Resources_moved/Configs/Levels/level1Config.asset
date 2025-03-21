@@ -24,3 +24,4 @@ MonoBehaviour:
     ProjectileSetup:
       Speed: 3
       ContactRadius: 1
+      Damage: 1

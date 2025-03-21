@@ -25,29 +25,32 @@ public static class GameComponentsLookup {
     public const int CameraUnity = 14;
     public const int Enemy = 15;
     public const int Hero = 16;
-    public const int ArrivalThreshold = 17;
-    public const int CurrentSpeed = 18;
-    public const int Direction = 19;
-    public const int MovementAvailable = 20;
-    public const int Moving = 21;
-    public const int RotationSpeed = 22;
-    public const int Speed = 23;
-    public const int WayPointsMove = 24;
-    public const int WayPointsMoveIndex = 25;
-    public const int CollectingTargetsContinuously = 26;
-    public const int CollectTargetsInterval = 27;
-    public const int CollectTargetsTimer = 28;
-    public const int LayerMask = 29;
-    public const int ProcessedTargets = 30;
-    public const int Radius = 31;
-    public const int Reached = 32;
-    public const int ReadyToCollectTargets = 33;
-    public const int TargetsBuffer = 34;
-    public const int Helicopter = 35;
-    public const int Tank = 36;
-    public const int VehicleTypeId = 37;
+    public const int CurrentHP = 17;
+    public const int Dead = 18;
+    public const int ProcessingDeath = 19;
+    public const int ArrivalThreshold = 20;
+    public const int CurrentSpeed = 21;
+    public const int Direction = 22;
+    public const int MovementAvailable = 23;
+    public const int Moving = 24;
+    public const int RotationSpeed = 25;
+    public const int Speed = 26;
+    public const int WayPointsMove = 27;
+    public const int WayPointsMoveIndex = 28;
+    public const int CollectingTargetsContinuously = 29;
+    public const int CollectTargetsInterval = 30;
+    public const int CollectTargetsTimer = 31;
+    public const int LayerMask = 32;
+    public const int ProcessedTargets = 33;
+    public const int Radius = 34;
+    public const int Reached = 35;
+    public const int ReadyToCollectTargets = 36;
+    public const int TargetsBuffer = 37;
+    public const int Helicopter = 38;
+    public const int Tank = 39;
+    public const int VehicleTypeId = 40;
 
-    public const int TotalComponents = 38;
+    public const int TotalComponents = 41;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -67,6 +70,9 @@ public static class GameComponentsLookup {
         "CameraUnity",
         "Enemy",
         "Hero",
+        "CurrentHP",
+        "Dead",
+        "ProcessingDeath",
         "ArrivalThreshold",
         "CurrentSpeed",
         "Direction",
@@ -108,6 +114,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Camera.CameraUnity),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Hero.Hero),
+        typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
+        typeof(Code.Gameplay.Features.Lifetime.Dead),
+        typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
         typeof(Code.Gameplay.Features.Movement.ArrivalThreshold),
         typeof(Code.Gameplay.Features.Movement.CurrentSpeed),
         typeof(Code.Gameplay.Features.Movement.Direction),

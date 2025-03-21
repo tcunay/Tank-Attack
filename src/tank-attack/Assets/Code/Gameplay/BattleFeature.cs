@@ -2,10 +2,10 @@ using Code.Common.Systems.Destruct;
 using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
-using Code.Infrastructure.Entitas;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
 
@@ -27,6 +27,10 @@ namespace Code.Gameplay
             Add(systems.Create<MovementFeature>());
             
             Add(systems.Create<CollectTargetsFeature>());
+            
+            Add(systems.Create<DeathFeature>());
+            
+            Add(systems.Create<EnemyFeature>());
             
             Add(systems.Create<ProcessDestructedFeature>());
 

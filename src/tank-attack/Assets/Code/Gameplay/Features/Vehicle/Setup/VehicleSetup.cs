@@ -6,6 +6,7 @@ namespace Code.Gameplay.Features.Vehicle.Setup
     public class VehicleSetup
     {
         public VehicleKind Kind;
+        public float MaxHp = 1;
         public WayPointsMoveSetup MoveSetup;
     }
 }

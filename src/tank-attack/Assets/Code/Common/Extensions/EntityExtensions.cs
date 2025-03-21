@@ -4,7 +4,7 @@ namespace Code.Common.Extensions
     {
         public static GameEntity RemoveTargetCollectionComponents(this GameEntity entity)
         {
-            /*if (entity.hasTargetsBuffer)
+            if (entity.hasTargetsBuffer)
             {
                 entity.RemoveTargetsBuffer();
             }
@@ -17,7 +17,7 @@ namespace Code.Common.Extensions
             if (entity.hasCollectTargetsTimer)
             {
                 entity.RemoveCollectTargetsTimer();
-            }*/
+            }
 
             return entity;
         }

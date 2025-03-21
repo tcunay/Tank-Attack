@@ -10,9 +10,10 @@ namespace Code.Gameplay.Features.Armaments.Systems
         public TakeDamageWhenProjectileIsReachedSystem(GameContext game)
         {
             _projectiles = game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Projectile, GameMatcher.TargetsBuffer, GameMatcher.Reached));
+                .AllOf(GameMatcher.Projectile, GameMatcher.TargetsBuffer, GameMatcher.Reached, GameMatcher.Damage));
 
-            _enemies = game.GetGroup(GameMatcher.Enemy);
+            _enemies = game.GetGroup(GameMatcher
+                .AllOf(GameMatcher.Enemy, GameMatcher.CurrentHP));
         }
 
         public void Execute()
@@ -23,7 +24,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
             {
                 if (enemy.Id == targetId)
                 {
-                    enemy.isDestructed = true;
+                    enemy.ReplaceCurrentHP(enemy.CurrentHP - projectile.Damage);
                 }
             }
         }
