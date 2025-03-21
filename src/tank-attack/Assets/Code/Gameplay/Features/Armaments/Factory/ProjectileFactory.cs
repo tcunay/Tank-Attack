@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Armaments.Setup;
@@ -33,7 +34,13 @@ namespace Code.Gameplay.Features.Armaments.Factory
                 .AddSelfDestructTimer(5)
                 .With(x => x.isMovementAvailable = true)
                 .With(x => x.isMoving = true)
-                .With(x => x.isProjectile = true);
+                .With(x => x.isProjectile = true)
+                .AddRadius(setup.ContactRadius)
+                .AddTargetsBuffer(new List<int>())
+                .AddProcessedTargets(new HashSet<int>())
+                .AddLayerMask(CollisionLayer.Enemy.AsMask())
+                .With(x => x.isReadyToCollectTargets = true)
+                .With(x => x.isCollectingTargetsContinuously = true);
         }
     }
 }

@@ -3,6 +3,7 @@ using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Movement;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Gameplay.Input;
 using Code.Infrastructure.Entitas;
 using Code.Infrastructure.Systems;
@@ -10,7 +11,7 @@ using Code.Infrastructure.View;
 
 namespace Code.Gameplay
 {
-    public class BattleFeature : UniFeature
+    public class BattleFeature : Feature
     {
         public BattleFeature(ISystemFactory systems)
         {
@@ -24,6 +25,9 @@ namespace Code.Gameplay
             Add(systems.Create<ArmamentsFeature>());
             
             Add(systems.Create<MovementFeature>());
+            
+            Add(systems.Create<CollectTargetsFeature>());
+            
             Add(systems.Create<ProcessDestructedFeature>());
 
             /*Add(systems.Create<HeroFeature>());

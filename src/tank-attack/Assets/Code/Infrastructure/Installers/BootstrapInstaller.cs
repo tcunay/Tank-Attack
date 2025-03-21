@@ -1,6 +1,7 @@
 using Code.Gameplay.Cameras.Factory;
 using Code.Gameplay.Cameras.Provider;
 using Code.Gameplay.Common.Collisions;
+using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Enemies.Factory;
@@ -117,7 +118,7 @@ namespace Code.Infrastructure.Installers
         {
             //Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
             Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
-            //Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
+            Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
         }

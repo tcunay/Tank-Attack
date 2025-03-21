@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.Armaments.Setup
     public class ProjectileSetup
     {
         public float Speed;
+        public float ContactRadius;
     }
     
 }

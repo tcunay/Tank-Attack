@@ -34,11 +34,20 @@ public static class GameComponentsLookup {
     public const int Speed = 23;
     public const int WayPointsMove = 24;
     public const int WayPointsMoveIndex = 25;
-    public const int Helicopter = 26;
-    public const int Tank = 27;
-    public const int VehicleTypeId = 28;
+    public const int CollectingTargetsContinuously = 26;
+    public const int CollectTargetsInterval = 27;
+    public const int CollectTargetsTimer = 28;
+    public const int LayerMask = 29;
+    public const int ProcessedTargets = 30;
+    public const int Radius = 31;
+    public const int Reached = 32;
+    public const int ReadyToCollectTargets = 33;
+    public const int TargetsBuffer = 34;
+    public const int Helicopter = 35;
+    public const int Tank = 36;
+    public const int VehicleTypeId = 37;
 
-    public const int TotalComponents = 29;
+    public const int TotalComponents = 38;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -67,6 +76,15 @@ public static class GameComponentsLookup {
         "Speed",
         "WayPointsMove",
         "WayPointsMoveIndex",
+        "CollectingTargetsContinuously",
+        "CollectTargetsInterval",
+        "CollectTargetsTimer",
+        "LayerMask",
+        "ProcessedTargets",
+        "Radius",
+        "Reached",
+        "ReadyToCollectTargets",
+        "TargetsBuffer",
         "Helicopter",
         "Tank",
         "VehicleTypeId"
@@ -99,6 +117,15 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Speed),
         typeof(Code.Gameplay.Features.Movement.WayPointsMove),
         typeof(Code.Gameplay.Features.Movement.WayPointsMoveIndex),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectingTargetsContinuously),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
+        typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
+        typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
+        typeof(Code.Gameplay.Features.TargetCollection.Radius),
+        typeof(Code.Gameplay.Features.TargetCollection.Reached),
+        typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Helicopter),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Tank),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)

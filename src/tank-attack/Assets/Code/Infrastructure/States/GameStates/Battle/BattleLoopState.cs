@@ -1,5 +1,6 @@
 using Code.Common.Extensions;
 using Code.Gameplay;
+using Code.Gameplay.Features.TargetCollection;
 using Code.Infrastructure.States.StateInfrastructure;
 using Code.Infrastructure.Systems;
 using Code.Meta.UI;
@@ -12,6 +13,7 @@ namespace Code.Infrastructure.States.GameStates.Battle
         private readonly LoadingCurtain _loadingCurtain;
         private readonly GameContext _gameContext;
         private BattleFeature _battleFeature;
+        private BattlePhysicsFeature _battlePhysicsFeature;
 
         public BattleLoopState(ISystemFactory systems, LoadingCurtain loadingCurtain, GameContext gameContext)
         {
@@ -24,6 +26,10 @@ namespace Code.Infrastructure.States.GameStates.Battle
         {
             _battleFeature = _systems.Create<BattleFeature>();
             _battleFeature.Initialize();
+
+            _battlePhysicsFeature = _systems.Create<BattlePhysicsFeature>();
+            _battlePhysicsFeature.Initialize();
+            
             _loadingCurtain.Hide();
         }
 
@@ -35,7 +41,8 @@ namespace Code.Infrastructure.States.GameStates.Battle
         
         public void FixedUpdate()
         {
-            _battleFeature.FixedExecute();
+            _battlePhysicsFeature.Execute();
+            _battlePhysicsFeature.Cleanup();
         }
 
         protected override void ExitOnEndOfFrame()
