@@ -1,10 +1,9 @@
 using Code.Gameplay.Features.Movement.Systems;
-using Code.Infrastructure.Entitas;
 using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Movement
 {
-    public class MovementFeature : UniFeature
+    public class MovementFeature : Feature
     {
         public MovementFeature(ISystemFactory systems)
         {
