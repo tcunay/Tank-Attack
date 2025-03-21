@@ -15,7 +15,12 @@ namespace Code.Gameplay.Input
         {
             _inputService = inputService;
         }
-        
+
+        private void Start()
+        {
+            OnSliderValueChanged(_slider.value);
+        }
+
         private void Awake()
         {
             _slider.onValueChanged.AddListener(OnSliderValueChanged);
