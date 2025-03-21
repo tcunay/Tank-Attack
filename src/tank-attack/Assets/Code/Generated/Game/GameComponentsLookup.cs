@@ -20,37 +20,40 @@ public static class GameComponentsLookup {
     public const int WorldPosition = 9;
     public const int WorldRotation = 10;
     public const int Armament = 11;
-    public const int Projectile = 12;
-    public const int Camera = 13;
-    public const int CameraUnity = 14;
-    public const int Enemy = 15;
-    public const int Hero = 16;
-    public const int CurrentHP = 17;
-    public const int Dead = 18;
-    public const int ProcessingDeath = 19;
-    public const int ArrivalThreshold = 20;
-    public const int CurrentSpeed = 21;
-    public const int Direction = 22;
-    public const int MovementAvailable = 23;
-    public const int Moving = 24;
-    public const int RotationSpeed = 25;
-    public const int Speed = 26;
-    public const int WayPointsMove = 27;
-    public const int WayPointsMoveIndex = 28;
-    public const int CollectingTargetsContinuously = 29;
-    public const int CollectTargetsInterval = 30;
-    public const int CollectTargetsTimer = 31;
-    public const int LayerMask = 32;
-    public const int ProcessedTargets = 33;
-    public const int Radius = 34;
-    public const int Reached = 35;
-    public const int ReadyToCollectTargets = 36;
-    public const int TargetsBuffer = 37;
-    public const int Helicopter = 38;
-    public const int Tank = 39;
-    public const int VehicleTypeId = 40;
+    public const int BulletCounter = 12;
+    public const int CurrentBulletsCount = 13;
+    public const int MaxBulletsCount = 14;
+    public const int Projectile = 15;
+    public const int Camera = 16;
+    public const int CameraUnity = 17;
+    public const int Enemy = 18;
+    public const int Hero = 19;
+    public const int CurrentHP = 20;
+    public const int Dead = 21;
+    public const int ProcessingDeath = 22;
+    public const int ArrivalThreshold = 23;
+    public const int CurrentSpeed = 24;
+    public const int Direction = 25;
+    public const int MovementAvailable = 26;
+    public const int Moving = 27;
+    public const int RotationSpeed = 28;
+    public const int Speed = 29;
+    public const int WayPointsMove = 30;
+    public const int WayPointsMoveIndex = 31;
+    public const int CollectingTargetsContinuously = 32;
+    public const int CollectTargetsInterval = 33;
+    public const int CollectTargetsTimer = 34;
+    public const int LayerMask = 35;
+    public const int ProcessedTargets = 36;
+    public const int Radius = 37;
+    public const int Reached = 38;
+    public const int ReadyToCollectTargets = 39;
+    public const int TargetsBuffer = 40;
+    public const int Helicopter = 41;
+    public const int Tank = 42;
+    public const int VehicleTypeId = 43;
 
-    public const int TotalComponents = 41;
+    public const int TotalComponents = 44;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -65,6 +68,9 @@ public static class GameComponentsLookup {
         "WorldPosition",
         "WorldRotation",
         "Armament",
+        "BulletCounter",
+        "CurrentBulletsCount",
+        "MaxBulletsCount",
         "Projectile",
         "Camera",
         "CameraUnity",
@@ -109,6 +115,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Common.WorldRotation),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Armament),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.BulletCounter),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.CurrentBulletsCount),
+        typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.MaxBulletsCount),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Projectile),
         typeof(Code.Gameplay.Features.Camera.Camera),
         typeof(Code.Gameplay.Features.Camera.CameraUnity),

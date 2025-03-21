@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
                 .AllOf(InputMatcher.Input, InputMatcher.AttackInput));
             
             _heroes = gameContext.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Hero, GameMatcher.WorldPosition));
+                .AllOf(GameMatcher.Hero, GameMatcher.WorldPosition, GameMatcher.CurrentBulletsCount));
         }
 
         public void Execute()
@@ -31,6 +31,11 @@ namespace Code.Gameplay.Features.Armaments.Systems
             foreach (GameEntity hero in _heroes)
             foreach (InputEntity input in _inputs)
             {
+                if (hero.CurrentBulletsCount <= 0)
+                {
+                    continue;
+                }
+                
                 ProjectileSetup projectileSetup = _levelDataProvider.LevelConfig.ArmamentSetup.ProjectileSetup;
                 
                 Vector3 forward = hero.WorldRotation * Vector3.forward;

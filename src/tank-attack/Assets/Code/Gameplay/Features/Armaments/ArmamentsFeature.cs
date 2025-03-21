@@ -8,6 +8,10 @@ namespace Code.Gameplay.Features.Armaments
         public ArmamentsFeature(ISystemFactory systems)
         {
             Add(systems.Create<ShootByInputSystem>());
+            
+            Add(systems.Create<DecreaseBulletCountSystem>());
+            
+            Add(systems.Create<BulletCounterSystem>());
         }
     }
 }
