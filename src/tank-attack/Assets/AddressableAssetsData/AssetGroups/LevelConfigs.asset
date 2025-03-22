@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: LevelConfigs
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: LevelConfigs
   m_GUID: 9b3df92ad84bf4544a8c0aba9b28b780
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 02a96fd5663cc4ecfa47f230afe89c81
+    m_Address: LevelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4431743483e0545d398a4e86c9679cb6
+    m_Address: LevelConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5ef6fc925e2b64e408be7ce0d2abc957, type: 2}
   m_SchemaSet:
