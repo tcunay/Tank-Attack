@@ -29,7 +29,6 @@ namespace Code.Infrastructure.States.GameStates.Battle
         {
             _loadingCurtain.Show();
             
-            //_sceneLoader.LoadScene("BattleScene", LoadingButtonState);
             _sceneLoader.LoadSceneAsset(_levelDataProvider.LevelConfig.SceneReference, LoadingButtonState);
         }
 

@@ -31,6 +31,6 @@ namespace Code.Meta.UI
         }
 
         private void EnterBattleState() => 
-            _stateMachine.Enter<BootBattleState>();
+            _stateMachine.Enter<BootBattleState, int>(1);
     }
 }

@@ -2,7 +2,7 @@ using Code.Infrastructure.States.GameStates.GameOver;
 using Code.Infrastructure.States.StateMachine;
 using Entitas;
 
-namespace Code.Gameplay.Features.GameOver
+namespace Code.Gameplay.Features.EndLevel.Systems
 {
    public class GameOverOnOutOfBulletsSystem : IExecuteSystem
    {

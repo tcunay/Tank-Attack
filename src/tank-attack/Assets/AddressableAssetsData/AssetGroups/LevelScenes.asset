@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LevelScenes
+  m_EditorClassIdentifier: 
+  m_GroupName: LevelScenes
+  m_GUID: d5ad4e27ca9894dae9ea98454c3e6840
+  m_SerializeEntries:
+  - m_GUID: e881377307492436cbf922946a5a128b
+    m_Address: Assets/Scenes/BattleScenes
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5ef6fc925e2b64e408be7ce0d2abc957, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c1c8578dd552c4c11b736616041d82aa, type: 2}
+    - {fileID: 11400000, guid: 83aece11ba93949c18e3b6b4fd1bf48c, type: 2}

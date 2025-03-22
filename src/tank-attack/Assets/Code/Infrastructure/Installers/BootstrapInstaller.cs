@@ -18,6 +18,7 @@ using Code.Infrastructure.States.GameStates;
 using Code.Infrastructure.States.GameStates.Battle;
 using Code.Infrastructure.States.GameStates.GameOver;
 using Code.Infrastructure.States.GameStates.Home;
+using Code.Infrastructure.States.GameStates.WinLevel;
 using Code.Infrastructure.States.StateMachine;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View.Factory;
@@ -73,8 +74,12 @@ namespace Code.Infrastructure.Installers
             Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
+            
             Container.BindInterfacesAndSelfTo<LoadingGameOverState>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameOverLoopState>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<LoadingWinLevelState>().AsSingle();
+            Container.BindInterfacesAndSelfTo<WinLevelLoopState>().AsSingle();
         }
         
         private void BindContexts()

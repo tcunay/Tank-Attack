@@ -6,7 +6,7 @@ using Code.Infrastructure.States.StateMachine;
 
 namespace Code.Infrastructure.States.GameStates.Battle
 {
-    public class BootBattleState : SimpleState
+    public class BootBattleState : SimplePayloadState<int>
     {
         private readonly ILevelDataProvider _levelDataProvider;
         private readonly IGameStateMachine _stateMachine;
@@ -19,9 +19,9 @@ namespace Code.Infrastructure.States.GameStates.Battle
             _staticDataService = staticDataService;
         }
 
-        public override void Enter()
+        public override void Enter(int level)
         {
-            LevelConfig levelConfig = _staticDataService.GetLevelConfig(1);
+            LevelConfig levelConfig = _staticDataService.GetLevelConfig(level);
             _levelDataProvider.SetLevelConfig(levelConfig);
             
             _stateMachine.Enter<LoadingBattleState>();

@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HomeScreen.unity
     guid: f63b34f462f874bccb3ddcab066afa2d
   - enabled: 0
-    path: Assets/Scenes/BattleScene.unity
+    path: Assets/Scenes/BattleScenes/Level 1.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: a86a9df4961f44dd68eaa5d298aa6e63, type: 2}

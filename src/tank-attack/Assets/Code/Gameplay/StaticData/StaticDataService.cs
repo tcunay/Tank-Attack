@@ -105,7 +105,7 @@ namespace Code.Gameplay.StaticData
         
         private async UniTask LoadLevels()
         {
-            IList<LevelConfig> levels = await _assetProvider.LoadAssets<LevelConfig>("Levels");
+            IList<LevelConfig> levels = await _assetProvider.LoadAssets<LevelConfig>("LevelConfig");
             _levels = levels.ToDictionary(x => x.LevelNumber);
         }
 

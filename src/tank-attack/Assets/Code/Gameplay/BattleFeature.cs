@@ -1,7 +1,8 @@
 using Code.Common.Systems.Destruct;
 using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Camera;
-using Code.Gameplay.Features.GameOver;
+using Code.Gameplay.Features.EndLevel;
+using Code.Gameplay.Features.EndLevel.Systems;
 using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
@@ -33,7 +34,7 @@ namespace Code.Gameplay
             
             Add(systems.Create<EnemyFeature>());
             
-            Add(systems.Create<GameOverOnOutOfBulletsSystem>());
+            Add(systems.Create<EndLevelFeature>());
             
             Add(systems.Create<ProcessDestructedFeature>());
             
