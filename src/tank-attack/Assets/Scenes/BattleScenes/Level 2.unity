@@ -1672,10 +1672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1300924655}
   - component: {fileID: 1300924654}
-  - component: {fileID: 1300924659}
   - component: {fileID: 1300924657}
-  - component: {fileID: 1300924656}
-  - component: {fileID: 1300924658}
   - component: {fileID: 1300924660}
   m_Layer: 0
   m_Name: SceneContext
@@ -1698,7 +1695,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 1300924659}
   - {fileID: 1300924657}
   _installerPrefabs: []
   _autoRun: 1
@@ -1732,19 +1728,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1300924656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300924653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b78187ac78154f039649e6f5d0b2a504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _heroStartPosition: {fileID: 0}
 --- !u!114 &1300924657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,49 +1742,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Initializers:
   - {fileID: 1300924660}
---- !u!114 &1300924658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300924653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc11aaa67c1b405db997d5207dd13ac4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoveSetups:
-  - Kind: 0
-    MaxHp: 0
-    MoveSetup:
-      Speed: 1
-      ArrivalThreshold: 1
-      WayPoints: []
-  - Kind: 0
-    MaxHp: 0
-    MoveSetup:
-      Speed: 1
-      ArrivalThreshold: 1
-      WayPoints: []
-  - Kind: 0
-    MaxHp: 0
-    MoveSetup:
-      Speed: 1
-      ArrivalThreshold: 1
-      WayPoints: []
---- !u!114 &1300924659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300924653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed749404cf204f4e9f655f2bcf8d44e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1300924660
 MonoBehaviour:
   m_ObjectHideFlags: 0
