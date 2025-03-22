@@ -15,8 +15,13 @@ MonoBehaviour:
   m_GroupName: LevelScenes
   m_GUID: d5ad4e27ca9894dae9ea98454c3e6840
   m_SerializeEntries:
-  - m_GUID: e881377307492436cbf922946a5a128b
-    m_Address: Assets/Scenes/BattleScenes
+  - m_GUID: 99c9720ab356a0642a771bea13969a05
+    m_Address: LevelScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b165d0b404db547e69d2d8dbf5e8ebb3
+    m_Address: LevelScene
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
