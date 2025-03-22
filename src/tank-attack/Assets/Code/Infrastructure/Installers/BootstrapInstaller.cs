@@ -121,7 +121,6 @@ namespace Code.Infrastructure.Installers
         
         private void BindCommonServices()
         {
-            //Container.Bind<IRandomService>().To<UnityRandomService>().AsSingle();
             Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
             Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
@@ -135,14 +134,6 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
             Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
             Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
-
-            /*Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
-            Container.Bind<IArmamentFactory>().To<ArmamentFactory>().AsSingle();
-            Container.Bind<IAbilityFactory>().To<AbilityFactory>().AsSingle();
-            Container.Bind<IEffectFactory>().To<EffectFactory>().AsSingle();
-            Container.Bind<IStatusFactory>().To<StatusFactory>().AsSingle();
-            Container.Bind<ILootFactory>().To<LootFactory>().AsSingle();
-            Container.Bind<IShopItemFactory>().To<ShopItemFactory>().AsSingle();*/
         }
         
         private void BindLoadingCurtain()

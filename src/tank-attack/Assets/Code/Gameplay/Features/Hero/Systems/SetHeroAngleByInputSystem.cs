@@ -3,7 +3,7 @@ using Code.Gameplay.Common.Time;
 using Entitas;
 using UnityEngine;
 
-namespace Code.Gameplay.Features.Hero.Services
+namespace Code.Gameplay.Features.Hero.Systems
 {
     public class SetHeroAngleByInputSystem : IExecuteSystem
     {
