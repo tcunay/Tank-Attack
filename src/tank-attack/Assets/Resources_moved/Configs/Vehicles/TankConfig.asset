@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TankConfig
   m_EditorClassIdentifier: 
   _vehicleKind: 1
-  _prefab: {fileID: -1677035578204368272, guid: ec6a7757e8d0d415486255ecee77127e, type: 3}
+  _prefab: {fileID: 9198603948833259302, guid: 18c9ac322dc0743aaa270af4d6379f5e, type: 3}

@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18c9ac322dc0743aaa270af4d6379f5e
+    m_Address: Tank
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2168e02d209cc4400aa11588725c2922
     m_Address: BulletMaterial
     m_ReadOnly: 0
@@ -40,8 +45,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8b9b0c69114a746f9b14145b57d5f8c0
-    m_Address: HelicopterModel
+  - m_GUID: 8d4bf8099c21248abac992f9f76f0a07
+    m_Address: Helicopter
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -72,11 +77,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: db44fbeb2509343fba99565763a48feb
     m_Address: Camera
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ec6a7757e8d0d415486255ecee77127e
-    m_Address: Tank
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

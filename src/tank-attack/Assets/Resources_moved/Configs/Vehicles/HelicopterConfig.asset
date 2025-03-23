@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HelicopterConfig
   m_EditorClassIdentifier: 
   _vehicleKind: 2
-  _prefab: {fileID: 3390509707903661787, guid: 8b9b0c69114a746f9b14145b57d5f8c0, type: 3}
+  _prefab: {fileID: 2519028049216871640, guid: 8d4bf8099c21248abac992f9f76f0a07, type: 3}
