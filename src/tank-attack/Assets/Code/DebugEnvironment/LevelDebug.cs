@@ -2,14 +2,18 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Vehicle.Setup;
+using Code.Infrastructure.Installers.Initializers.BattleScene;
 using UnityEngine;
 
-namespace Code.Infrastructure.Installers.Initializers.BattleScene
+namespace Code.DebugEnvironment
 {
     [ExecuteAlways]
-    public partial class LevelInitializer
+    public class LevelDebug : MonoBehaviour
     {
+        [SerializeField] private LevelInitializer _levelInitializer;
+        
         public const string WaypointsDebugObject = "WAY_POINTS_DEBUG";
+        //DEBUG_ENVIRONMENT
         
         private readonly List<LineRenderer> _lineRenderers = new();
         
@@ -36,7 +40,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
 
             GameObject linesParent = new GameObject(WaypointsDebugObject);
             
-            foreach (var wayPointsMoveSetup in _enemiesSetups.Select(x => x.VehicleSetup.MoveSetup))
+            foreach (var wayPointsMoveSetup in _levelInitializer.EnemiesSetups.Select(x => x.VehicleSetup.MoveSetup))
             {
                 GameObject wayPointsLine = CreateWayPointsLine(wayPointsMoveSetup);
 
@@ -71,11 +75,11 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         private void ClearLines()
         {
-            DestroyImmediate(GameObject.Find(WaypointsDebugObject));
+            Object.DestroyImmediate(GameObject.Find(WaypointsDebugObject));
             
             foreach (var lineRenderer in _lineRenderers.Where(x => x != null))
             {
-                DestroyImmediate(lineRenderer?.gameObject);
+                Object.DestroyImmediate(lineRenderer?.gameObject);
             }
             
             _lineRenderers.Clear();
