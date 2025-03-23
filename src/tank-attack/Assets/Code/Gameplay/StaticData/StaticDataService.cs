@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Code.DebugEnvironment;
 using Code.Gameplay.Features.Vehicle.Setup;
 using Code.Gameplay.Levels.Setup;
 using Code.Infrastructure.AssetManagement;
@@ -19,6 +20,7 @@ namespace Code.Gameplay.StaticData
         private Dictionary<VehicleKind ,VehicleConfig> _vehicleConfigs;
         private Dictionary<int, LevelConfig> _levels;
         private AssetReference _gameOverSceneReference;
+        private DebugEnvironmentSettings _debugEnvironmentSettings;
 
         public StaticDataService(IAssetProvider assetProvider)
         {
@@ -33,15 +35,10 @@ namespace Code.Gameplay.StaticData
                 LoadCameraPrefab(),
                 LoadVehicles(),
                 LoadLevels(),
-                LoadGameOverSceneReference()
+                LoadDebugEnvironmentSettings()
             );
         }
-
-        private async UniTask LoadGameOverSceneReference()
-        {
-            //_gameOverSceneReference = await _assetProvider.LoadAsset<AssetReference>(AssetPath.GameOverScene);
-        }
-
+        
         public GameObject HeroPrefab()
         {
             return _hero;
@@ -82,6 +79,11 @@ namespace Code.Gameplay.StaticData
             return _gameOverSceneReference;
         }
 
+        public DebugEnvironmentSettings DebugEnvironmentSettings()
+        {
+            return _debugEnvironmentSettings;
+        }
+
         private async UniTask LoadHeroPrefab()
         {
             _hero = await Load(AssetPath.HeroPrefabPath);
@@ -97,15 +99,21 @@ namespace Code.Gameplay.StaticData
             _camera = await Load(AssetPath.CameraPrefabPath);
         }
         
+        private async UniTask LoadDebugEnvironmentSettings()
+        {
+            _debugEnvironmentSettings =
+                await _assetProvider.LoadAsset<DebugEnvironmentSettings>(AssetPath.DebugEnvironmentSettings);
+        }
+        
         private async UniTask LoadVehicles()
         {
-            IList<VehicleConfig> vehiclesList = await _assetProvider.LoadAssets<VehicleConfig>("Vehicles");
+            IList<VehicleConfig> vehiclesList = await _assetProvider.LoadAssets<VehicleConfig>(AssetPath.Vehicles);
             _vehicleConfigs = vehiclesList.ToDictionary(x => x.Kind);
         }
         
         private async UniTask LoadLevels()
         {
-            IList<LevelConfig> levels = await _assetProvider.LoadAssets<LevelConfig>("LevelConfig");
+            IList<LevelConfig> levels = await _assetProvider.LoadAssets<LevelConfig>(AssetPath.LevelConfig);
             _levels = levels.ToDictionary(x => x.LevelNumber);
         }
 

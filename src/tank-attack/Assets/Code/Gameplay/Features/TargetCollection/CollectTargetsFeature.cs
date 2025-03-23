@@ -13,6 +13,7 @@ namespace Code.Gameplay.Features.TargetCollection
             
             Add(systems.Create<TakeDamageWhenProjectileIsReachedSystem>());
             Add(systems.Create<ProjectileMarkDestructedWhenReachedSystem>());
+            Add(systems.Create<DrawDebugCollidersSystem>());
 
             Add(systems.Create<CleanupTargetBufferSystem>());
         }

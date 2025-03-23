@@ -23,5 +23,5 @@ MonoBehaviour:
     Count: 10
     ProjectileSetup:
       Speed: 3
-      ContactRadius: 1
+      ContactRadius: 0.1
       Damage: 1

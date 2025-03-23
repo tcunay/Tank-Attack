@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2358707177435094780}
+  - component: {fileID: 4233935394396871328}
   m_Layer: 7
   m_Name: Trigger Collider
   m_TagString: Untagged
@@ -62,6 +63,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8050065080515261211}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4233935394396871328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785785365385274619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e1897b9f5f4b3a87c5ee2175877236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EntityView: {fileID: 3629503536777034291}
 --- !u!1 &6244329064569279568
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,6 +122,7 @@ namespace Code.Infrastructure.Installers
         private void BindCommonServices()
         {
             Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
+            Container.Bind<IDrawColliderService>().To<DrawColliderService>().AsSingle();
             Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();

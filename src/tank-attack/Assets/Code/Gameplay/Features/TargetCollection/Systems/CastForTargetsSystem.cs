@@ -40,7 +40,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
         private IEnumerable<int> TargetsInRadius(GameEntity entity)
         {
             return _physicsService
-                .CircleCast(entity.WorldPosition, entity.Radius, entity.LayerMask)
+                .CircleSphere(entity.WorldPosition, entity.Radius, entity.LayerMask)
                 .Select(x => x.Id);
         }
     }

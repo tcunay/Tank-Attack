@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 namespace Code.Gameplay.Features.TargetCollection
 {
@@ -14,4 +15,5 @@ namespace Code.Gameplay.Features.TargetCollection
     [Game] public class Radius : IComponent { public float Value; }
     [Game] public class LayerMask : IComponent { public int Value; }
     [Game] public class Reached : IComponent { }
+    [Game] public class DebugCollider : IComponent { public Collider Value; }
 }

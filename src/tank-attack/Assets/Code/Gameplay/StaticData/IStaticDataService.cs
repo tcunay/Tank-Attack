@@ -1,3 +1,4 @@
+using Code.DebugEnvironment;
 using Code.Gameplay.Features.Vehicle.Setup;
 using Code.Gameplay.Levels.Setup;
 using Cysharp.Threading.Tasks;
@@ -15,5 +16,6 @@ namespace Code.Gameplay.StaticData
         VehicleConfig GetVehicleConfig(VehicleKind vehicleKind);
         LevelConfig GetLevelConfig(int levelNumber);
         AssetReference GameOverSceneReference();
+        DebugEnvironmentSettings DebugEnvironmentSettings();
     }
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05272d1e6164d5895fb30243fffe528, type: 3}
   m_Name: AdditionalBuildSettings
   m_EditorClassIdentifier: 
-  _isDebugEnvironment: 0
+  _isDebugEnvironment: 1

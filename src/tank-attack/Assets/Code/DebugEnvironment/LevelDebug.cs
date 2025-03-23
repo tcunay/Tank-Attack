@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Vehicle.Setup;
+using Code.Gameplay.StaticData;
 using Code.Infrastructure.Installers.Initializers.BattleScene;
 using UnityEngine;
+using Zenject;
 using Object = UnityEngine.Object;
 
 namespace Code.DebugEnvironment
@@ -13,16 +15,25 @@ namespace Code.DebugEnvironment
     {
         [SerializeField] private LevelInitializer _levelInitializer;
      
-        public const string Tag = "DebugEnvironment";
         public const string WaypointsDebugObject = "WAY_POINTS_DEBUG";
         
         private readonly List<LineRenderer> _lineRenderers = new();
         
         private Material _lineMaterial;
+        private IStaticDataService _staticDataService;
+
+        [Inject]
+        private void Construct(IStaticDataService staticDataService)
+        {
+            _staticDataService = staticDataService;
+        }
 
         private void Start()
         {
-            InitializeLineRenderer();
+            if (_staticDataService.DebugEnvironmentSettings().IsDebugEnvironment)
+            {
+                InitializeLineRenderer();
+            }
         }
 
         private void OnDestroy()
@@ -50,7 +61,6 @@ namespace Code.DebugEnvironment
             GameObject linesParent = new GameObject
             {
                 name = WaypointsDebugObject,
-                tag = Tag
             };
 
             foreach (var wayPointsMoveSetup in _levelInitializer.EnemiesSetups.Select(x => x.VehicleSetup.MoveSetup))

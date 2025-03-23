@@ -43,17 +43,18 @@ public static class GameComponentsLookup {
     public const int CollectingTargetsContinuously = 32;
     public const int CollectTargetsInterval = 33;
     public const int CollectTargetsTimer = 34;
-    public const int LayerMask = 35;
-    public const int ProcessedTargets = 36;
-    public const int Radius = 37;
-    public const int Reached = 38;
-    public const int ReadyToCollectTargets = 39;
-    public const int TargetsBuffer = 40;
-    public const int Helicopter = 41;
-    public const int Tank = 42;
-    public const int VehicleTypeId = 43;
+    public const int DebugCollider = 35;
+    public const int LayerMask = 36;
+    public const int ProcessedTargets = 37;
+    public const int Radius = 38;
+    public const int Reached = 39;
+    public const int ReadyToCollectTargets = 40;
+    public const int TargetsBuffer = 41;
+    public const int Helicopter = 42;
+    public const int Tank = 43;
+    public const int VehicleTypeId = 44;
 
-    public const int TotalComponents = 44;
+    public const int TotalComponents = 45;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -91,6 +92,7 @@ public static class GameComponentsLookup {
         "CollectingTargetsContinuously",
         "CollectTargetsInterval",
         "CollectTargetsTimer",
+        "DebugCollider",
         "LayerMask",
         "ProcessedTargets",
         "Radius",
@@ -138,6 +140,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.CollectingTargetsContinuously),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsInterval),
         typeof(Code.Gameplay.Features.TargetCollection.CollectTargetsTimer),
+        typeof(Code.Gameplay.Features.TargetCollection.DebugCollider),
         typeof(Code.Gameplay.Features.TargetCollection.LayerMask),
         typeof(Code.Gameplay.Features.TargetCollection.ProcessedTargets),
         typeof(Code.Gameplay.Features.TargetCollection.Radius),

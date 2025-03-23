@@ -75,6 +75,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2c46389c00864c97abc53aafd15e760
+    m_Address: DebugEnvironmentSettings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: db44fbeb2509343fba99565763a48feb
     m_Address: Camera
     m_ReadOnly: 0

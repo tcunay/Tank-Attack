@@ -74,9 +74,9 @@ namespace Code.Gameplay.Common.Physics
       return null;
     }
     
-    public IEnumerable<GameEntity> CircleCast(Vector3 position, float radius, int layerMask) 
+    public IEnumerable<GameEntity> CircleSphere(Vector3 position, float radius, int layerMask) 
     {
-      int hitCount = OverlapCircle(position, radius, OverlapHits, layerMask);
+      int hitCount = OverlapSphere(position, radius, OverlapHits, layerMask);
 
       DrawDebug(position, radius, 1f, Color.red);
       
@@ -92,7 +92,7 @@ namespace Code.Gameplay.Common.Physics
 
     public int CircleCastNonAlloc(Vector3 position, float radius, int layerMask, GameEntity[] hitBuffer) 
     {
-      int hitCount = OverlapCircle(position, radius, OverlapHits, layerMask);
+      int hitCount = OverlapSphere(position, radius, OverlapHits, layerMask);
 
       DrawDebug(position, radius, 1f, Color.green);
       
@@ -129,7 +129,7 @@ namespace Code.Gameplay.Common.Physics
       return null;
     }
 
-    public int OverlapCircle(Vector3 worldPos, float radius, Collider[] hits, int layerMask) =>
+    public int OverlapSphere(Vector3 worldPos, float radius, Collider[] hits, int layerMask) =>
       UnityEngine.Physics.OverlapSphereNonAlloc(worldPos, radius, hits, layerMask);
     
     private static void DrawDebug(Vector2 worldPos, float radius, float seconds, Color color)
