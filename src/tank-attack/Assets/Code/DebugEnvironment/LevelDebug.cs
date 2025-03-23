@@ -12,7 +12,8 @@ namespace Code.DebugEnvironment
     public class LevelDebug : MonoBehaviour
     {
         [SerializeField] private LevelInitializer _levelInitializer;
-        
+     
+        public const string Tag = "DebugEnvironment";
         public const string WaypointsDebugObject = "WAY_POINTS_DEBUG";
         
         private readonly List<LineRenderer> _lineRenderers = new();
@@ -46,8 +47,12 @@ namespace Code.DebugEnvironment
                 color = Color.green.AlphaMultiplied(0.2f)
             };
 
-            GameObject linesParent = new GameObject(WaypointsDebugObject);
-            
+            GameObject linesParent = new GameObject
+            {
+                name = WaypointsDebugObject,
+                tag = Tag
+            };
+
             foreach (var wayPointsMoveSetup in _levelInitializer.EnemiesSetups.Select(x => x.VehicleSetup.MoveSetup))
             {
                 GameObject wayPointsLine = CreateWayPointsLine(wayPointsMoveSetup);

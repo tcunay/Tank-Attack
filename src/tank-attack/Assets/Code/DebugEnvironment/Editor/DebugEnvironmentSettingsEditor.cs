@@ -1,15 +1,15 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Code.Build.Editor
+namespace Code.DebugEnvironment.Editor
 {
-    [CustomEditor(typeof(AdditionalBuildSettings))]
-    public class AdditionalBuildSettingsEditor : UnityEditor.Editor
+    [CustomEditor(typeof(DebugEnvironmentSettings))]
+    public class DebugEnvironmentSettingsEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            var settings = (AdditionalBuildSettings)target;
+            var settings = (DebugEnvironmentSettings)target;
 
             if(GUILayout.Button("Apply", GUILayout.Height(40)))
             {
@@ -18,15 +18,15 @@ namespace Code.Build.Editor
         
         }
         
-        private void Apply(AdditionalBuildSettings settings)
+        private void Apply(DebugEnvironmentSettings settings)
         {
             if (settings.IsDebugEnvironment)
             {
-                AddDefineSymbol(Defines.DebugEnvironment);
+                //AddDefineSymbol(Defines.DebugEnvironment);
             }
             else
             {
-                RemoveDefineSymbol(Defines.DebugEnvironment);
+                //RemoveDefineSymbol(Defines.DebugEnvironment);
             }
         }
 
