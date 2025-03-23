@@ -5,11 +5,11 @@ using Zenject;
 
 namespace Code.Infrastructure.Installers.Initializers.BattleScene
 {
-    public class LevelInitializer : MonoBehaviour, IInitializable
+    public partial class LevelInitializer : MonoBehaviour, IInitializable
     {
         [SerializeField] private Transform _heroPoint;
         [SerializeField] public EnemySetup[] _enemiesSetups;
-        
+
         private ILevelDataProvider _levelDataProvider;
 
         [Inject]
@@ -17,7 +17,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         {
             _levelDataProvider = levelDataProvider;
         }
-        
+
         public void Initialize()
         {
             _levelDataProvider.SetStartPoint(_heroPoint);

@@ -58,7 +58,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
                 .AddSpeed(vehicleSetup.MoveSetup.Speed)
                 .AddWayPointsMove(vehicleSetup.MoveSetup.WayPoints.Select(x => x.position).ToArray())
                 .AddWayPointsMoveIndex(0)
-                .AddArrivalThreshold(vehicleSetup.MoveSetup.ArrivalThreshold)
+                .AddArrivalThreshold(0.01f)//(vehicleSetup.MoveSetup.ArrivalThreshold)
                 .AddRotationSpeed(3)
                 .With(x => x.isMoving = true)
                 .With(x => x.isMovementAvailable = true)
