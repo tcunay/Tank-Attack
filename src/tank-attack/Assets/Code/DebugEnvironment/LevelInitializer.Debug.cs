@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Extensions;
-using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.Vehicle.Setup;
 using UnityEngine;
 
@@ -37,7 +36,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
 
             GameObject linesParent = new GameObject(WaypointsDebugObject);
             
-            foreach (var wayPointsMoveSetup in Enumerable.Select<EnemySetup, WayPointsMoveSetup>(_enemiesSetups, x => x.VehicleSetup.MoveSetup))
+            foreach (var wayPointsMoveSetup in _enemiesSetups.Select(x => x.VehicleSetup.MoveSetup))
             {
                 GameObject wayPointsLine = CreateWayPointsLine(wayPointsMoveSetup);
 
@@ -72,14 +71,14 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         
         private void ClearLines()
         {
-            foreach (var lineRenderer in _lineRenderers)
+            DestroyImmediate(GameObject.Find(WaypointsDebugObject));
+            
+            foreach (var lineRenderer in _lineRenderers.Where(x => x != null))
             {
-                Object.DestroyImmediate(lineRenderer.gameObject);
+                DestroyImmediate(lineRenderer?.gameObject);
             }
-
+            
             _lineRenderers.Clear();
-
-            Object.DestroyImmediate(GameObject.Find(WaypointsDebugObject));
         }
     }
 }
