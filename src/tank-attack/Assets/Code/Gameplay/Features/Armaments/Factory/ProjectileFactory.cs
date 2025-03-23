@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using Code.Common.Entity;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Armaments.Setup;
-using Code.Gameplay.StaticData;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Identifiers;
 using UnityEngine;
-using Zenject;
 
 namespace Code.Gameplay.Features.Armaments.Factory
 {
     public class ProjectileFactory : IProjectileFactory
     {
-        private readonly IInstantiator _instantiator;
-        private readonly IStaticDataService _staticData;
         private readonly IIdentifierService _identifierService;
 
-        public ProjectileFactory(IInstantiator instantiator, IStaticDataService staticData, IIdentifierService identifierService)
+        public ProjectileFactory(IIdentifierService identifierService)
         {
-            _instantiator = instantiator;
-            _staticData = staticData;
             _identifierService = identifierService;
         }
 
