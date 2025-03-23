@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Extensions;
+using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.Vehicle.Setup;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
     [ExecuteAlways]
     public partial class LevelInitializer
     {
-        public const string WaypointsDebugObject = "WAY_POINT_DEBUG";
+        public const string WaypointsDebugObject = "WAY_POINTS_DEBUG";
         
         private readonly List<LineRenderer> _lineRenderers = new();
         
@@ -36,7 +37,7 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
 
             GameObject linesParent = new GameObject(WaypointsDebugObject);
             
-            foreach (var wayPointsMoveSetup in _enemiesSetups.Select(x => x.VehicleSetup.MoveSetup))
+            foreach (var wayPointsMoveSetup in Enumerable.Select<EnemySetup, WayPointsMoveSetup>(_enemiesSetups, x => x.VehicleSetup.MoveSetup))
             {
                 GameObject wayPointsLine = CreateWayPointsLine(wayPointsMoveSetup);
 
@@ -73,12 +74,12 @@ namespace Code.Infrastructure.Installers.Initializers.BattleScene
         {
             foreach (var lineRenderer in _lineRenderers)
             {
-                DestroyImmediate(lineRenderer.gameObject);
+                Object.DestroyImmediate(lineRenderer.gameObject);
             }
 
             _lineRenderers.Clear();
 
-            DestroyImmediate(GameObject.Find(WaypointsDebugObject));
+            Object.DestroyImmediate(GameObject.Find(WaypointsDebugObject));
         }
     }
 }

@@ -3,7 +3,7 @@ using Code.Infrastructure.Installers.Initializers.BattleScene;
 using UnityEditor;
 using UnityEngine;
 
-namespace Code.Infrastructure.DebugEnvironment.Editor
+namespace Code.DebugEnvironment.Editor
 {
     [InitializeOnLoad]
     public class HierarchyColorizer
