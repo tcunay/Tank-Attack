@@ -1674,6 +1674,7 @@ GameObject:
   - component: {fileID: 1300924654}
   - component: {fileID: 1300924657}
   - component: {fileID: 1300924660}
+  - component: {fileID: 1300924661}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1761,7 +1762,6 @@ MonoBehaviour:
       MaxHp: 2
       MoveSetup:
         Speed: 1
-        ArrivalThreshold: 1
         WayPoints:
         - {fileID: 1645450525}
         - {fileID: 1921213427}
@@ -1770,7 +1770,6 @@ MonoBehaviour:
       MaxHp: 2
       MoveSetup:
         Speed: 1
-        ArrivalThreshold: 1
         WayPoints:
         - {fileID: 1464428146}
         - {fileID: 2062380208}
@@ -1784,7 +1783,6 @@ MonoBehaviour:
       MaxHp: 1
       MoveSetup:
         Speed: 1
-        ArrivalThreshold: 1
         WayPoints:
         - {fileID: 496717926}
         - {fileID: 1716619495}
@@ -1793,6 +1791,19 @@ MonoBehaviour:
         - {fileID: 999818541}
         - {fileID: 1557470046}
         - {fileID: 1712057750}
+--- !u!114 &1300924661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300924653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3d49af7b654764813b38f3debd86be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelInitializer: {fileID: 1300924660}
 --- !u!1 &1464428145
 GameObject:
   m_ObjectHideFlags: 0

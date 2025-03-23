@@ -1,19 +1,19 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Code.Common.Extensions;
 using Code.Gameplay.Features.Vehicle.Setup;
 using Code.Infrastructure.Installers.Initializers.BattleScene;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Code.DebugEnvironment
 {
-    [ExecuteAlways]
     public class LevelDebug : MonoBehaviour
     {
         [SerializeField] private LevelInitializer _levelInitializer;
         
         public const string WaypointsDebugObject = "WAY_POINTS_DEBUG";
-        //DEBUG_ENVIRONMENT
         
         private readonly List<LineRenderer> _lineRenderers = new();
         
@@ -27,6 +27,14 @@ namespace Code.DebugEnvironment
         private void OnDestroy()
         {
             ClearLines();
+        }
+
+        private void OnDrawGizmos()
+        {
+            foreach (WayPointsMoveSetup wayPointsMoveSetup in _levelInitializer.EnemiesSetups.Select(x => x.VehicleSetup.MoveSetup))
+            {
+                DrawGizmoWayPoint(wayPointsMoveSetup);
+            }
         }
 
         private void InitializeLineRenderer()
@@ -83,6 +91,27 @@ namespace Code.DebugEnvironment
             }
             
             _lineRenderers.Clear();
+        }
+        
+        private void DrawGizmoWayPoint(WayPointsMoveSetup wayPointsMoveSetup)
+        {
+            if (wayPointsMoveSetup?.WayPoints == null || wayPointsMoveSetup.WayPoints.Length == 0)
+                return;
+
+            Gizmos.color = Color.green;
+
+            for (int i = 0; i < wayPointsMoveSetup.WayPoints.Length; i++)
+            {
+                if (wayPointsMoveSetup.WayPoints[i] != null)
+                {
+                    Gizmos.DrawSphere(wayPointsMoveSetup.WayPoints[i].position, 0.3f);
+                }
+
+                if (i > 0 && wayPointsMoveSetup.WayPoints[i - 1] != null && wayPointsMoveSetup.WayPoints[i] != null)
+                {
+                    Gizmos.DrawLine(wayPointsMoveSetup.WayPoints[i - 1].position, wayPointsMoveSetup.WayPoints[i].position);
+                }
+            }
         }
     }
 }
