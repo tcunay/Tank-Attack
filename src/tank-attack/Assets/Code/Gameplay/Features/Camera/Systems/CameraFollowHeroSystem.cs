@@ -23,7 +23,7 @@ namespace Code.Gameplay.Features.Camera.Systems
                 .AllOf(
                     matchers: new[]
                     {
-                        GameMatcher.Camera,
+                        GameMatcher.MainCamera,
                         GameMatcher.WorldPosition,
                         GameMatcher.WorldRotation
                     }));

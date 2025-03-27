@@ -19,42 +19,50 @@ public static class GameComponentsLookup {
     public const int Transform = 8;
     public const int WorldPosition = 9;
     public const int WorldRotation = 10;
-    public const int Armament = 11;
-    public const int BulletCounter = 12;
-    public const int CurrentBulletsCount = 13;
-    public const int MaxBulletsCount = 14;
-    public const int Projectile = 15;
-    public const int Camera = 16;
-    public const int CameraUnity = 17;
-    public const int Enemy = 18;
-    public const int Hero = 19;
-    public const int CurrentHP = 20;
-    public const int Dead = 21;
-    public const int ProcessingDeath = 22;
-    public const int ArrivalThreshold = 23;
-    public const int CurrentSpeed = 24;
-    public const int Direction = 25;
-    public const int MovementAvailable = 26;
-    public const int Moving = 27;
-    public const int RotationSpeed = 28;
-    public const int Speed = 29;
-    public const int WayPointsMove = 30;
-    public const int WayPointsMoveIndex = 31;
-    public const int CollectingTargetsContinuously = 32;
-    public const int CollectTargetsInterval = 33;
-    public const int CollectTargetsTimer = 34;
-    public const int DebugCollider = 35;
-    public const int LayerMask = 36;
-    public const int ProcessedTargets = 37;
-    public const int Radius = 38;
-    public const int Reached = 39;
-    public const int ReadyToCollectTargets = 40;
-    public const int TargetsBuffer = 41;
-    public const int Helicopter = 42;
-    public const int Tank = 43;
-    public const int VehicleTypeId = 44;
+    public const int Aim = 11;
+    public const int AutoHoming = 12;
+    public const int AutoHomingTimerText = 13;
+    public const int DetectedTargetId = 14;
+    public const int DetectingTargetId = 15;
+    public const int DetectionTime = 16;
+    public const int Icon = 17;
+    public const int MaxDetectingTime = 18;
+    public const int Armament = 19;
+    public const int BulletCounter = 20;
+    public const int CurrentBulletsCount = 21;
+    public const int MaxBulletsCount = 22;
+    public const int Projectile = 23;
+    public const int CameraUnity = 24;
+    public const int MainCamera = 25;
+    public const int Enemy = 26;
+    public const int Hero = 27;
+    public const int CurrentHP = 28;
+    public const int Dead = 29;
+    public const int ProcessingDeath = 30;
+    public const int ArrivalThreshold = 31;
+    public const int CurrentSpeed = 32;
+    public const int Direction = 33;
+    public const int MovementAvailable = 34;
+    public const int Moving = 35;
+    public const int RotationSpeed = 36;
+    public const int Speed = 37;
+    public const int WayPointsMove = 38;
+    public const int WayPointsMoveIndex = 39;
+    public const int CollectingTargetsContinuously = 40;
+    public const int CollectTargetsInterval = 41;
+    public const int CollectTargetsTimer = 42;
+    public const int DebugCollider = 43;
+    public const int LayerMask = 44;
+    public const int ProcessedTargets = 45;
+    public const int Radius = 46;
+    public const int Reached = 47;
+    public const int ReadyToCollectTargets = 48;
+    public const int TargetsBuffer = 49;
+    public const int Helicopter = 50;
+    public const int Tank = 51;
+    public const int VehicleTypeId = 52;
 
-    public const int TotalComponents = 45;
+    public const int TotalComponents = 53;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -68,13 +76,21 @@ public static class GameComponentsLookup {
         "Transform",
         "WorldPosition",
         "WorldRotation",
+        "Aim",
+        "AutoHoming",
+        "AutoHomingTimerText",
+        "DetectedTargetId",
+        "DetectingTargetId",
+        "DetectionTime",
+        "Icon",
+        "MaxDetectingTime",
         "Armament",
         "BulletCounter",
         "CurrentBulletsCount",
         "MaxBulletsCount",
         "Projectile",
-        "Camera",
         "CameraUnity",
+        "MainCamera",
         "Enemy",
         "Hero",
         "CurrentHP",
@@ -116,13 +132,21 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Common.TransformComponent),
         typeof(Code.Gameplay.Common.WorldPosition),
         typeof(Code.Gameplay.Common.WorldRotation),
+        typeof(Code.Gameplay.Features.Aim.Aim),
+        typeof(Code.Gameplay.Features.Aim.AutoHoming),
+        typeof(Code.Gameplay.Features.Aim.AutoHomingTimerText),
+        typeof(Code.Gameplay.Features.Aim.DetectedTargetId),
+        typeof(Code.Gameplay.Features.Aim.DetectingTargetId),
+        typeof(Code.Gameplay.Features.Aim.DetectionTime),
+        typeof(Code.Gameplay.Features.Aim.Icon),
+        typeof(Code.Gameplay.Features.Aim.MaxDetectingTime),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Armament),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.BulletCounter),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.CurrentBulletsCount),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.MaxBulletsCount),
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Projectile),
-        typeof(Code.Gameplay.Features.Camera.Camera),
         typeof(Code.Gameplay.Features.Camera.CameraUnity),
+        typeof(Code.Gameplay.Features.Camera.MainCamera),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHP),

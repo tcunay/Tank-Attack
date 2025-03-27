@@ -37,5 +37,12 @@ namespace Code.Gameplay.Features.Armaments.Factory
                 .With(x => x.isReadyToCollectTargets = true)
                 .With(x => x.isCollectingTargetsContinuously = true);
         }
+
+        public GameEntity CreateAutoHomingBullet(Vector3 at, Vector3 direction, ProjectileSetup setup, int targetId)
+        {
+            return CreateBullet(at, direction, setup)
+                .AddDetectedTargetId(targetId)
+                .With(x => x.isAutoHoming = true);
+        }
     }
 }

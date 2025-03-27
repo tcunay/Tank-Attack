@@ -9,6 +9,8 @@ namespace Code.Gameplay.Features.Armaments
         {
             Add(systems.Create<ShootByInputSystem>());
             
+            Add(systems.Create<SetDirectionByAutoHomingProjectile>());
+            
             Add(systems.Create<DecreaseBulletCountSystem>());
             
             Add(systems.Create<BulletCounterSystem>());

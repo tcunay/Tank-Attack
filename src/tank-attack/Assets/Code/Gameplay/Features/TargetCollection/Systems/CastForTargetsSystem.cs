@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Code.Gameplay.Common.Physics;
+using Code.Gameplay.Common.PhysicsGame;
 using Entitas;
 
 namespace Code.Gameplay.Features.TargetCollection.Systems
@@ -40,7 +40,7 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
         private IEnumerable<int> TargetsInRadius(GameEntity entity)
         {
             return _physicsService
-                .CircleSphere(entity.WorldPosition, entity.Radius, entity.LayerMask)
+                .OverlapSphere(entity.WorldPosition, entity.Radius, entity.LayerMask)
                 .Select(x => x.Id);
         }
     }

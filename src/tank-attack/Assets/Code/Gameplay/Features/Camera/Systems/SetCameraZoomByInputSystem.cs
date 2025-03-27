@@ -14,7 +14,7 @@ namespace Code.Gameplay.Features.Camera.Systems
         public SetCameraZoomByInputSystem(GameContext game, InputContext inputContext)
         {
             _cameras = game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Camera, GameMatcher.CameraUnity));
+                .AllOf(GameMatcher.MainCamera, GameMatcher.CameraUnity));
 
             _inputs = inputContext.GetGroup(InputMatcher
                 .AllOf(InputMatcher.CameraZoomInput));

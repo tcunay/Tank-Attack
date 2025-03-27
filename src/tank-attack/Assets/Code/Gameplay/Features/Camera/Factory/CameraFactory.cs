@@ -24,7 +24,7 @@ namespace Code.Gameplay.Cameras.Factory
                 .AddViewPath(AssetPath.CameraPrefabPath)
                 .AddWorldPosition(Vector3.zero)
                 .AddWorldRotation(Quaternion.identity)
-                .With(x => x.isCamera = true);
+                .With(x => x.isMainCamera = true);
         }
     }
 }

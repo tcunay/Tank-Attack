@@ -1,4 +1,5 @@
 using Code.Gameplay.Cameras.Factory;
+using Code.Gameplay.Features.Aim;
 using Code.Gameplay.Features.Enemies;
 using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Hero.Factory;

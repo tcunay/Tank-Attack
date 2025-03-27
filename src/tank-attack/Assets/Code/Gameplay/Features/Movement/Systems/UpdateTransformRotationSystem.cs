@@ -11,7 +11,8 @@ namespace Code.Gameplay.Features.Movement.Systems
             _transforms = gameContext.GetGroup(GameMatcher
                 .AllOf(
                     GameMatcher.WorldPosition,
-                    GameMatcher.WorldRotation
+                    GameMatcher.WorldRotation,
+                    GameMatcher.Transform
                 ));
         }
         

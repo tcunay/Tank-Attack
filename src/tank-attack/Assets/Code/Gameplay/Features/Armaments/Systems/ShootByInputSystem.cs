@@ -2,7 +2,6 @@ using Code.Gameplay.Features.Armaments.Factory;
 using Code.Gameplay.Features.Armaments.Setup;
 using Code.Gameplay.Levels;
 using Entitas;
-using UnityEngine;
 
 namespace Code.Gameplay.Features.Armaments.Systems
 {
@@ -13,6 +12,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
 
         private readonly IGroup<InputEntity> _inputs;
         private readonly IGroup<GameEntity> _heroes;
+        private readonly IGroup<GameEntity> _aims;
 
         public ShootByInputSystem(InputContext inputContext, GameContext gameContext, IProjectileFactory projectileFactory, ILevelDataProvider levelDataProvider)
         {
@@ -24,11 +24,15 @@ namespace Code.Gameplay.Features.Armaments.Systems
             
             _heroes = gameContext.GetGroup(GameMatcher
                 .AllOf(GameMatcher.Hero, GameMatcher.WorldPosition, GameMatcher.CurrentBulletsCount));
+            
+            _aims = gameContext.GetGroup(GameMatcher
+                .AllOf(GameMatcher.Aim, GameMatcher.WorldPosition, GameMatcher.Direction));
         }
 
         public void Execute()
         {
             foreach (GameEntity hero in _heroes)
+            foreach (GameEntity aim in _aims)
             foreach (InputEntity input in _inputs)
             {
                 if (hero.CurrentBulletsCount <= 0)
@@ -37,9 +41,16 @@ namespace Code.Gameplay.Features.Armaments.Systems
                 }
                 
                 ProjectileSetup projectileSetup = _levelDataProvider.LevelConfig.ArmamentSetup.ProjectileSetup;
-                
-                Vector3 forward = hero.WorldRotation * Vector3.forward;
-                _projectileFactory.CreateBullet(hero.WorldPosition, forward, projectileSetup);
+
+                if (aim.isAutoHoming)
+                {
+                    _projectileFactory.CreateAutoHomingBullet(aim.WorldPosition, aim.Direction, projectileSetup,
+                        aim.DetectedTargetId);
+                }
+                else
+                {
+                    _projectileFactory.CreateBullet(aim.WorldPosition, aim.Direction, projectileSetup);
+                }
             }
         }
     }

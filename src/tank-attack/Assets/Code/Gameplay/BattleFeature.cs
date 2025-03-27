@@ -1,4 +1,5 @@
 using Code.Common.Systems.Destruct;
+using Code.Gameplay.Features.Aim;
 using Code.Gameplay.Features.Armaments;
 using Code.Gameplay.Features.Camera;
 using Code.Gameplay.Features.EndLevel;
@@ -24,6 +25,7 @@ namespace Code.Gameplay
             Add(systems.Create<HeroFeature>());
             Add(systems.Create<CameraFeature>());
             
+            Add(systems.Create<AimFeature>());
             Add(systems.Create<ArmamentsFeature>());
             
             Add(systems.Create<MovementFeature>());

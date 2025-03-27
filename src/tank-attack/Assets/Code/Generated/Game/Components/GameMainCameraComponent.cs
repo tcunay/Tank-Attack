@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherCamera;
+    static Entitas.IMatcher<GameEntity> _matcherMainCamera;
 
-    public static Entitas.IMatcher<GameEntity> Camera {
+    public static Entitas.IMatcher<GameEntity> MainCamera {
         get {
-            if (_matcherCamera == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Camera);
+            if (_matcherMainCamera == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.MainCamera);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherCamera = matcher;
+                _matcherMainCamera = matcher;
             }
 
-            return _matcherCamera;
+            return _matcherMainCamera;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Camera.Camera cameraComponent = new Code.Gameplay.Features.Camera.Camera();
+    static readonly Code.Gameplay.Features.Camera.MainCamera mainCameraComponent = new Code.Gameplay.Features.Camera.MainCamera();
 
-    public bool isCamera {
-        get { return HasComponent(GameComponentsLookup.Camera); }
+    public bool isMainCamera {
+        get { return HasComponent(GameComponentsLookup.MainCamera); }
         set {
-            if (value != isCamera) {
-                var index = GameComponentsLookup.Camera;
+            if (value != isMainCamera) {
+                var index = GameComponentsLookup.MainCamera;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : cameraComponent;
+                            : mainCameraComponent;
 
                     AddComponent(index, component);
                 } else {
