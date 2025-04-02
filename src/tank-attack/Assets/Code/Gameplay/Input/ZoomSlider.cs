@@ -1,5 +1,7 @@
 using Code.Gameplay.Input.Services;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Zenject;
 
@@ -33,7 +35,14 @@ namespace Code.Gameplay.Input
 
         private void OnSliderValueChanged(float value)
         {
+            Debug.Log($"Value changed = {value}");
+            Deselect();
             _inputService.CameraZoomAxis = value;
+        }
+
+        private void Deselect()
+        {
+            EventSystem.current.SetSelectedGameObject(null);
         }
     }
 }
