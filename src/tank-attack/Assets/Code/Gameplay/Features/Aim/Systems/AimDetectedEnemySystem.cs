@@ -5,8 +5,11 @@ namespace Code.Gameplay.Features.Aim.Systems
 {
     public class AimDetectedEnemySystem : IExecuteSystem
     {
+        private const float RadiusFactor = 0.0125f;
+        
         private readonly IPhysicsService _physicsService;
         private readonly IGroup<GameEntity> _aims;
+        private readonly IGroup<GameEntity> _cameras;
 
         public AimDetectedEnemySystem(GameContext game, IPhysicsService physicsService)
         {
@@ -18,13 +21,21 @@ namespace Code.Gameplay.Features.Aim.Systems
                     GameMatcher.Direction,
                     GameMatcher.LayerMask
                     ));
+            
+            _cameras = game.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.CameraUnity,
+                    GameMatcher.MainCamera
+                ));
         }
 
         public void Execute()
         {
+            foreach (GameEntity camera in _cameras)
             foreach (GameEntity aim in _aims)
             {
-                GameEntity hit = _physicsService.Raycast(aim.WorldPosition, aim.Direction, aim.LayerMask);
+                float radius = RadiusFactor * camera.CameraUnity.fieldOfView;
+                GameEntity hit = _physicsService.SphereCast(aim.WorldPosition, aim.Direction, aim.LayerMask, radius, 100);
 
                 if (hit != null)
                 {
