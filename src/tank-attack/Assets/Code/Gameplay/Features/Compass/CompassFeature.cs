@@ -8,9 +8,9 @@ namespace Code.Gameplay.Features.Compass
     {
         public CompassFeature(ISystemFactory systems)
         {
+            Add(systems.Create<CreateMarkToEnemySystem>());
             Add(systems.Create<RemoveMarkWithoutTargetSystem>());
             
-            Add(systems.Create<CreateMarkToEnemySystem>());
             Add(systems.Create<MoveMarksSystem>());
         }
     }
