@@ -63,9 +63,7 @@ namespace Code.Gameplay.Features.Compass.Systems
 
             float angle = Vector3.SignedAngle(flatForward, flatToEnemy, Vector3.up);
 
-            // Допустим, ты хочешь, чтобы угол ±90° отображался как ±компасWidth / 2
             float compassWidth = compass.CompassView.MarkParent.rect.width; // ширина UI-компаса в пикселях
-            //float maxAngle = f; // максимально допустимый угол видимости
 
             // Ограничим угол (опционально)
             float clampedAngle = Mathf.Clamp(angle, -MaxAngle, MaxAngle);
