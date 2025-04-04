@@ -17,5 +17,6 @@ namespace Code.Gameplay.StaticData
         LevelConfig GetLevelConfig(int levelNumber);
         AssetReference GameOverSceneReference();
         DebugEnvironmentSettings DebugEnvironmentSettings();
+        GameObject EnemyMarkPrefab();
     }
 }

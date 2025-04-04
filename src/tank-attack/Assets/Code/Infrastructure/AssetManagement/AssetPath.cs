@@ -11,6 +11,7 @@ namespace Code.Infrastructure.AssetManagement
         public const string WinLevelScene = "WinLevelScene";
         public const string Vehicles = "Vehicles";
         public const string LevelConfig = "LevelConfig";
+        public const string EnemyMark = "EnemyMark";
         public const string DebugEnvironmentSettings = "DebugEnvironmentSettings";
     }
 }

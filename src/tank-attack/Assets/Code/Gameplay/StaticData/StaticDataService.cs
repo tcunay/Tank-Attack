@@ -17,6 +17,7 @@ namespace Code.Gameplay.StaticData
         private GameObject _hero;
         private GameObject _bullet;
         private GameObject _camera;
+        private GameObject _enemyMark;
         private Dictionary<VehicleKind ,VehicleConfig> _vehicleConfigs;
         private Dictionary<int, LevelConfig> _levels;
         private AssetReference _gameOverSceneReference;
@@ -35,7 +36,8 @@ namespace Code.Gameplay.StaticData
                 LoadCameraPrefab(),
                 LoadVehicles(),
                 LoadLevels(),
-                LoadDebugEnvironmentSettings()
+                LoadDebugEnvironmentSettings(),
+                LoadEnemyMarkPrefab()
             );
         }
         
@@ -52,6 +54,11 @@ namespace Code.Gameplay.StaticData
         public GameObject CameraPrefab()
         {
             return _camera;
+        }
+        
+        public GameObject EnemyMarkPrefab()
+        {
+            return _enemyMark;
         }
 
         public VehicleConfig GetVehicleConfig(VehicleKind vehicleKind)
@@ -87,6 +94,11 @@ namespace Code.Gameplay.StaticData
         private async UniTask LoadHeroPrefab()
         {
             _hero = await Load(AssetPath.HeroPrefabPath);
+        }
+        
+        private async UniTask LoadEnemyMarkPrefab()
+        {
+            _enemyMark = await Load(AssetPath.EnemyMark);
         }
         
         private async UniTask LoadBulletPrefab()

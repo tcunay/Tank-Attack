@@ -5,6 +5,7 @@ using Code.Gameplay.Common.PhysicsGame;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Aim;
 using Code.Gameplay.Features.Armaments.Factory;
+using Code.Gameplay.Features.Compass.Factory;
 using Code.Gameplay.Features.Enemies.Factory;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Input.Services;
@@ -135,6 +136,7 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IEnemyFactory>().To<EnemyFactory>().AsSingle();
             Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
             Container.Bind<IProjectileFactory>().To<ProjectileFactory>().AsSingle();
+            Container.Bind<IMarkFactory>().To<MarkFactory>().AsSingle();
         }
         
         private void BindLoadingCurtain()

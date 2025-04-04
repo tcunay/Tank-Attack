@@ -25,7 +25,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
         {
             foreach (GameEntity bullet in _bullets.GetEntities(_bulletsBuffer))
             {
-                GameEntity target = bullet.Target();
+                GameEntity target = bullet.DetectedTarget();
                 
                 if (target == null || target.isDestructed)
                 {

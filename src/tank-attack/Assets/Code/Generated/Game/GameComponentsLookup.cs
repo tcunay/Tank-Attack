@@ -9,63 +9,69 @@
 public static class GameComponentsLookup {
 
     public const int Destructed = 0;
-    public const int SelfDestructTimer = 1;
-    public const int View = 2;
-    public const int ViewPath = 3;
-    public const int ViewPrefab = 4;
-    public const int Damage = 5;
-    public const int Id = 6;
-    public const int Rigidbody = 7;
-    public const int Transform = 8;
-    public const int WorldPosition = 9;
-    public const int WorldRotation = 10;
-    public const int Aim = 11;
-    public const int AutoHoming = 12;
-    public const int AutoHomingTimerText = 13;
-    public const int DetectedTargetId = 14;
-    public const int DetectingTargetId = 15;
-    public const int DetectionTime = 16;
-    public const int Icon = 17;
-    public const int MaxDetectingTime = 18;
-    public const int Armament = 19;
-    public const int BulletCounter = 20;
-    public const int CurrentBulletsCount = 21;
-    public const int MaxBulletsCount = 22;
-    public const int Projectile = 23;
-    public const int CameraUnity = 24;
-    public const int MainCamera = 25;
-    public const int Enemy = 26;
-    public const int Hero = 27;
-    public const int CurrentHP = 28;
-    public const int Dead = 29;
-    public const int ProcessingDeath = 30;
-    public const int ArrivalThreshold = 31;
-    public const int CurrentSpeed = 32;
-    public const int Direction = 33;
-    public const int MovementAvailable = 34;
-    public const int Moving = 35;
-    public const int RotationSpeed = 36;
-    public const int Speed = 37;
-    public const int WayPointsMove = 38;
-    public const int WayPointsMoveIndex = 39;
-    public const int CollectingTargetsContinuously = 40;
-    public const int CollectTargetsInterval = 41;
-    public const int CollectTargetsTimer = 42;
-    public const int DebugCollider = 43;
-    public const int LayerMask = 44;
-    public const int ProcessedTargets = 45;
-    public const int Radius = 46;
-    public const int Reached = 47;
-    public const int ReadyToCollectTargets = 48;
-    public const int TargetsBuffer = 49;
-    public const int Helicopter = 50;
-    public const int Tank = 51;
-    public const int VehicleTypeId = 52;
+    public const int InstantiateParent = 1;
+    public const int SelfDestructTimer = 2;
+    public const int View = 3;
+    public const int ViewPath = 4;
+    public const int ViewPrefab = 5;
+    public const int Damage = 6;
+    public const int Id = 7;
+    public const int Rigidbody = 8;
+    public const int Transform = 9;
+    public const int WorldPosition = 10;
+    public const int WorldRotation = 11;
+    public const int Aim = 12;
+    public const int AutoHoming = 13;
+    public const int AutoHomingTimerText = 14;
+    public const int DetectedTargetId = 15;
+    public const int DetectingTargetId = 16;
+    public const int DetectionTime = 17;
+    public const int Icon = 18;
+    public const int MaxDetectingTime = 19;
+    public const int Armament = 20;
+    public const int BulletCounter = 21;
+    public const int CurrentBulletsCount = 22;
+    public const int MaxBulletsCount = 23;
+    public const int Projectile = 24;
+    public const int CameraUnity = 25;
+    public const int MainCamera = 26;
+    public const int CompassMark = 27;
+    public const int CompassView = 28;
+    public const int Marked = 29;
+    public const int Enemy = 30;
+    public const int Hero = 31;
+    public const int CurrentHP = 32;
+    public const int Dead = 33;
+    public const int ProcessingDeath = 34;
+    public const int ArrivalThreshold = 35;
+    public const int CurrentSpeed = 36;
+    public const int Direction = 37;
+    public const int MovementAvailable = 38;
+    public const int Moving = 39;
+    public const int RotationSpeed = 40;
+    public const int Speed = 41;
+    public const int WayPointsMove = 42;
+    public const int WayPointsMoveIndex = 43;
+    public const int CollectingTargetsContinuously = 44;
+    public const int CollectTargetsInterval = 45;
+    public const int CollectTargetsTimer = 46;
+    public const int DebugCollider = 47;
+    public const int LayerMask = 48;
+    public const int ProcessedTargets = 49;
+    public const int Radius = 50;
+    public const int Reached = 51;
+    public const int ReadyToCollectTargets = 52;
+    public const int TargetId = 53;
+    public const int TargetsBuffer = 54;
+    public const int Helicopter = 55;
+    public const int Tank = 56;
+    public const int VehicleTypeId = 57;
 
-    public const int TotalComponents = 53;
+    public const int TotalComponents = 58;
 
     public static readonly string[] componentNames = {
         "Destructed",
+        "InstantiateParent",
         "SelfDestructTimer",
         "View",
         "ViewPath",
@@ -91,6 +97,9 @@ public static class GameComponentsLookup {
         "Projectile",
         "CameraUnity",
         "MainCamera",
+        "CompassMark",
+        "CompassView",
+        "Marked",
         "Enemy",
         "Hero",
         "CurrentHP",
@@ -114,6 +123,7 @@ public static class GameComponentsLookup {
         "Radius",
         "Reached",
         "ReadyToCollectTargets",
+        "TargetId",
         "TargetsBuffer",
         "Helicopter",
         "Tank",
@@ -122,6 +132,7 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(Code.Common.Destructed),
+        typeof(Code.Common.InstantiateParent),
         typeof(Code.Common.SelfDestructTimer),
         typeof(Code.Common.View),
         typeof(Code.Common.ViewPath),
@@ -147,6 +158,9 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Armaments.ArmamentComponents.Projectile),
         typeof(Code.Gameplay.Features.Camera.CameraUnity),
         typeof(Code.Gameplay.Features.Camera.MainCamera),
+        typeof(Code.Gameplay.Features.Compass.CompassMark),
+        typeof(Code.Gameplay.Features.Compass.CompassViewComponent),
+        typeof(Code.Gameplay.Features.Compass.Marked),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
@@ -170,6 +184,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.Radius),
         typeof(Code.Gameplay.Features.TargetCollection.Reached),
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
+        typeof(Code.Gameplay.Features.TargetCollection.TargetId),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Helicopter),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Tank),
