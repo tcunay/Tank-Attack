@@ -1,4 +1,5 @@
 using System;
+using Code.Gameplay.Levels;
 using Code.Infrastructure.States.GameStates.Battle;
 using Code.Infrastructure.States.GameStates.GameOver;
 using Code.Infrastructure.States.GameStates.Home;
@@ -15,10 +16,12 @@ namespace Code.Infrastructure.Installers.Initializers.GameOver
         [SerializeField] private Button _restartButton;
         
         private IGameStateMachine _stateMachine;
+        private ILevelDataProvider _levelDataProvider;
 
         [Inject]
-        private void Construct(IGameStateMachine stateMachine)
+        private void Construct(IGameStateMachine stateMachine, ILevelDataProvider levelDataProvider)
         {
+            _levelDataProvider = levelDataProvider;
             _stateMachine = stateMachine;
         }
         
@@ -38,7 +41,7 @@ namespace Code.Infrastructure.Installers.Initializers.GameOver
 
         private void RestartBattle()
         {
-            _stateMachine.Enter<LoadingBattleState>();
+            _stateMachine.Enter<LoadingBattleState, int>(_levelDataProvider.LevelConfig.LevelNumber);
         }
 
         private void GoHome()

@@ -49,7 +49,7 @@ namespace Code.Infrastructure.Installers.Initializers.WinLevel
 
         private void RestartBattle()
         {
-            _stateMachine.Enter<LoadingBattleState>();
+            _stateMachine.Enter<LoadingBattleState, int>(_levelDataProvider.LevelConfig.LevelNumber);
         }
 
         private void GoHome()
@@ -61,7 +61,7 @@ namespace Code.Infrastructure.Installers.Initializers.WinLevel
         {
             int currentLevelNumber = _levelDataProvider.LevelConfig.LevelNumber;
             
-            _stateMachine.Enter<BootBattleState, int>(currentLevelNumber + 1);
+            _stateMachine.Enter<LoadingBattleState, int>(currentLevelNumber + 1);
         }
         
         private bool ExistNextLevel()

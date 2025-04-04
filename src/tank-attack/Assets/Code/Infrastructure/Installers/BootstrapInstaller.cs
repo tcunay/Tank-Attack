@@ -71,7 +71,6 @@ namespace Code.Infrastructure.Installers
             Container.BindInterfacesAndSelfTo<BootstrapState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingHomeScreenState>().AsSingle();
             Container.BindInterfacesAndSelfTo<HomeScreenState>().AsSingle();
-            Container.BindInterfacesAndSelfTo<BootBattleState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleEnterState>().AsSingle();
             Container.BindInterfacesAndSelfTo<BattleLoopState>().AsSingle();
             Container.BindInterfacesAndSelfTo<LoadingBattleState>().AsSingle();
