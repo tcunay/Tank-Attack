@@ -12,7 +12,6 @@ namespace Code.Gameplay.Features.Compass
             
             Add(systems.Create<CreateMarkToEnemySystem>());
             Add(systems.Create<MoveMarksSystem>());
-            //Add(systems.Create<AddMarkWhenEnemyCreatedSystem>());
         }
     }
 }
