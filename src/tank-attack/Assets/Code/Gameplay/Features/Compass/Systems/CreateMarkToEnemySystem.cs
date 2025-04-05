@@ -6,9 +6,10 @@ namespace Code.Gameplay.Features.Compass.Systems
 {
     public class CreateMarkToEnemySystem : IExecuteSystem
     {
+        private readonly List<GameEntity> _enemiesBuffer = new(16);
+        
         private readonly IMarkFactory _markFactory;
         
-        private readonly List<GameEntity> _enemiesBuffer = new(16);
         private readonly IGroup<GameEntity> _enemies;
         private readonly IGroup<GameEntity> _compasses;
 
