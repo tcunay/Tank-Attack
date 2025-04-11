@@ -23,8 +23,8 @@ namespace Code.Gameplay.Features.Aim.Systems
             foreach (GameEntity hero in _heroes)
             foreach (GameEntity aim in _aims)
             {
-                aim.ReplaceWorldPosition(hero.WorldPosition);
                 aim.ReplaceDirection(hero.WorldRotation * Vector3.forward);
+                aim.ReplaceWorldPosition(hero.WorldPosition + aim.Direction);
             }
         }
     }

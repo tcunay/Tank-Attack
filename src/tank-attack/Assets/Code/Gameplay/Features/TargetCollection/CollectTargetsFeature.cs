@@ -9,7 +9,6 @@ namespace Code.Gameplay.Features.TargetCollection
         public CollectTargetsFeature(ISystemFactory systems)
         {
             Add(systems.Create<CastForTargetsSystem>());
-            Add(systems.Create<MarkReachedSystem>());
             
             Add(systems.Create<TakeDamageWhenProjectileIsReachedSystem>());
             Add(systems.Create<ProjectileMarkDestructedWhenReachedSystem>());

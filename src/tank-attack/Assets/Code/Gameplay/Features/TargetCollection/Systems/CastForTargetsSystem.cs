@@ -29,19 +29,18 @@ namespace Code.Gameplay.Features.TargetCollection.Systems
         {
             foreach (GameEntity entity in _ready.GetEntities(_buffer))
             {
+                int hitCount = _physicsService
+                    .OverlapSphere(entity.WorldPosition, entity.Radius, entity.LayerMask,
+                        out IEnumerable<GameEntity> entities);
+
+                entity.isReached = hitCount > 0;
                 
-                entity.TargetsBuffer.AddRange(TargetsInRadius(entity));
+                entity.TargetsBuffer
+                    .AddRange(entities.Select(x => x.Id));
 
                 if(!entity.isCollectingTargetsContinuously)
                     entity.isReadyToCollectTargets = false;
             }
-        }
-
-        private IEnumerable<int> TargetsInRadius(GameEntity entity)
-        {
-            return _physicsService
-                .OverlapSphere(entity.WorldPosition, entity.Radius, entity.LayerMask)
-                .Select(x => x.Id);
         }
     }
 }

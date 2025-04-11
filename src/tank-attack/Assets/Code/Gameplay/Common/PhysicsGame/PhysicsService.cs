@@ -89,15 +89,22 @@ namespace Code.Gameplay.Common.PhysicsGame
       return null;
     }
     
-    public IEnumerable<GameEntity> OverlapSphere(Vector3 position, float radius, int layerMask) 
+    public int OverlapSphere(Vector3 position, float radius, int layerMask, out IEnumerable<GameEntity> hitEntities) 
     {
       int hitCount = OverlapSphere(position, radius, OverlapHits, layerMask);
 
       DrawDebug(position, radius, 1f, Color.red);
       
+      hitEntities = GetHitEntities(hitCount, OverlapHits);
+
+      return hitCount;
+    }
+
+    private IEnumerable<GameEntity> GetHitEntities(int hitCount, Collider[] hits)
+    {
       for (int i = 0; i < hitCount; i++)
       {
-        GameEntity entity = _collisionRegistry.Get<GameEntity>(OverlapHits[i].GetInstanceID());
+        GameEntity entity = _collisionRegistry.Get<GameEntity>(hits[i].GetInstanceID());
         if (entity == null)
           continue;
 
