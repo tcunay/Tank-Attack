@@ -34,19 +34,14 @@ namespace Code.Gameplay.Common.PhysicsGame
       }
     }
 
-    public GameEntity Raycast(Vector3 worldPosition, Vector3 direction, int layerMask)
+    public GameEntity Raycast(Vector3 worldPosition, Vector3 direction, int layerMask, float maxDistance)
     {
-      int hitCount = Physics.RaycastNonAlloc(worldPosition, direction, Hits, layerMask);
-
-      for (int i = 0; i < hitCount; i++)
+      if (Physics.Raycast(worldPosition, direction, out RaycastHit hit, maxDistance, layerMask))
       {
-        RaycastHit hit = Hits[i];
         if (hit.collider == null)
-          continue;
+          return null;
 
         GameEntity entity = _collisionRegistry.Get<GameEntity>(hit.collider.GetInstanceID());
-        if (entity == null)
-          continue;
 
         return entity;
       }

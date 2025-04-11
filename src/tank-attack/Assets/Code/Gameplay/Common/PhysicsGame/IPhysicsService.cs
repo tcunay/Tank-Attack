@@ -5,7 +5,7 @@ namespace Code.Gameplay.Common.PhysicsGame
 {
   public interface IPhysicsService
   {
-    GameEntity Raycast(Vector3 worldPosition, Vector3 direction, int layerMask);
+    GameEntity Raycast(Vector3 worldPosition, Vector3 direction, int layerMask, float maxDistance);
     GameEntity LineCast(Vector2 start, Vector2 end, int layerMask);
     TEntity OverlapPoint<TEntity>(Vector2 worldPosition, int layerMask) where TEntity : class;
     IEnumerable<GameEntity> RaycastAll(Vector2 worldPosition, Vector2 direction, int layerMask);

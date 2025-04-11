@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
                 .AddRadius(setup.ContactRadius)
                 .AddTargetsBuffer(new List<int>())
                 .AddProcessedTargets(new HashSet<int>())
-                .AddLayerMask(CollisionLayer.Enemy.AsMask())
+                .AddLayerMask(CollisionLayer.Hittable.AsMask())
                 .With(x => x.isReadyToCollectTargets = true)
                 .With(x => x.isCollectingTargetsContinuously = true);
         }

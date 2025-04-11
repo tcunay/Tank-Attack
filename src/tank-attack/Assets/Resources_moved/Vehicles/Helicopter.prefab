@@ -7649,15 +7649,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2358707177435094780, guid: 4e58e87c97e9b4d4b859440359e50472, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2358707177435094780, guid: 4e58e87c97e9b4d4b859440359e50472, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2358707177435094780, guid: 4e58e87c97e9b4d4b859440359e50472, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2358707177435094780, guid: 4e58e87c97e9b4d4b859440359e50472, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -7748,7 +7748,7 @@ CapsuleCollider:
   m_Radius: 1.96
   m_Height: 9.45
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: -2.08}
+  m_Center: {x: 0, y: 0, z: -0.5}
 --- !u!4 &6101685380077512633 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4901743855431942482, guid: 4e58e87c97e9b4d4b859440359e50472, type: 3}

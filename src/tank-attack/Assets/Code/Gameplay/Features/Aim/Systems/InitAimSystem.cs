@@ -27,7 +27,7 @@ namespace Code.Gameplay.Features.Aim.Systems
                 aim.AddDetectionTime(1.5f)
                     .AddWorldPosition(Vector3.zero)
                     .AddDirection(Vector3.zero)
-                    .AddLayerMask(CollisionLayer.Enemy.AsMask())
+                    .AddLayerMask(CollisionLayer.Hittable.AsMask())
                     .AddMaxDetectingTime(2f);
             }
         }
