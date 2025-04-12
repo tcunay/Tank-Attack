@@ -35,6 +35,7 @@ namespace Code.Gameplay.Features.Aim.Systems
                     if(aim.hasDetectedTargetId)
                         aim.RemoveDetectedTargetId();
                 }
+                
             }
         }
     }
