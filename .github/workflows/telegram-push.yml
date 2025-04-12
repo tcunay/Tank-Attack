@@ -16,4 +16,4 @@ jobs:
             -d text="📦 Push в *${{ github.repository }}*
 👤 От: `${{ github.actor }}`
 📝 Коммит: _${{ github.event.head_commit.message }}_" \
-  -d parse_mode="Markdown"
+            -d parse_mode="Markdown"
