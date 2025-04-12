@@ -15,4 +15,4 @@ jobs:
             -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
             -d text="📦 Push в *${{ github.repository }}*%0A👤 От: `${{ github.actor }}`%0A📝 Коммит: _${{ github.event.head_commit.message }}_" \
             -d parse_mode="Markdown" \
-            -d message_thread_id=18
+            -d message_thread_id=${{ secrets.TELEGRAM_CHAT_THREAD_ID }}
