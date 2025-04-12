@@ -50,7 +50,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
             VehicleConfig vehicleConfig = _staticDataService.GetVehicleConfig(vehicleSetup.Kind);
             
             return CreateEntity.Empty(_identifierService.Next())
-                .AddCurrentHP(vehicleSetup.MaxHp)
+                .AddMaxHp(vehicleSetup.MaxHp)
                 .AddWorldPosition(startPoint.position)
                 .AddWorldRotation(startPoint.rotation)
                 .AddViewPrefab(vehicleConfig.Prefab)

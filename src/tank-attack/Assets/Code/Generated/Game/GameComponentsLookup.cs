@@ -39,35 +39,39 @@ public static class GameComponentsLookup {
     public const int CompassView = 28;
     public const int Marked = 29;
     public const int Enemy = 30;
-    public const int Hero = 31;
-    public const int CurrentHP = 32;
-    public const int Dead = 33;
-    public const int ProcessingDeath = 34;
-    public const int ArrivalThreshold = 35;
-    public const int CurrentSpeed = 36;
-    public const int Direction = 37;
-    public const int MovementAvailable = 38;
-    public const int Moving = 39;
-    public const int RotationSpeed = 40;
-    public const int Speed = 41;
-    public const int WayPointsMove = 42;
-    public const int WayPointsMoveIndex = 43;
-    public const int CollectingTargetsContinuously = 44;
-    public const int CollectTargetsInterval = 45;
-    public const int CollectTargetsTimer = 46;
-    public const int DebugCollider = 47;
-    public const int LayerMask = 48;
-    public const int ProcessedTargets = 49;
-    public const int Radius = 50;
-    public const int Reached = 51;
-    public const int ReadyToCollectTargets = 52;
-    public const int TargetId = 53;
-    public const int TargetsBuffer = 54;
-    public const int Helicopter = 55;
-    public const int Tank = 56;
-    public const int VehicleTypeId = 57;
+    public const int EnemyHpBarView = 31;
+    public const int Hero = 32;
+    public const int CurrentHp = 33;
+    public const int Dead = 34;
+    public const int MaxHp = 35;
+    public const int PrevHp = 36;
+    public const int ProcessingDeath = 37;
+    public const int TakeDamage = 38;
+    public const int ArrivalThreshold = 39;
+    public const int CurrentSpeed = 40;
+    public const int Direction = 41;
+    public const int MovementAvailable = 42;
+    public const int Moving = 43;
+    public const int RotationSpeed = 44;
+    public const int Speed = 45;
+    public const int WayPointsMove = 46;
+    public const int WayPointsMoveIndex = 47;
+    public const int CollectingTargetsContinuously = 48;
+    public const int CollectTargetsInterval = 49;
+    public const int CollectTargetsTimer = 50;
+    public const int DebugCollider = 51;
+    public const int LayerMask = 52;
+    public const int ProcessedTargets = 53;
+    public const int Radius = 54;
+    public const int Reached = 55;
+    public const int ReadyToCollectTargets = 56;
+    public const int TargetId = 57;
+    public const int TargetsBuffer = 58;
+    public const int Helicopter = 59;
+    public const int Tank = 60;
+    public const int VehicleTypeId = 61;
 
-    public const int TotalComponents = 58;
+    public const int TotalComponents = 62;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -101,10 +105,14 @@ public static class GameComponentsLookup {
         "CompassView",
         "Marked",
         "Enemy",
+        "EnemyHpBarView",
         "Hero",
-        "CurrentHP",
+        "CurrentHp",
         "Dead",
+        "MaxHp",
+        "PrevHp",
         "ProcessingDeath",
+        "TakeDamage",
         "ArrivalThreshold",
         "CurrentSpeed",
         "Direction",
@@ -162,10 +170,14 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Compass.CompassViewComponent),
         typeof(Code.Gameplay.Features.Compass.Marked),
         typeof(Code.Gameplay.Features.Enemies.Enemy),
+        typeof(Code.Gameplay.Features.EnemyHpBar.EnemyHpBarViewComponent),
         typeof(Code.Gameplay.Features.Hero.Hero),
-        typeof(Code.Gameplay.Features.Lifetime.CurrentHP),
+        typeof(Code.Gameplay.Features.Lifetime.CurrentHp),
         typeof(Code.Gameplay.Features.Lifetime.Dead),
+        typeof(Code.Gameplay.Features.Lifetime.MaxHp),
+        typeof(Code.Gameplay.Features.Lifetime.PrevHp),
         typeof(Code.Gameplay.Features.Lifetime.ProcessingDeath),
+        typeof(Code.Gameplay.Features.Lifetime.TakeDamage),
         typeof(Code.Gameplay.Features.Movement.ArrivalThreshold),
         typeof(Code.Gameplay.Features.Movement.CurrentSpeed),
         typeof(Code.Gameplay.Features.Movement.Direction),

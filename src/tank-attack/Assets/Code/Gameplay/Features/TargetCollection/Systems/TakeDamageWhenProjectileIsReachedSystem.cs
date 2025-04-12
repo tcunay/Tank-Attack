@@ -13,7 +13,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
                 .AllOf(GameMatcher.Projectile, GameMatcher.TargetsBuffer, GameMatcher.Reached, GameMatcher.Damage));
 
             _enemies = game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.Enemy, GameMatcher.CurrentHP));
+                .AllOf(GameMatcher.Enemy, GameMatcher.CurrentHp));
         }
 
         public void Execute()
@@ -24,7 +24,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
             {
                 if (enemy.Id == targetId)
                 {
-                    enemy.ReplaceCurrentHP(enemy.CurrentHP - projectile.Damage);
+                    enemy.AddTakeDamage(projectile.Damage);
                 }
             }
         }

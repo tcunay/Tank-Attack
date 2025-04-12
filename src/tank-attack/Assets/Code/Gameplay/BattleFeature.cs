@@ -6,6 +6,7 @@ using Code.Gameplay.Features.Compass;
 using Code.Gameplay.Features.EndLevel;
 using Code.Gameplay.Features.EndLevel.Systems;
 using Code.Gameplay.Features.Hero;
+using Code.Gameplay.Features.Lifetime;
 using Code.Gameplay.Features.Lifetime.Systems;
 using Code.Gameplay.Features.Movement;
 using Code.Gameplay.Features.TargetCollection;
@@ -23,6 +24,8 @@ namespace Code.Gameplay
 
             Add(systems.Create<BindViewFeature>());
             
+            Add(systems.Create<InitHealthFeature>());
+            
             Add(systems.Create<HeroFeature>());
             
             Add(systems.Create<CameraFeature>());
@@ -37,6 +40,8 @@ namespace Code.Gameplay
             Add(systems.Create<MovementFeature>());
             
             Add(systems.Create<CollectTargetsFeature>());
+            
+            Add(systems.Create<DamageFeature>());
             
             Add(systems.Create<DeathFeature>());
             

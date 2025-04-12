@@ -3,27 +3,23 @@ using Entitas;
 
 namespace Code.Gameplay.Features.Lifetime.Systems
 {
-    public class MarkDeadSystem : IExecuteSystem
+    public class InitCurrentHpSystem : IExecuteSystem
     {
         private readonly IGroup<GameEntity> _entities;
         private readonly List<GameEntity>  _buffer = new(128);
 
-        public MarkDeadSystem(GameContext game)
+        public InitCurrentHpSystem(GameContext game)
         {
             _entities = game.GetGroup(GameMatcher
-                .AllOf(GameMatcher.CurrentHp)
-                .NoneOf(GameMatcher.Dead));
+                .AllOf(GameMatcher.MaxHp)
+                .NoneOf(GameMatcher.CurrentHp));
         }
 
         public void Execute()
         {
             foreach (GameEntity entity in _entities.GetEntities(_buffer))
             {
-                if (entity.CurrentHp <= 0)
-                {
-                    entity.isDead = true;
-                    entity.isProcessingDeath = true;
-                }
+                entity.AddCurrentHp(entity.MaxHp);
             }
         }
     }
