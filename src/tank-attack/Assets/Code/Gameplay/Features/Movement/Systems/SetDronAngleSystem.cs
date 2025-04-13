@@ -4,15 +4,15 @@ using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems
 {
-    public class SetHelicopterXAngleSystem : IExecuteSystem
+    public class SetDronAngleSystem : IExecuteSystem
     {
-        private readonly IGroup<GameEntity> _helicopters;
+        private readonly IGroup<GameEntity> _drons;
 
-        public SetHelicopterXAngleSystem(GameContext game)
+        public SetDronAngleSystem(GameContext game)
         {
-            _helicopters = game.GetGroup(GameMatcher
+            _drons = game.GetGroup(GameMatcher
                 .AllOf(
-                    GameMatcher.Helicopter,
+                    GameMatcher.Dron,
                     GameMatcher.WorldRotation,
                     GameMatcher.Direction,
                     GameMatcher.Moving,
@@ -22,11 +22,11 @@ namespace Code.Gameplay.Features.Movement.Systems
 
         public void Execute()
         {
-            foreach (GameEntity mover in _helicopters)
+            foreach (GameEntity mover in _drons)
             {
                 Vector3 eulerRotation = mover.WorldRotation.eulerAngles;
 
-                mover.ReplaceWorldRotation(Quaternion.Euler(eulerRotation.SetX(30)));
+                mover.ReplaceWorldRotation(Quaternion.Euler(eulerRotation.SetX(0).SetZ(0)));
             }
             
         }
