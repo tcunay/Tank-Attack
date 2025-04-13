@@ -11,6 +11,7 @@ namespace Code.Gameplay.Features.Movement
             Add(systems.Create<SetRotationByDirection>());
             
             Add(systems.Create<SetHelicopterXAngleSystem>());
+            Add(systems.Create<SetDronAngleSystem>());
             
             Add(systems.Create<UpdateTransformPositionSystem>());
             Add(systems.Create<UpdateTransformRotationSystem>());

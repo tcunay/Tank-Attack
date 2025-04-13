@@ -67,11 +67,12 @@ public static class GameComponentsLookup {
     public const int ReadyToCollectTargets = 56;
     public const int TargetId = 57;
     public const int TargetsBuffer = 58;
-    public const int Helicopter = 59;
-    public const int Tank = 60;
-    public const int VehicleTypeId = 61;
+    public const int Dron = 59;
+    public const int Helicopter = 60;
+    public const int Tank = 61;
+    public const int VehicleTypeId = 62;
 
-    public const int TotalComponents = 62;
+    public const int TotalComponents = 63;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -133,6 +134,7 @@ public static class GameComponentsLookup {
         "ReadyToCollectTargets",
         "TargetId",
         "TargetsBuffer",
+        "Dron",
         "Helicopter",
         "Tank",
         "VehicleTypeId"
@@ -198,6 +200,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.TargetCollection.ReadyToCollectTargets),
         typeof(Code.Gameplay.Features.TargetCollection.TargetId),
         typeof(Code.Gameplay.Features.TargetCollection.TargetsBuffer),
+        typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Dron),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Helicopter),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Tank),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)

@@ -5,5 +5,6 @@ namespace Code.Gameplay.Features.Vehicle.Setup
         None = 0,
         Tank = 1,
         Helicopter = 2,
+        Dron = 3,
     }
 }

@@ -8,5 +8,6 @@ namespace Code.Gameplay.Features.Vehicle
         [Game] public class  VehicleTypeIdComponent : IComponent { public VehicleKind Value; }
         [Game] public class  Tank : IComponent { }
         [Game] public class  Helicopter : IComponent { }
+        [Game] public class  Dron : IComponent { }
     }
 }

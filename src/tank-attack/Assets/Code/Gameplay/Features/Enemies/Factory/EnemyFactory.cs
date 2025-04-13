@@ -28,6 +28,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
             {
                 VehicleKind.Tank => CreateTank(vehicleSetup),
                 VehicleKind.Helicopter => CreateHelicopter(vehicleSetup),
+                VehicleKind.Dron => CreateDron(vehicleSetup),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -36,6 +37,12 @@ namespace Code.Gameplay.Features.Enemies.Factory
         {
             return CreateVehicle(vehicleSetup)
                 .With(x => x.isHelicopter = true);
+        }
+        
+        private GameEntity CreateDron(VehicleSetup vehicleSetup)
+        {
+            return CreateVehicle(vehicleSetup)
+                .With(x => x.isDron = true);
         }
 
         private GameEntity CreateTank(VehicleSetup vehicleSetup)
@@ -52,7 +59,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
             return CreateEntity.Empty(_identifierService.Next())
                 .AddMaxHp(vehicleSetup.MaxHp)
                 .AddWorldPosition(startPoint.position)
-                .AddWorldRotation(startPoint.rotation)
+                .AddWorldRotation(startPoint.localRotation)
                 .AddViewPrefab(vehicleConfig.Prefab)
                 .AddVehicleTypeId(vehicleSetup.Kind)
                 .AddSpeed(vehicleSetup.MoveSetup.Speed)
