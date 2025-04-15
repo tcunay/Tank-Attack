@@ -70,10 +70,11 @@ public static class GameComponentsLookup {
     public const int BlockPost = 59;
     public const int Dron = 60;
     public const int Helicopter = 61;
-    public const int Tank = 62;
-    public const int VehicleTypeId = 63;
+    public const int Jeep = 62;
+    public const int Tank = 63;
+    public const int VehicleTypeId = 64;
 
-    public const int TotalComponents = 64;
+    public const int TotalComponents = 65;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -138,6 +139,7 @@ public static class GameComponentsLookup {
         "BlockPost",
         "Dron",
         "Helicopter",
+        "Jeep",
         "Tank",
         "VehicleTypeId"
     };
@@ -205,6 +207,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.BlockPost),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Dron),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Helicopter),
+        typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Jeep),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.Tank),
         typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)
     };

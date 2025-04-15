@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Vehicle
     {
         [Game] public class  VehicleTypeIdComponent : IComponent { public EnemyType Value; }
         [Game] public class  Tank : IComponent { }
+        [Game] public class  Jeep : IComponent { }
         [Game] public class  Helicopter : IComponent { }
         [Game] public class  Dron : IComponent { }
         [Game] public class  BlockPost : IComponent { }

@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2402666285450153697, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: m_Name
-      value: VehicleSetup (3)
+      value: Dron
       objectReference: {fileID: 0}
     - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: Kind
@@ -404,7 +404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2402666285450153697, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: m_Name
-      value: VehicleSetup (2)
+      value: Helicopter
       objectReference: {fileID: 0}
     - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: Kind
@@ -1898,10 +1898,10 @@ MonoBehaviour:
         - {fileID: 1645450525}
         - {fileID: 1921213427}
   - VehicleSetup:
-      Kind: 1
-      MaxHp: 2
+      Kind: 5
+      MaxHp: 1
       MoveSetup:
-        Speed: 1
+        Speed: 2
         WayPoints:
         - {fileID: 1464428146}
         - {fileID: 2062380208}
@@ -2514,7 +2514,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2402666285450153697, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: m_Name
-      value: VehicleSetup (1)
+      value: Jeep
       objectReference: {fileID: 0}
     - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: Kind
@@ -2944,7 +2944,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2402666285450153697, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: m_Name
-      value: VehicleSetup
+      value: Tank
       objectReference: {fileID: 0}
     - target: {fileID: 5656886670048257027, guid: 4e27cc4ab686b41689f71a3b63cae7e1, type: 3}
       propertyPath: Kind

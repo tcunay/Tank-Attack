@@ -35,11 +35,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7e027f6bfa84140b3900d254f360cd0e
-    m_Address: Vehicles
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 89befbf4d86094d319dc20e16c036d9a
     m_Address: Hero
     m_ReadOnly: 0
@@ -82,11 +77,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: db44fbeb2509343fba99565763a48feb
     m_Address: Camera
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e240a30fbcee24241827e11dc0099c89
-    m_Address: Vehicles
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

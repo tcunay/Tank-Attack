@@ -7,5 +7,6 @@ namespace Code.Gameplay.Features.Vehicle.Setup
         Helicopter = 2,
         Dron = 3,
         BlockPost = 4,
+        Jeep = 5,
     }
 }

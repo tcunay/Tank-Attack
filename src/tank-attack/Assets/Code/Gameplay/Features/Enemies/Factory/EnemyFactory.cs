@@ -30,6 +30,7 @@ namespace Code.Gameplay.Features.Enemies.Factory
                 EnemyType.Helicopter => CreateHelicopter(vehicleSetup),
                 EnemyType.Dron => CreateDron(vehicleSetup),
                 EnemyType.BlockPost => CreateBlockPost(vehicleSetup),
+                EnemyType.Jeep => CreateJeep(vehicleSetup),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -56,6 +57,12 @@ namespace Code.Gameplay.Features.Enemies.Factory
         {
             return CreateVehicle(vehicleSetup)
                 .With(x => x.isTank = true);
+        }
+        
+        private GameEntity CreateJeep(VehicleSetup vehicleSetup)
+        {
+            return CreateVehicle(vehicleSetup)
+                .With(x => x.isJeep = true);
         }
 
         private GameEntity CreateVehicle(VehicleSetup vehicleSetup)
