@@ -18,7 +18,7 @@ namespace Code.Gameplay.StaticData
         private GameObject _bullet;
         private GameObject _camera;
         private GameObject _enemyMark;
-        private Dictionary<VehicleKind ,VehicleConfig> _vehicleConfigs;
+        private Dictionary<EnemyType ,VehicleConfig> _vehicleConfigs;
         private Dictionary<int, LevelConfig> _levels;
         private AssetReference _gameOverSceneReference;
         private DebugEnvironmentSettings _debugEnvironmentSettings;
@@ -61,7 +61,7 @@ namespace Code.Gameplay.StaticData
             return _enemyMark;
         }
 
-        public VehicleConfig GetVehicleConfig(VehicleKind vehicleKind)
+        public VehicleConfig GetVehicleConfig(EnemyType vehicleKind)
         {
             if (_vehicleConfigs.TryGetValue(vehicleKind, out VehicleConfig config))
             {

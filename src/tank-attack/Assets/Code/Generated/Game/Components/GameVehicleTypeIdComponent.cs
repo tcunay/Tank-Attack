@@ -34,10 +34,10 @@ public sealed partial class GameMatcher {
 public partial class GameEntity {
 
     public Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent vehicleTypeId { get { return (Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)GetComponent(GameComponentsLookup.VehicleTypeId); } }
-    public Code.Gameplay.Features.Vehicle.Setup.VehicleKind VehicleTypeId { get { return vehicleTypeId.Value; } }
+    public Code.Gameplay.Features.Vehicle.Setup.EnemyType VehicleTypeId { get { return vehicleTypeId.Value; } }
     public bool hasVehicleTypeId { get { return HasComponent(GameComponentsLookup.VehicleTypeId); } }
 
-    public GameEntity AddVehicleTypeId(Code.Gameplay.Features.Vehicle.Setup.VehicleKind newValue) {
+    public GameEntity AddVehicleTypeId(Code.Gameplay.Features.Vehicle.Setup.EnemyType newValue) {
         var index = GameComponentsLookup.VehicleTypeId;
         var component = (Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent));
         component.Value = newValue;
@@ -45,7 +45,7 @@ public partial class GameEntity {
         return this;
     }
 
-    public GameEntity ReplaceVehicleTypeId(Code.Gameplay.Features.Vehicle.Setup.VehicleKind newValue) {
+    public GameEntity ReplaceVehicleTypeId(Code.Gameplay.Features.Vehicle.Setup.EnemyType newValue) {
         var index = GameComponentsLookup.VehicleTypeId;
         var component = (Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent)CreateComponent(index, typeof(Code.Gameplay.Features.Vehicle.VehicleComponents.VehicleTypeIdComponent));
         component.Value = newValue;

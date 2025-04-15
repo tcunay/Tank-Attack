@@ -13,7 +13,7 @@ namespace Code.Gameplay.StaticData
         GameObject HeroPrefab();
         GameObject BulletPrefab();
         GameObject CameraPrefab();
-        VehicleConfig GetVehicleConfig(VehicleKind vehicleKind);
+        VehicleConfig GetVehicleConfig(EnemyType vehicleKind);
         LevelConfig GetLevelConfig(int levelNumber);
         AssetReference GameOverSceneReference();
         DebugEnvironmentSettings DebugEnvironmentSettings();

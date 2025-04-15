@@ -26,12 +26,17 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4e27cc4ab686b41689f71a3b63cae7e1
-    m_Address: VehicleSetup
+    m_Address: EnemyPoints
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 750e1ac9411ad41caa30abea259eb366
     m_Address: WinLevelScene
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e027f6bfa84140b3900d254f360cd0e
+    m_Address: Vehicles
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
