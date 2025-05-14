@@ -26,7 +26,7 @@ namespace Code.Gameplay.Features.Armaments.Factory
                 .AddSpeed(setup.Speed)
                 .AddDamage(setup.Damage)
                 .AddDirection(direction)
-                .AddSelfDestructTimer(5)
+                .AddSelfDestructTimer(10)
                 .With(x => x.isMovementAvailable = true)
                 .With(x => x.isMoving = true)
                 .With(x => x.isProjectile = true)
