@@ -21,7 +21,4 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   _armamentSetup:
     Count: 10
-    ProjectileSetup:
-      Speed: 3
-      ContactRadius: 0.1
-      Damage: 1
+    Config: {fileID: 11400000, guid: 7a6eb39ea879d44aea784a9d2a9334c9, type: 2}

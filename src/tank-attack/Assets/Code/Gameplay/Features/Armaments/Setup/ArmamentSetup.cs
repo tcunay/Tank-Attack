@@ -6,7 +6,7 @@ namespace Code.Gameplay.Features.Armaments.Setup
     public class ArmamentSetup
     {
         public int Count;
-        public ProjectileSetup ProjectileSetup;
+        public ArmamentConfig Config;
     }
 
     [Serializable]

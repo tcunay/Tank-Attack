@@ -40,7 +40,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
                     continue;
                 }
                 
-                ProjectileSetup projectileSetup = _levelDataProvider.LevelConfig.ArmamentSetup.ProjectileSetup;
+                ProjectileSetup projectileSetup = _levelDataProvider.LevelConfig.ArmamentSetup.Config.ProjectileSetup;
 
                 if (aim.isAutoHoming)
                 {
