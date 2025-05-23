@@ -10,7 +10,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
         private readonly IProjectileFactory _projectileFactory;
         private readonly ILevelDataProvider _levelDataProvider;
 
-        private readonly IGroup<InputEntity> _inputs;
+        private readonly IGroup<InputEntity> _attackInputs;
         private readonly IGroup<GameEntity> _heroes;
         private readonly IGroup<GameEntity> _aims;
 
@@ -19,8 +19,8 @@ namespace Code.Gameplay.Features.Armaments.Systems
             _projectileFactory = projectileFactory;
             _levelDataProvider = levelDataProvider;
 
-            _inputs = inputContext.GetGroup(InputMatcher
-                .AllOf(InputMatcher.Input, InputMatcher.AttackInput));
+            _attackInputs = inputContext.GetGroup(InputMatcher
+                .AllOf(InputMatcher.AttackInput));
             
             _heroes = gameContext.GetGroup(GameMatcher
                 .AllOf(GameMatcher.Hero, GameMatcher.WorldPosition, GameMatcher.CurrentBulletsCount));
@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
         {
             foreach (GameEntity hero in _heroes)
             foreach (GameEntity aim in _aims)
-            foreach (InputEntity input in _inputs)
+            foreach (InputEntity input in _attackInputs)
             {
                 if (hero.CurrentBulletsCount <= 0)
                 {
