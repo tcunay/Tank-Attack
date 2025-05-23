@@ -23,6 +23,8 @@ namespace Code.Gameplay.Features.Armaments.Factory
             return CreateEntity.Empty(_identifierService.Next())
                 .AddViewPath(AssetPath.BulletPrefabPath)
                 .AddWorldPosition(at)
+                .AddRotationSpeed(setup.Speed)
+                .AddWorldRotation(Quaternion.LookRotation(direction))
                 .AddSpeed(setup.Speed)
                 .AddDamage(setup.Damage)
                 .AddDirection(direction)
