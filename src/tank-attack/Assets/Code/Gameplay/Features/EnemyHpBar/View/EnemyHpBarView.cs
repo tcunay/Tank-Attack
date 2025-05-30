@@ -15,11 +15,6 @@ namespace Code.Gameplay.Features.EnemyHpBar.View
 
         private Coroutine _currentCoroutine;
 
-        private void Awake()
-        {
-            Hide();
-        }
-
         public void AnimateTakeDamage(float maxHp, float currentHp, float prevHp)
         {
             if (_currentCoroutine != null)
@@ -30,8 +25,6 @@ namespace Code.Gameplay.Features.EnemyHpBar.View
 
         private IEnumerator TakeDamageAnim(float maxHp, float currentHp, float prevHp)
         {
-            Show();
-
             float startFill = prevHp / maxHp;
             float targetFill = currentHp / maxHp;
             float elapsed = 0f;
@@ -50,9 +43,6 @@ namespace Code.Gameplay.Features.EnemyHpBar.View
 
             SetFillAmount(targetFill);
             SetHpText(currentHp, maxHp);
-
-            yield return new WaitForSeconds(_visibleDuration);
-            Hide();
         }
 
         private void SetHpText(float currentHp, float maxHp)

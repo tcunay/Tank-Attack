@@ -10,22 +10,28 @@ namespace Code.Gameplay.Features.EnemyHpBar.Systems
 
         public UpdateEnemyBarSystem(GameContext game) : base(game)
         {
-            _enemyHpBars = game.GetGroup(GameMatcher.EnemyHpBarView);
+            _enemyHpBars = game.GetGroup(GameMatcher
+                .AllOf(
+                    GameMatcher.EnemyHpBarView,
+                    GameMatcher.Enemy,
+                    GameMatcher.CurrentHp
+                ));
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context) =>
             context.CreateCollector(GameMatcher.CurrentHp);
 
         protected override bool Filter(GameEntity enemy) => enemy.isEnemy && 
+                                                            enemy.hasEnemyHpBarView &&
                                                             enemy.hasMaxHp && enemy.hasCurrentHp && enemy.hasPrevHp &&
                                                             Math.Abs(enemy.CurrentHp - enemy.PrevHp) > float.Epsilon;
 
         protected override void Execute(List<GameEntity> enemies)
         {
-            foreach (GameEntity hpBar in _enemyHpBars)
+            //foreach (GameEntity hpBar in _enemyHpBars)
             foreach (GameEntity enemy in enemies)
             {
-                hpBar.EnemyHpBarView.AnimateTakeDamage(enemy.MaxHp, enemy.CurrentHp, enemy.PrevHp);
+                enemy.EnemyHpBarView.AnimateTakeDamage(enemy.MaxHp, enemy.CurrentHp, enemy.PrevHp);
             }
         }
     }

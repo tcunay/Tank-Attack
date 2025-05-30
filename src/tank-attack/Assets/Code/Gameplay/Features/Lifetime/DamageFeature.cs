@@ -11,6 +11,7 @@ namespace Code.Gameplay.Features.Lifetime
             Add(systems.Create<ProcessingTakeDamageSystem>());
             
             Add(systems.Create<UpdateEnemyBarSystem>());
+            Add(systems.Create<RotateHpBarTowardsHeroSystem>());
             
             Add(systems.Create<CleanupTakeDamageSystem>());
         }
