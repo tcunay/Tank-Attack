@@ -15,66 +15,67 @@ public static class GameComponentsLookup {
     public const int ViewPath = 4;
     public const int ViewPrefab = 5;
     public const int Damage = 6;
-    public const int Id = 7;
-    public const int Rigidbody = 8;
-    public const int Transform = 9;
-    public const int WorldPosition = 10;
-    public const int WorldRotation = 11;
-    public const int Aim = 12;
-    public const int AutoHoming = 13;
-    public const int AutoHomingTimerText = 14;
-    public const int DetectedTargetId = 15;
-    public const int DetectingTargetId = 16;
-    public const int DetectionTime = 17;
-    public const int Icon = 18;
-    public const int MaxDetectingTime = 19;
-    public const int Armament = 20;
-    public const int BulletCounter = 21;
-    public const int CurrentBulletsCount = 22;
-    public const int MaxBulletsCount = 23;
-    public const int Projectile = 24;
-    public const int CameraUnity = 25;
-    public const int MainCamera = 26;
-    public const int CompassMark = 27;
-    public const int CompassView = 28;
-    public const int Marked = 29;
-    public const int Enemy = 30;
-    public const int EnemyHpBarView = 31;
-    public const int Hero = 32;
-    public const int CurrentHp = 33;
-    public const int Dead = 34;
-    public const int MaxHp = 35;
-    public const int PrevHp = 36;
-    public const int ProcessingDeath = 37;
-    public const int TakeDamage = 38;
-    public const int ArrivalThreshold = 39;
-    public const int CurrentSpeed = 40;
-    public const int Direction = 41;
-    public const int MovementAvailable = 42;
-    public const int Moving = 43;
-    public const int RotationSpeed = 44;
-    public const int Speed = 45;
-    public const int WayPointsMove = 46;
-    public const int WayPointsMoveIndex = 47;
-    public const int CollectingTargetsContinuously = 48;
-    public const int CollectTargetsInterval = 49;
-    public const int CollectTargetsTimer = 50;
-    public const int DebugCollider = 51;
-    public const int LayerMask = 52;
-    public const int ProcessedTargets = 53;
-    public const int Radius = 54;
-    public const int Reached = 55;
-    public const int ReadyToCollectTargets = 56;
-    public const int TargetId = 57;
-    public const int TargetsBuffer = 58;
-    public const int BlockPost = 59;
-    public const int Dron = 60;
-    public const int Helicopter = 61;
-    public const int Jeep = 62;
-    public const int Tank = 63;
-    public const int VehicleTypeId = 64;
+    public const int DirectionToCenter = 7;
+    public const int Id = 8;
+    public const int Rigidbody = 9;
+    public const int Transform = 10;
+    public const int WorldPosition = 11;
+    public const int WorldRotation = 12;
+    public const int Aim = 13;
+    public const int AutoHoming = 14;
+    public const int AutoHomingTimerText = 15;
+    public const int DetectedTargetId = 16;
+    public const int DetectingTargetId = 17;
+    public const int DetectionTime = 18;
+    public const int Icon = 19;
+    public const int MaxDetectingTime = 20;
+    public const int Armament = 21;
+    public const int BulletCounter = 22;
+    public const int CurrentBulletsCount = 23;
+    public const int MaxBulletsCount = 24;
+    public const int Projectile = 25;
+    public const int CameraUnity = 26;
+    public const int MainCamera = 27;
+    public const int CompassMark = 28;
+    public const int CompassView = 29;
+    public const int Marked = 30;
+    public const int Enemy = 31;
+    public const int EnemyHpBarView = 32;
+    public const int Hero = 33;
+    public const int CurrentHp = 34;
+    public const int Dead = 35;
+    public const int MaxHp = 36;
+    public const int PrevHp = 37;
+    public const int ProcessingDeath = 38;
+    public const int TakeDamage = 39;
+    public const int ArrivalThreshold = 40;
+    public const int CurrentSpeed = 41;
+    public const int Direction = 42;
+    public const int MovementAvailable = 43;
+    public const int Moving = 44;
+    public const int RotationSpeed = 45;
+    public const int Speed = 46;
+    public const int WayPointsMove = 47;
+    public const int WayPointsMoveIndex = 48;
+    public const int CollectingTargetsContinuously = 49;
+    public const int CollectTargetsInterval = 50;
+    public const int CollectTargetsTimer = 51;
+    public const int DebugCollider = 52;
+    public const int LayerMask = 53;
+    public const int ProcessedTargets = 54;
+    public const int Radius = 55;
+    public const int Reached = 56;
+    public const int ReadyToCollectTargets = 57;
+    public const int TargetId = 58;
+    public const int TargetsBuffer = 59;
+    public const int BlockPost = 60;
+    public const int Dron = 61;
+    public const int Helicopter = 62;
+    public const int Jeep = 63;
+    public const int Tank = 64;
+    public const int VehicleTypeId = 65;
 
-    public const int TotalComponents = 65;
+    public const int TotalComponents = 66;
 
     public static readonly string[] componentNames = {
         "Destructed",
@@ -84,6 +85,7 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "Damage",
+        "DirectionToCenter",
         "Id",
         "Rigidbody",
         "Transform",
@@ -152,6 +154,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPath),
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.Damage),
+        typeof(Code.Gameplay.Common.DirectionToCenter),
         typeof(Code.Gameplay.Common.Id),
         typeof(Code.Gameplay.Common.RigidbodyComponent),
         typeof(Code.Gameplay.Common.TransformComponent),

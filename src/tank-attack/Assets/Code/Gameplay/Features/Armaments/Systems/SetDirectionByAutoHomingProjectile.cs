@@ -33,7 +33,7 @@ namespace Code.Gameplay.Features.Armaments.Systems
                     continue;
                 }
                 
-                Vector3 targetPosition = target.WorldPosition;
+                Vector3 targetPosition = target.WorldPosition - target.DirectionToCenter;
                 bullet.ReplaceDirection((targetPosition - bullet.WorldPosition).normalized);
             }
         }

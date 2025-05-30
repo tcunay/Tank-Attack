@@ -25,7 +25,9 @@ namespace Code.Infrastructure.View
             _entity.Retain(this);
 
             RegisterComponents();
-            RegisterColliders();
+            Vector3 directionToCenter = RegisterColliders();
+            
+            RegisterDirectionToCenter(directionToCenter);
         }
 
         public void ReleaseEntity()
@@ -33,14 +35,27 @@ namespace Code.Infrastructure.View
             UnRegisterComponents();
             UnregisterColliders();
             
+            UnRegisterDirectionToCenter();
+            
             _entity.Release(this);
             _entity = null;
         }
-        
-        private void RegisterColliders()
+
+        private Vector3 RegisterColliders()
         {
-            foreach (Collider collider in GetComponentsInChildren<Collider>(includeInactive: true))
+            Collider[] colliders = GetComponentsInChildren<Collider>(includeInactive: true);
+            Vector3 centersSum = Vector3.zero;
+            
+            foreach (Collider collider in colliders)
+            {
                 _collisionRegistry.Register(collider.GetInstanceID(), _entity);
+                centersSum += collider.bounds.center;
+            }
+
+            Vector3 center = centersSum / colliders.Length;
+            Vector3 directionToCenter = transform.position - center;
+
+            return directionToCenter;
         }
 
         private void UnregisterColliders()
@@ -59,6 +74,19 @@ namespace Code.Infrastructure.View
         {
             foreach (IEntityComponentRegistrar registrar in GetComponentsInChildren<IEntityComponentRegistrar>())
                 registrar.UnRegisterComponents();
+        }
+        
+        private void RegisterDirectionToCenter(Vector3 directionToCenter)
+        {
+            Entity.AddDirectionToCenter(directionToCenter);
+        }
+        
+        private void UnRegisterDirectionToCenter()
+        {
+            if (Entity.hasDirectionToCenter)
+            {
+                Entity.RemoveDirectionToCenter();
+            }
         }
     }
 }
